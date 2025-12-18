@@ -5,7 +5,7 @@
    Global CSS variables
    ========================================================================== */
 :root {
-  --qode-main-color: #0000B4;
+  --qode-main-color: #557C23;
   --qode-second-main-color: #EBD616;
   --qode-header-light-color: #fff;
   --qode-header-light-hover-color: #fff;
@@ -625,7 +625,7 @@ pre {
   word-wrap: break-word;
   font-family: monospace;
   font-size: 1em;
-  color: #0000B4;
+  color: #557C23;
 }
 
 code {
@@ -633,7 +633,7 @@ code {
   padding: 0;
   font-family: monospace, monospace;
   font-size: 1em;
-  color: #0000B4;
+  color: #557C23;
 }
 
 sub,
@@ -827,7 +827,7 @@ figcaption,
   max-width: 100%;
   font-size: 13px !important;
   line-height: 1em !important;
-  color: #0000B4;
+  color: #557C23;
   text-align: center;
   opacity: 1;
   margin: 0 auto 20px auto;
@@ -992,7 +992,7 @@ body {
   font-size: 16px;
   line-height: 1.5em;
   font-weight: 500;
-  color: #0000B4;
+  color: #557C23;
   background-color: #ffffff;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -1002,7 +1002,7 @@ h1,
 .qodef-h1 {
   font-family: "Inter", sans-serif;
   letter-spacing: -0.02em;
-  color: #0000B4;
+  color: #557C23;
   font-size: 60px;
   line-height: 1.13333em;
   font-weight: 700;
@@ -1033,7 +1033,7 @@ h2,
 .qodef-h2 {
   font-family: "Inter", sans-serif;
   letter-spacing: -0.02em;
-  color: #0000B4;
+  color: #557C23;
   font-size: 48px;
   line-height: 1.125em;
   font-weight: 600;
@@ -1064,7 +1064,7 @@ h3,
 .qodef-h3 {
   font-family: "Inter", sans-serif;
   letter-spacing: -0.02em;
-  color: #0000B4;
+  color: #557C23;
   font-size: 40px;
   line-height: 1.2em;
   font-weight: 600;
@@ -1095,7 +1095,7 @@ h4,
 .qodef-h4 {
   font-family: "Inter", sans-serif;
   letter-spacing: -0.02em;
-  color: #0000B4;
+  color: #557C23;
   font-size: 31px;
   line-height: 1.22581em;
   font-weight: 600;
@@ -1126,7 +1126,7 @@ h5,
 .qodef-h5 {
   font-family: "Inter", sans-serif;
   letter-spacing: -0.02em;
-  color: #0000B4;
+  color: #557C23;
   font-size: 22px;
   line-height: 1.36364em;
   font-weight: 600;
@@ -1157,7 +1157,7 @@ h6,
 .qodef-h6 {
   font-family: "Inter", sans-serif;
   letter-spacing: -0.02em;
-  color: #0000B4;
+  color: #557C23;
   font-size: 18px;
   line-height: 1.33333em;
   font-weight: 600;
@@ -1186,7 +1186,7 @@ h6 a:focus, h6 a:hover,
 
 a,
 p a {
-  color: #0000B4;
+  color: #557C23;
   text-decoration: none;
   transition: color 0.3s ease-out;
   cursor: pointer;
@@ -1227,7 +1227,7 @@ blockquote,
   vertical-align: top;
   font-family: "Inter", sans-serif;
   letter-spacing: -0.02em;
-  color: #0000B4;
+  color: #557C23;
   font-size: 22px;
   line-height: 1.36364em;
   font-weight: 600;
@@ -1344,11 +1344,11 @@ blockquote .wp-block-pullquote__citation,
   font-size: 16px;
   line-height: 1.5em;
   font-weight: 500;
-  color: #0000B4;
+  color: #557C23;
   display: inline-flex;
   vertical-align: middle;
   flex-wrap: wrap;
-  color: #0000B4;
+  color: #557C23;
 }
 
 .qodef-e-info > a:hover {
@@ -1506,7 +1506,7 @@ textarea,
 select {
   background-color: transparent;
   border-color: var(--qode-main-color);
-  color: #0000B4;
+  color: #557C23;
 }
 
 input[type="text"]:focus,
@@ -1521,7 +1521,7 @@ textarea:focus,
 select:focus {
   background-color: transparent;
   border-color: var(--qode-main-color);
-  color: #0000B4;
+  color: #557C23;
 }
 
 #qodef-page-footer input[type="text"], #qodef-page-footer
@@ -1678,7 +1678,7 @@ select:disabled {
 }
 
 select option {
-  color: #0000B4;
+  color: #557C23;
 }
 
 select.qodef-arrow--light {
@@ -1714,7 +1714,7 @@ button[type="submit"],
   transition: color 0.3s ease-out, background-color 0.3s ease-out, border-color 0.3s ease-out;
   padding: 5px 49px 8px;
   color: #ffffff;
-  background-color: #0000B4;
+  background-color: #557C23;
   border: 1px solid transparent;
   cursor: pointer;
 }
@@ -1723,7 +1723,7 @@ input[type="submit"]:hover,
 button[type="submit"]:hover,
 .qodef-theme-button:hover {
   color: #ffffff;
-  background-color: #1111d1;
+  background-color: #486b1a;
 }
 
 button[type="submit"] span,
@@ -1885,7 +1885,7 @@ button[type="submit"] span:before,
 }
 
 [class*="teenglow"] .select2-container--default .select2-selection--multiple .select2-selection__rendered .select2-selection__choice {
-  background-color: #0000B4;
+  background-color: #557C23;
   border: 0;
   border-radius: 0;
   color: #ffffff;
@@ -1927,7 +1927,7 @@ button[type="submit"] span:before,
 }
 
 [class*="teenglow"] .select2-container--default .select2-search--inline .select2-search__field:focus {
-  border-color: #0000B4;
+  border-color: #557C23;
 }
 
 [class*="teenglow"] .select2-container--default .select2-search--inline .select2-search__field::-webkit-search-cancel-button {
@@ -1968,7 +1968,7 @@ button[type="submit"] span:before,
 [class*="teenglow"] .select2-container--default .select2-search--dropdown .select2-search__field {
   -webkit-appearance: none;
   border: 1px solid var(--qode-main-color);
-  color: #0000B4;
+  color: #557C23;
   font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
@@ -1985,7 +1985,7 @@ button[type="submit"] span:before,
 
 [class*="teenglow"] .select2-container--default .select2-search--dropdown .select2-search__field:focus {
   border: 1px solid var(--qode-main-color);
-  color: #0000B4;
+  color: #557C23;
 }
 
 [class*="teenglow"] .select2-container--default .select2-results {
@@ -2023,12 +2023,12 @@ button[type="submit"] span:before,
 }
 
 [class*="teenglow"] .select2-container--default .select2-results__option[aria-disabled=true] {
-  color: #0000B4;
+  color: #557C23;
 }
 
 [class*="teenglow"] .select2-container--default .select2-results__option[aria-selected=true], [class*="teenglow"] .select2-container--default .select2-results__option[data-selected=true] {
   background: none;
-  color: #0000B4;
+  color: #557C23;
 }
 
 [class*="teenglow"] .select2-container--default .select2-results__option .select2-results__option {
@@ -2066,7 +2066,7 @@ button[type="submit"] span:before,
 
 [class*="teenglow"] .select2-container--default .select2-results__option--highlighted[aria-selected] {
   background: none;
-  color: #0000B4;
+  color: #557C23;
 }
 
 [class*="teenglow"] .select2-container--default .select2-results__group {
@@ -2123,7 +2123,7 @@ button[type="submit"] span:before,
 
 [class*="teenglow"] .select2-container--default.select2-container--open .select2-selection--single,
 [class*="teenglow"] .select2-container--default.select2-container--open .select2-selection--multiple {
-  color: #0000B4;
+  color: #557C23;
 }
 
 [class*="teenglow"] .select2-container--default.select2-container--open .select2-dropdown {
@@ -2141,13 +2141,13 @@ button[type="submit"] span:before,
 .select2-container--default .select2-selection {
   background-color: transparent !important;
   border-color: var(--qode-main-color) !important;
-  color: #0000B4 !important;
+  color: #557C23 !important;
 }
 
 .select2-container--default .select2-selection:focus {
   background-color: transparent !important;
   border-color: var(--qode-main-color) !important;
-  color: #0000B4 !important;
+  color: #557C23 !important;
 }
 
 #qodef-page-footer .select2-container--default .select2-selection {
@@ -2222,7 +2222,7 @@ input[type="text"]::-ms-clear {
    ========================================================================== */
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 1000px transparent inset;
-  -webkit-text-fill-color: #0000B4;
+  -webkit-text-fill-color: #557C23;
 }
 
 #qodef-page-footer input:-webkit-autofill {
@@ -2864,7 +2864,7 @@ button.mfp-close svg {
 .mfp-bottom-bar .mfp-counter {
   font-family: "Inter", sans-serif;
   letter-spacing: -0.02em;
-  color: #0000B4;
+  color: #557C23;
   font-size: 18px;
   line-height: 1.33333em;
   font-weight: 600;
@@ -2997,7 +2997,7 @@ html.touchevents body.qodef-swiper--show-hidden-slides #qodef-page-wrapper {
 
 .swiper-pagination-bullets .swiper-pagination-bullet {
   align-items: center;
-  background-color: #0000B4;
+  background-color: #557C23;
   border-radius: 50%;
   display: flex;
   height: 10px;
@@ -3022,7 +3022,7 @@ html.touchevents body.qodef-swiper--show-hidden-slides #qodef-page-wrapper {
 .swiper-button-prev,
 .swiper-button-next {
   background-image: none !important;
-  color: #0000B4;
+  color: #557C23;
   height: auto !important;
   margin: 0 !important;
   transform: translateY(-50%);
@@ -3277,7 +3277,7 @@ html.touchevents body.qodef-swiper--show-hidden-slides #qodef-page-wrapper {
   padding: 11px 20px;
   height: 46px;
   line-height: 24px;
-  color: #0000B4;
+  color: #557C23;
   background-color: #fff;
   border: 1px solid transparent;
   font-size: 14px;
@@ -3297,7 +3297,7 @@ html.touchevents body.qodef-swiper--show-hidden-slides #qodef-page-wrapper {
 
 #qodef-page-header .widget_icl_lang_sel_widget .wpml-ls-legacy-dropdown .wpml-ls-sub-menu .wpml-ls-item a,
 #qodef-page-header .widget_icl_lang_sel_widget .wpml-ls-legacy-dropdown-click .wpml-ls-sub-menu .wpml-ls-item a {
-  color: #0000B4;
+  color: #557C23;
   font-size: 14px;
 }
 
@@ -3312,7 +3312,7 @@ html.touchevents body.qodef-swiper--show-hidden-slides #qodef-page-wrapper {
 }
 
 #qodef-page-header .widget_icl_lang_sel_widget .wpml-ls-legacy-list-horizontal ul li a {
-  color: #0000B4;
+  color: #557C23;
 }
 
 #qodef-page-header .widget_icl_lang_sel_widget .wpml-ls-legacy-list-horizontal ul li a:hover {
@@ -3328,7 +3328,7 @@ html.touchevents body.qodef-swiper--show-hidden-slides #qodef-page-wrapper {
 }
 
 #qodef-page-header .widget_icl_lang_sel_widget .wpml-ls-legacy-list-vertical ul li a {
-  color: #0000B4;
+  color: #557C23;
 }
 
 #qodef-page-header .widget_icl_lang_sel_widget .wpml-ls-legacy-list-vertical ul li a:hover {
@@ -3345,7 +3345,7 @@ html.touchevents body.qodef-swiper--show-hidden-slides #qodef-page-wrapper {
   padding: 11px 20px;
   height: 46px;
   line-height: 24px;
-  color: #0000B4;
+  color: #557C23;
   background-color: transparent;
   border: 1px solid transparent;
   font-size: 14px;
@@ -3365,7 +3365,7 @@ html.touchevents body.qodef-swiper--show-hidden-slides #qodef-page-wrapper {
 
 #qodef-page-mobile-header .widget_icl_lang_sel_widget .wpml-ls-legacy-dropdown .wpml-ls-sub-menu .wpml-ls-item a,
 #qodef-page-mobile-header .widget_icl_lang_sel_widget .wpml-ls-legacy-dropdown-click .wpml-ls-sub-menu .wpml-ls-item a {
-  color: #0000B4;
+  color: #557C23;
   font-size: 14px;
 }
 
@@ -3380,7 +3380,7 @@ html.touchevents body.qodef-swiper--show-hidden-slides #qodef-page-wrapper {
 }
 
 #qodef-page-mobile-header .widget_icl_lang_sel_widget .wpml-ls-legacy-list-horizontal ul li a {
-  color: #0000B4;
+  color: #557C23;
 }
 
 #qodef-page-mobile-header .widget_icl_lang_sel_widget .wpml-ls-legacy-list-horizontal ul li a:hover {
@@ -3396,7 +3396,7 @@ html.touchevents body.qodef-swiper--show-hidden-slides #qodef-page-wrapper {
 }
 
 #qodef-page-mobile-header .widget_icl_lang_sel_widget .wpml-ls-legacy-list-vertical ul li a {
-  color: #0000B4;
+  color: #557C23;
 }
 
 #qodef-page-mobile-header .widget_icl_lang_sel_widget .wpml-ls-legacy-list-vertical ul li a:hover {
@@ -3481,7 +3481,7 @@ html.touchevents body.qodef-swiper--show-hidden-slides #qodef-page-wrapper {
   padding: 11px 20px;
   height: 46px;
   line-height: 24px;
-  color: #0000B4;
+  color: #557C23;
   background-color: #F9F9F9;
   border: 1px solid transparent;
   font-size: 14px;
@@ -3501,7 +3501,7 @@ html.touchevents body.qodef-swiper--show-hidden-slides #qodef-page-wrapper {
 
 #qodef-page-sidebar .widget_icl_lang_sel_widget .wpml-ls-legacy-dropdown .wpml-ls-sub-menu .wpml-ls-item a,
 #qodef-page-sidebar .widget_icl_lang_sel_widget .wpml-ls-legacy-dropdown-click .wpml-ls-sub-menu .wpml-ls-item a {
-  color: #0000B4;
+  color: #557C23;
   font-size: 14px;
 }
 
@@ -3516,7 +3516,7 @@ html.touchevents body.qodef-swiper--show-hidden-slides #qodef-page-wrapper {
 }
 
 #qodef-page-sidebar .widget_icl_lang_sel_widget .wpml-ls-legacy-list-horizontal ul li a {
-  color: #0000B4;
+  color: #557C23;
 }
 
 #qodef-page-sidebar .widget_icl_lang_sel_widget .wpml-ls-legacy-list-horizontal ul li a:hover {
@@ -3532,7 +3532,7 @@ html.touchevents body.qodef-swiper--show-hidden-slides #qodef-page-wrapper {
 }
 
 #qodef-page-sidebar .widget_icl_lang_sel_widget .wpml-ls-legacy-list-vertical ul li a {
-  color: #0000B4;
+  color: #557C23;
 }
 
 #qodef-page-sidebar .widget_icl_lang_sel_widget .wpml-ls-legacy-list-vertical ul li a:hover {
@@ -3549,7 +3549,7 @@ html.touchevents body.qodef-swiper--show-hidden-slides #qodef-page-wrapper {
   padding: 11px 20px;
   height: 46px;
   line-height: 24px;
-  color: #0000B4;
+  color: #557C23;
   background-color: #F9F9F9;
   border: 1px solid transparent;
   font-size: 14px;
@@ -3569,7 +3569,7 @@ html.touchevents body.qodef-swiper--show-hidden-slides #qodef-page-wrapper {
 
 #qodef-page-footer .widget_icl_lang_sel_widget .wpml-ls-legacy-dropdown .wpml-ls-sub-menu .wpml-ls-item a,
 #qodef-page-footer .widget_icl_lang_sel_widget .wpml-ls-legacy-dropdown-click .wpml-ls-sub-menu .wpml-ls-item a {
-  color: #0000B4;
+  color: #557C23;
   font-size: 14px;
 }
 
@@ -3617,7 +3617,7 @@ html.touchevents body.qodef-swiper--show-hidden-slides #qodef-page-wrapper {
   padding: 11px 20px;
   height: 46px;
   line-height: 24px;
-  color: #0000B4;
+  color: #557C23;
   background-color: #F9F9F9;
   border: 1px solid transparent;
   font-size: 14px;
@@ -3637,7 +3637,7 @@ html.touchevents body.qodef-swiper--show-hidden-slides #qodef-page-wrapper {
 
 #qodef-side-area .widget_icl_lang_sel_widget .wpml-ls-legacy-dropdown .wpml-ls-sub-menu .wpml-ls-item a,
 #qodef-side-area .widget_icl_lang_sel_widget .wpml-ls-legacy-dropdown-click .wpml-ls-sub-menu .wpml-ls-item a {
-  color: #0000B4;
+  color: #557C23;
   font-size: 14px;
 }
 
@@ -3805,7 +3805,7 @@ html.touchevents body.qodef-swiper--show-hidden-slides #qodef-page-wrapper {
   line-height: 1.92em;
   font-weight: 600;
   letter-spacing: 0.1em;
-  color: #0000B4;
+  color: #557C23;
   text-transform: uppercase;
 }
 
@@ -4072,7 +4072,7 @@ html.elementor-html .qodef-blog article.format-audio audio {
   line-height: 1.92em;
   font-weight: 600;
   letter-spacing: 0.1em;
-  color: #0000B4;
+  color: #557C23;
   text-transform: uppercase;
 }
 
@@ -4165,7 +4165,7 @@ html.elementor-html .qodef-blog article.format-audio audio {
   line-height: 1.92em;
   font-weight: 600;
   letter-spacing: 0.1em;
-  color: #0000B4;
+  color: #557C23;
   text-transform: uppercase;
   margin: -5px 0 1px;
 }
@@ -4175,11 +4175,11 @@ html.elementor-html .qodef-blog article.format-audio audio {
 }
 
 #qodef-page-comments-list .qodef-comment-item .qodef-e-date a {
-  color: #0000B4;
+  color: #557C23;
 }
 
 #qodef-page-comments-list .qodef-comment-item .qodef-e-date a:hover {
-  color: #0000B4;
+  color: #557C23;
 }
 
 #qodef-page-comments-list .qodef-comment-item .qodef-e-text {
@@ -4281,7 +4281,7 @@ html.elementor-html .qodef-blog article.format-audio audio {
 .qodef-comment-item #respond .comment-reply-title {
   font-family: "Inter", sans-serif;
   letter-spacing: -0.02em;
-  color: #0000B4;
+  color: #557C23;
   font-size: 22px;
   line-height: 1.36364em;
   font-weight: 600;
@@ -4481,7 +4481,7 @@ html.elementor-html .qodef-blog article.format-audio audio {
 }
 
 #qodef-page-footer-top-area {
-  background-color: #0000B4;
+  background-color: #557C23;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -4492,15 +4492,15 @@ html.elementor-html .qodef-blog article.format-audio audio {
 }
 
 .qodef-footer-skin--dark #qodef-page-footer-top-area * {
-  color: #0000B4 !important;
+  color: #557C23 !important;
 }
 
 .qodef-footer-skin--dark #qodef-page-footer-top-area input {
-  border-color: #0000B4;
+  border-color: #557C23;
 }
 
 .qodef-footer-skin--dark #qodef-page-footer-top-area input:focus {
-  border-color: #0000B4;
+  border-color: #557C23;
 }
 
 @media only screen and (min-width: 1025px) {
@@ -4544,7 +4544,7 @@ html.elementor-html .qodef-blog article.format-audio audio {
 }
 
 #qodef-page-footer-bottom-area {
-  background-color: #0000B4;
+  background-color: #557C23;
 }
 
 .qodef-footer-skin--dark #qodef-page-footer-bottom-area {
@@ -4552,7 +4552,7 @@ html.elementor-html .qodef-blog article.format-audio audio {
 }
 
 .qodef-footer-skin--dark #qodef-page-footer-bottom-area * {
-  color: #0000B4 !important;
+  color: #557C23 !important;
 }
 
 .qodef-footer-skin--dark #qodef-page-footer-bottom-area a:hover {
@@ -4560,7 +4560,7 @@ html.elementor-html .qodef-blog article.format-audio audio {
 }
 
 .qodef-footer-skin--dark #qodef-page-footer-bottom-area input {
-  border-color: #0000B4;
+  border-color: #557C23;
 }
 
 @media only screen and (min-width: 1025px) {
@@ -4617,7 +4617,7 @@ html.elementor-html .qodef-blog article.format-audio audio {
   transition: color 0.3s ease-out, background-color 0.3s ease-out, border-color 0.3s ease-out;
   padding: 5px 49px 8px !important;
   color: #ffffff;
-  background-color: #0000B4;
+  background-color: #557C23;
   border: 1px solid transparent;
   cursor: pointer;
 }
@@ -4628,7 +4628,7 @@ html.elementor-html .qodef-blog article.format-audio audio {
 
 .wp-block-button .wp-block-button__link:hover {
   color: #ffffff;
-  background-color: #1111d1;
+  background-color: #486b1a;
 }
 
 .wp-block-button.is-style-outline {
@@ -4821,7 +4821,7 @@ html.elementor-html .qodef-blog article.format-audio audio {
 }
 
 .wp-block-file {
-  color: #0000B4;
+  color: #557C23;
   text-decoration: none;
   transition: color 0.3s ease-out;
   cursor: pointer;
@@ -5908,11 +5908,11 @@ figure > figcaption {
   font-size: 16px;
   line-height: 1.5em;
   font-weight: 500;
-  color: #0000B4;
+  color: #557C23;
   display: inline-flex;
   vertical-align: middle;
   flex-wrap: wrap;
-  color: #0000B4;
+  color: #557C23;
   margin-right: 10px;
 }
 
@@ -6008,7 +6008,7 @@ figure > figcaption {
   right: 0;
   height: 100%;
   background-color: transparent;
-  color: #0000B4;
+  color: #557C23;
 }
 
 .qodef-search .qodef-search-form-button:hover {
@@ -6343,7 +6343,7 @@ figure > figcaption {
   display: inline-block;
   width: 100%;
   vertical-align: top;
-  height: 250px;
+  height: 50px;
   background-color: #F9F9F9;
 }
 
@@ -6721,7 +6721,7 @@ figure > figcaption {
 }
 
 .widget a {
-  color: #0000B4;
+  color: #557C23;
 }
 
 .widget a:hover {
@@ -6746,16 +6746,16 @@ figure > figcaption {
 }
 
 .widget .qodef-search-form-button.qodef--button-inside {
-  color: #0000B4;
+  color: #557C23;
 }
 
 .widget .qodef-search-form-button.qodef--button-inside:hover {
-  color: #0000B4;
+  color: #557C23;
 }
 
 .widget .tagcloud a,
 .widget .wp-block-tag-cloud a {
-  color: #0000B4;
+  color: #557C23;
 }
 
 .widget .tagcloud a:hover,
@@ -6771,7 +6771,7 @@ figure > figcaption {
 
 .widget.widget_calendar .wp-calendar-nav a,
 .widget .wp-block-calendar .wp-calendar-nav a {
-  color: #0000B4;
+  color: #557C23;
 }
 
 .widget.widget_calendar .wp-calendar-nav a:hover,
@@ -6873,11 +6873,11 @@ figure > figcaption {
 }
 
 #qodef-top-area .widget .qodef-search-form-button.qodef--button-inside {
-  color: #0000B4;
+  color: #557C23;
 }
 
 #qodef-top-area .widget .qodef-search-form-button.qodef--button-inside:hover {
-  color: #0000B4;
+  color: #557C23;
 }
 
 #qodef-top-area .widget .tagcloud a,
@@ -7191,11 +7191,11 @@ figure > figcaption {
 }
 
 #qodef-side-area .widget .qodef-search-form-button.qodef--button-inside {
-  color: #0000B4;
+  color: #557C23;
 }
 
 #qodef-side-area .widget .qodef-search-form-button.qodef--button-inside:hover {
-  color: #0000B4;
+  color: #557C23;
 }
 
 #qodef-side-area .widget .tagcloud a,
@@ -7328,11 +7328,11 @@ figure > figcaption {
 }
 
 .qodef-mega-menu-widget-holder .widget .qodef-search-form-button.qodef--button-inside {
-  color: #0000B4;
+  color: #557C23;
 }
 
 .qodef-mega-menu-widget-holder .widget .qodef-search-form-button.qodef--button-inside:hover {
-  color: #0000B4;
+  color: #557C23;
 }
 
 .qodef-mega-menu-widget-holder .widget .tagcloud a,
@@ -7587,7 +7587,7 @@ figure > figcaption {
   z-index: 3;
   white-space: nowrap;
   color: #ffffff;
-  background-color: #0000B4;
+  background-color: #557C23;
   border: 1px solid transparent;
   text-transform: capitalize;
 }
@@ -7599,7 +7599,7 @@ figure > figcaption {
 #yith-quick-view-modal .button:hover,
 #yith-quick-view-modal .added_to_cart:hover {
   color: #ffffff;
-  background-color: #1111d1;
+  background-color: #486b1a;
 }
 
 #qodef-woo-page .button del,
@@ -7696,7 +7696,7 @@ figure > figcaption {
   text-align: center;
   font-family: "Inter", sans-serif;
   letter-spacing: -0.02em;
-  color: #0000B4;
+  color: #557C23;
   font-size: 22px;
   line-height: 1.36364em;
   font-weight: 600;
@@ -7755,7 +7755,7 @@ figure > figcaption {
   z-index: 3;
   white-space: nowrap;
   color: #ffffff;
-  background-color: #0000B4;
+  background-color: #557C23;
   border: 1px solid transparent;
 }
 
@@ -7763,7 +7763,7 @@ figure > figcaption {
 .woocommerce-info .wc-forward:hover,
 .woocommerce-error .wc-forward:hover {
   color: #ffffff;
-  background-color: #1111d1;
+  background-color: #486b1a;
 }
 
 .woocommerce-NoticeGroup-checkout .woocommerce-error {
@@ -7795,7 +7795,7 @@ figure > figcaption {
 .woocommerce-page div.woocommerce .shop_table th {
   font-family: "Inter", sans-serif;
   letter-spacing: -0.02em;
-  color: #0000B4;
+  color: #557C23;
   font-size: 22px;
   line-height: 1.36364em;
   font-weight: 600;
@@ -8079,7 +8079,7 @@ figure > figcaption {
 .yith-wcwl-form .cart_totals > h2 {
   font-family: "Inter", sans-serif;
   letter-spacing: -0.02em;
-  color: #0000B4;
+  color: #557C23;
   font-size: 40px;
   line-height: 1.2em;
   font-weight: 600;
@@ -8200,7 +8200,7 @@ figure > figcaption {
 .woocommerce-page div.woocommerce > .cart-empty {
   font-family: "Inter", sans-serif;
   letter-spacing: -0.02em;
-  color: #0000B4;
+  color: #557C23;
   font-size: 40px;
   line-height: 1.2em;
   font-weight: 600;
@@ -8234,13 +8234,13 @@ figure > figcaption {
   z-index: 3;
   white-space: nowrap;
   color: #ffffff;
-  background-color: #0000B4;
+  background-color: #557C23;
   border: 1px solid transparent;
 }
 
 .woocommerce-page div.woocommerce > .return-to-shop a:hover {
   color: #ffffff;
-  background-color: #1111d1;
+  background-color: #486b1a;
 }
 
 /* ==========================================================================
@@ -8327,7 +8327,7 @@ figure > figcaption {
 #qodef-woo-page.qodef--checkout .wc_payment_methods label {
   font-family: "Inter", sans-serif;
   letter-spacing: -0.02em;
-  color: #0000B4;
+  color: #557C23;
   font-size: 22px;
   line-height: 1.36364em;
   font-weight: 600;
@@ -8407,7 +8407,7 @@ figure > figcaption {
 .woocommerce-account .woocommerce-MyAccount-content h2 {
   font-family: "Inter", sans-serif;
   letter-spacing: -0.02em;
-  color: #0000B4;
+  color: #557C23;
   font-size: 40px;
   line-height: 1.2em;
   font-weight: 600;
@@ -8437,13 +8437,13 @@ figure > figcaption {
   z-index: 3;
   white-space: nowrap;
   color: #ffffff;
-  background-color: #0000B4;
+  background-color: #557C23;
   border: 1px solid transparent;
 }
 
 .woocommerce-account .button:hover {
   color: #ffffff;
-  background-color: #1111d1;
+  background-color: #486b1a;
 }
 
 .woocommerce-account .woocommerce-form-login {
@@ -8523,7 +8523,7 @@ figure > figcaption {
 .woocommerce-order-received .woocommerce-order .woocommerce-thankyou-order-received {
   font-family: "Inter", sans-serif;
   letter-spacing: -0.02em;
-  color: #0000B4;
+  color: #557C23;
   font-size: 40px;
   line-height: 1.2em;
   font-weight: 600;
@@ -8554,7 +8554,7 @@ figure > figcaption {
 .woocommerce-order-received .woocommerce-order h2 {
   font-family: "Inter", sans-serif;
   letter-spacing: -0.02em;
-  color: #0000B4;
+  color: #557C23;
   font-size: 40px;
   line-height: 1.2em;
   font-weight: 600;
@@ -8904,7 +8904,7 @@ figure > figcaption {
   font-size: 16px;
   padding: 0 !important;
   background-color: transparent;
-  color: #0000B4;
+  color: #557C23;
   border: 0;
   border-radius: 0;
   position: relative;
@@ -8966,7 +8966,7 @@ figure > figcaption {
   font-size: 16px;
   padding: 0 !important;
   background-color: transparent;
-  color: #0000B4;
+  color: #557C23;
   border: 0;
   border-radius: 0;
   position: relative;
@@ -9211,7 +9211,7 @@ figure > figcaption {
   -webkit-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  color: #0000B4;
+  color: #557C23;
   background-color: transparent;
 }
 
@@ -9538,7 +9538,7 @@ figure > figcaption {
   font-size: 16px !important;
   line-height: 1.5em !important;
   font-weight: 500;
-  color: #0000B4;
+  color: #557C23;
 }
 
 #qodef-woo-page.qodef--single .entry-summary .yith-wcwl-add-to-wishlist .yith-wcwl-add-button a,
@@ -9587,12 +9587,12 @@ figure > figcaption {
 #yith-quick-view-content.single-product .woocommerce-product-rating .woocommerce-review-link {
   font-size: 14px;
   line-height: 1.714em;
-  color: #0000B4;
+  color: #557C23;
 }
 
 #qodef-woo-page.qodef--single .woocommerce-product-rating .woocommerce-review-link:hover,
 #yith-quick-view-content.single-product .woocommerce-product-rating .woocommerce-review-link:hover {
-  color: #0000B4;
+  color: #557C23;
 }
 
 #qodef-woo-page.qodef--single .woocommerce-product-details__short-description,
@@ -9685,7 +9685,7 @@ figure > figcaption {
   margin-bottom: 0;
   font-family: "Inter", sans-serif;
   letter-spacing: -0.02em;
-  color: #0000B4;
+  color: #557C23;
   font-size: 18px;
   line-height: 1.33333em;
   font-weight: 600;
@@ -9779,7 +9779,7 @@ figure > figcaption {
 #yith-quick-view-content.single-product form.cart .group_table th {
   font-family: "Inter", sans-serif;
   letter-spacing: -0.02em;
-  color: #0000B4;
+  color: #557C23;
   font-size: 22px;
   line-height: 1.36364em;
   font-weight: 600;
@@ -9917,7 +9917,7 @@ figure > figcaption {
   margin-bottom: 0;
   font-family: "Inter", sans-serif;
   letter-spacing: -0.02em;
-  color: #0000B4;
+  color: #557C23;
   font-size: 18px;
   line-height: 1.33333em;
   font-weight: 600;
@@ -9983,7 +9983,7 @@ figure > figcaption {
 #yith-quick-view-content.single-product .out-of-stock {
   font-family: "Inter", sans-serif;
   letter-spacing: -0.02em;
-  color: #0000B4;
+  color: #557C23;
   font-size: 22px;
   line-height: 1.36364em;
   font-weight: 600;
@@ -10017,7 +10017,7 @@ figure > figcaption {
   margin-right: 8px;
   font-family: "Inter", sans-serif;
   letter-spacing: -0.02em;
-  color: #0000B4;
+  color: #557C23;
   font-size: 18px;
   line-height: 1.33333em;
   font-weight: 600;
@@ -10130,7 +10130,7 @@ figure > figcaption {
 #yith-quick-view-content.single-product .qodef-social-share .qodef-social-title {
   font-family: "Inter", sans-serif;
   letter-spacing: -0.02em;
-  color: #0000B4;
+  color: #557C23;
   font-size: 18px;
   line-height: 1.33333em;
   font-weight: 600;
@@ -10502,7 +10502,7 @@ figure > figcaption {
 #yith-quick-view-content.single-product .woocommerce-Reviews .woocommerce-review__author {
   font-family: "Inter", sans-serif;
   letter-spacing: -0.02em;
-  color: #0000B4;
+  color: #557C23;
   font-size: 18px;
   line-height: 1.33333em;
   font-weight: 600;
@@ -10568,7 +10568,7 @@ figure > figcaption {
 #yith-quick-view-content.single-product #review_form .comment-reply-title {
   font-family: "Inter", sans-serif;
   letter-spacing: -0.02em;
-  color: #0000B4;
+  color: #557C23;
   font-size: 22px;
   line-height: 1.36364em;
   font-weight: 600;
@@ -10849,14 +10849,14 @@ figure > figcaption {
   z-index: 3;
   white-space: nowrap;
   color: #ffffff;
-  background-color: #0000B4;
+  background-color: #557C23;
   border: 1px solid transparent;
 }
 
 .widget.woocommerce .button:hover,
 .widget.woocommerce .woocommerce-widget-layered-nav-dropdown__submit:hover {
   color: #ffffff;
-  background-color: #1111d1;
+  background-color: #486b1a;
 }
 
 .widget.woocommerce.widget_shopping_cart {
@@ -10905,7 +10905,7 @@ figure > figcaption {
 .widget.woocommerce.widget_recent_reviews a {
   font-family: "Inter", sans-serif;
   letter-spacing: -0.02em;
-  color: #0000B4;
+  color: #557C23;
   font-size: 22px;
   line-height: 1.36364em;
   font-weight: 600;
@@ -11096,12 +11096,12 @@ figure > figcaption {
   z-index: 3 !important;
   white-space: nowrap;
   color: #ffffff !important;
-  background-color: #0000B4 !important;
+  background-color: #557C23 !important;
   border: 1px solid transparent !important;
   font-size: 16px !important;
   padding: 0 !important;
   background-color: transparent !important;
-  color: #0000B4 !important;
+  color: #557C23 !important;
   border: 0 !important;
   border-radius: 0 !important;
   position: relative;
@@ -11109,7 +11109,7 @@ figure > figcaption {
 
 .widget .wc-block-components-price-slider .wc-block-components-price-slider__actions button:hover {
   color: #ffffff !important;
-  background-color: #1111d1 !important;
+  background-color: #486b1a !important;
 }
 
 .widget .wc-block-components-price-slider .wc-block-components-price-slider__actions button:before, .widget .wc-block-components-price-slider .wc-block-components-price-slider__actions button:after {
@@ -11203,7 +11203,7 @@ figure > figcaption {
   line-height: 1.92em;
   font-weight: 600;
   letter-spacing: 0.1em;
-  color: #0000B4;
+  color: #557C23;
   text-transform: uppercase;
   background-repeat: no-repeat;
   transition: background-size 0.4s cubic-bezier(0.33, 0.52, 0.05, 0.96);
@@ -11234,7 +11234,7 @@ figure > figcaption {
 }
 
 .widget.woocommerce .qodef-woo-product-title a {
-  color: #0000B4;
+  color: #557C23;
 }
 
 .widget.woocommerce .qodef-woo-product-title a:hover {
@@ -11242,7 +11242,7 @@ figure > figcaption {
 }
 
 .widget.woocommerce a .product-title {
-  color: #0000B4;
+  color: #557C23;
 }
 
 .widget.woocommerce a:hover .product-title {
@@ -11378,7 +11378,7 @@ figure > figcaption {
 }
 
 .widget .wc-block-product-categories-list--has-images .wc-block-product-categories-list-item a {
-  color: #0000B4;
+  color: #557C23;
 }
 
 .widget .wc-block-product-categories-list--has-images .wc-block-product-categories-list-item a:hover {

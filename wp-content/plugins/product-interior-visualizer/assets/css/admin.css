@@ -1,0 +1,29 @@
+/**
+ * Admin Styles
+ */
+
+.piv-usage-stats {
+	margin-top: 40px;
+	padding: 20px;
+	background: #f9f9f9;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+}
+
+.piv-usage-stats h2 {
+	margin-top: 0;
+	margin-bottom: 20px;
+	color: #333;
+}
+
+.piv-usage-stats .widefat {
+	background: #fff;
+}
+
+.piv-usage-stats td {
+	padding: 15px;
+}
+
+.piv-usage-stats tr:nth-child(even) {
+	background: #f9f9f9;
+}
