@@ -1,0 +1,3 @@
+<?php
+
+include_once TEENGLOW_CORE_INC_PATH . '/opener-icon/helper.php';

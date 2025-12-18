@@ -1,0 +1,27 @@
+<?php
+
+define( 'TEENGLOW_CORE_VERSION', '1.0' );
+define( 'TEENGLOW_CORE_ABS_PATH', dirname( __FILE__ ) );
+define( 'TEENGLOW_CORE_REL_PATH', dirname( plugin_basename( __FILE__ ) ) );
+define( 'TEENGLOW_CORE_URL_PATH', plugin_dir_url( __FILE__ ) );
+define( 'TEENGLOW_CORE_ASSETS_PATH', TEENGLOW_CORE_ABS_PATH . '/assets' );
+define( 'TEENGLOW_CORE_ASSETS_URL_PATH', TEENGLOW_CORE_URL_PATH . 'assets' );
+define( 'TEENGLOW_CORE_INC_PATH', TEENGLOW_CORE_ABS_PATH . '/inc' );
+define( 'TEENGLOW_CORE_INC_URL_PATH', TEENGLOW_CORE_URL_PATH . 'inc' );
+define( 'TEENGLOW_CORE_CPT_PATH', TEENGLOW_CORE_INC_PATH . '/post-types' );
+define( 'TEENGLOW_CORE_CPT_URL_PATH', TEENGLOW_CORE_INC_URL_PATH . '/post-types' );
+define( 'TEENGLOW_CORE_SHORTCODES_PATH', TEENGLOW_CORE_INC_PATH . '/shortcodes' );
+define( 'TEENGLOW_CORE_SHORTCODES_URL_PATH', TEENGLOW_CORE_INC_URL_PATH . '/shortcodes' );
+define( 'TEENGLOW_CORE_PLUGINS_PATH', TEENGLOW_CORE_INC_PATH . '/plugins' );
+define( 'TEENGLOW_CORE_PLUGINS_URL_PATH', TEENGLOW_CORE_INC_URL_PATH . '/plugins' );
+define( 'TEENGLOW_CORE_HEADER_LAYOUTS_PATH', TEENGLOW_CORE_INC_PATH . '/header/layouts' );
+define( 'TEENGLOW_CORE_HEADER_LAYOUTS_URL_PATH', TEENGLOW_CORE_INC_URL_PATH . '/header/layouts' );
+define( 'TEENGLOW_CORE_HEADER_ASSETS_PATH', TEENGLOW_CORE_INC_PATH . '/header/assets' );
+define( 'TEENGLOW_CORE_HEADER_ASSETS_URL_PATH', TEENGLOW_CORE_INC_URL_PATH . '/header/assets' );
+define( 'TEENGLOW_CORE_MOBILE_HEADER_LAYOUTS_PATH', TEENGLOW_CORE_INC_PATH . '/mobile-header/layouts' );
+define( 'TEENGLOW_CORE_MOBILE_HEADER_LAYOUTS_URL_PATH', TEENGLOW_CORE_INC_URL_PATH . '/mobile-header/layouts' );
+
+define( 'TEENGLOW_CORE_MENU_NAME', 'teenglow_core_menu' );
+define( 'TEENGLOW_CORE_OPTIONS_NAME', 'teenglow_core_options' );
+
+define( 'TEENGLOW_CORE_PROFILE_SLUG', 'select' );
