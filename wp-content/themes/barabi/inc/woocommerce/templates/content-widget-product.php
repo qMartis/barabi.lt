@@ -30,18 +30,18 @@ if ( ! is_a( $product, 'WC_Product' ) ) {
 
 	<div class="qodef-e-media">
 		<a href="<?php echo esc_url( $product->get_permalink() ); ?>">
-			<?php echo teenglow_wp_kses_html( 'img', $product->get_image() ); // PHPCS:Ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+			<?php echo barabi_wp_kses_html( 'img', $product->get_image() ); // PHPCS:Ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 		</a>
 	</div>
 	<div class="qodef-e-content">
 		<h6 class="qodef-woo-product-title">
-			<a itemprop="url" href="<?php echo esc_url( $product->get_permalink() ); ?>"><?php echo teenglow_wp_kses_html( 'content', $product->get_name() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></a>
+			<a itemprop="url" href="<?php echo esc_url( $product->get_permalink() ); ?>"><?php echo barabi_wp_kses_html( 'content', $product->get_name() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></a>
 		</h6>
 		<?php if ( ! empty( $show_rating ) ) : ?>
 			<?php echo wc_get_rating_html( $product->get_average_rating() ); // PHPCS:Ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 		<?php endif; ?>
 		<div class="qodef-woo-product-price price">
-			<?php echo teenglow_wp_kses_html( 'html', $product->get_price_html() ); // PHPCS:Ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+			<?php echo barabi_wp_kses_html( 'html', $product->get_price_html() ); // PHPCS:Ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 		</div>
 	</div>
 

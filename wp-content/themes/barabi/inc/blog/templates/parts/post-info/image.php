@@ -9,7 +9,7 @@
 		<?php } ?>
 		<?php
 		// Hook to include additional content after blog post featured image
-		do_action( 'teenglow_action_after_post_thumbnail_image' );
+		do_action( 'barabi_action_after_post_thumbnail_image' );
 		?>
 	</div>
 <?php } ?>

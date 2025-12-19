@@ -26,14 +26,14 @@ global $product;
 
 	<?php if ( wc_product_sku_enabled() && ( $product->get_sku() || $product->is_type( 'variable' ) ) ) : ?>
 		<span class="sku_wrapper">
-			<span class="qodef-woo-meta-label"><?php esc_html_e( 'SKU:', 'teenglow' ); ?></span>
-			<span class="sku qodef-woo-meta-value"><?php echo esc_attr( $sku = $product->get_sku() ) ? $sku : esc_html__( 'N/A', 'teenglow' ); ?></span>
+			<span class="qodef-woo-meta-label"><?php esc_html_e( 'SKU:', 'barabi' ); ?></span>
+			<span class="sku qodef-woo-meta-value"><?php echo esc_attr( $sku = $product->get_sku() ) ? $sku : esc_html__( 'N/A', 'barabi' ); ?></span>
 		</span>
 	<?php endif; ?>
 
-	<?php echo wc_get_product_category_list( $product->get_id(), ' ', '<span class="posted_in"><span class="qodef-woo-meta-label">' . _n( 'Category:', 'Categories:', count( $product->get_category_ids() ), 'teenglow' ) . '</span><span class="qodef-woo-meta-value">', '</span></span>' ); ?>
+	<?php echo wc_get_product_category_list( $product->get_id(), ' ', '<span class="posted_in"><span class="qodef-woo-meta-label">' . _n( 'Category:', 'Categories:', count( $product->get_category_ids() ), 'barabi' ) . '</span><span class="qodef-woo-meta-value">', '</span></span>' ); ?>
 
-	<?php echo wc_get_product_tag_list( $product->get_id(), '| ', '<span class="tagged_as"><span class="qodef-woo-meta-label">' . _n( 'Tag:', 'Tags:', count( $product->get_tag_ids() ), 'teenglow' ) . '</span><span class="qodef-woo-meta-value">', '</span></span>' ); ?>
+	<?php echo wc_get_product_tag_list( $product->get_id(), '| ', '<span class="tagged_as"><span class="qodef-woo-meta-label">' . _n( 'Tag:', 'Tags:', count( $product->get_tag_ids() ), 'barabi' ) . '</span><span class="qodef-woo-meta-value">', '</span></span>' ); ?>
 
 	<?php do_action( 'woocommerce_product_meta_end' ); ?>
 </div>

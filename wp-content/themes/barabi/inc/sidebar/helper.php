@@ -1,26 +1,26 @@
 <?php
 
-if ( ! function_exists( 'teenglow_get_sidebar_name' ) ) {
+if ( ! function_exists( 'barabi_get_sidebar_name' ) ) {
 	/**
 	 * Function that return sidebar name
 	 *
 	 * @return string
 	 */
-	function teenglow_get_sidebar_name() {
-		return apply_filters( 'teenglow_filter_sidebar_name', 'qodef-main-sidebar' );
+	function barabi_get_sidebar_name() {
+		return apply_filters( 'barabi_filter_sidebar_name', 'qodef-main-sidebar' );
 	}
 }
 
-if ( ! function_exists( 'teenglow_get_sidebar_layout' ) ) {
+if ( ! function_exists( 'barabi_get_sidebar_layout' ) ) {
 	/**
 	 * Function that return sidebar layout
 	 *
 	 * @return string
 	 */
-	function teenglow_get_sidebar_layout() {
-		$sidebar_layout = apply_filters( 'teenglow_filter_sidebar_layout', 'no-sidebar' );
+	function barabi_get_sidebar_layout() {
+		$sidebar_layout = apply_filters( 'barabi_filter_sidebar_layout', 'no-sidebar' );
 
-		if ( 'no-sidebar' !== $sidebar_layout && ! is_active_sidebar( teenglow_get_sidebar_name() ) ) {
+		if ( 'no-sidebar' !== $sidebar_layout && ! is_active_sidebar( barabi_get_sidebar_name() ) ) {
 			$sidebar_layout = 'no-sidebar';
 		}
 
@@ -28,40 +28,40 @@ if ( ! function_exists( 'teenglow_get_sidebar_layout' ) ) {
 	}
 }
 
-if ( ! function_exists( 'teenglow_get_page_content_sidebar_classes' ) ) {
+if ( ! function_exists( 'barabi_get_page_content_sidebar_classes' ) ) {
 	/**
 	 * Function that return classes for the page content when sidebar is enabled
 	 *
 	 * @return string
 	 */
-	function teenglow_get_page_content_sidebar_classes() {
+	function barabi_get_page_content_sidebar_classes() {
 		$classes = array( 'qodef-page-content-section', 'qodef-col--content' );
 
-		return implode( ' ', apply_filters( 'teenglow_filter_page_content_sidebar_classes', $classes ) );
+		return implode( ' ', apply_filters( 'barabi_filter_page_content_sidebar_classes', $classes ) );
 	}
 }
 
-if ( ! function_exists( 'teenglow_get_page_sidebar_classes' ) ) {
+if ( ! function_exists( 'barabi_get_page_sidebar_classes' ) ) {
 	/**
 	 * Function that return classes for the page sidebar when sidebar is enabled
 	 *
 	 * @return string
 	 */
-	function teenglow_get_page_sidebar_classes() {
+	function barabi_get_page_sidebar_classes() {
 		$classes = array( 'qodef-page-sidebar-section', 'qodef-col--sidebar' );
 
-		return implode( ' ', apply_filters( 'teenglow_filter_page_sidebar_classes', $classes ) );
+		return implode( ' ', apply_filters( 'barabi_filter_page_sidebar_classes', $classes ) );
 	}
 }
 
-if ( ! function_exists( 'teenglow_get_page_grid_sidebar_classes' ) ) {
+if ( ! function_exists( 'barabi_get_page_grid_sidebar_classes' ) ) {
 	/**
 	 * Function that return classes for the page grid when sidebar is enabled
 	 *
 	 * @return string
 	 */
-	function teenglow_get_page_grid_sidebar_classes() {
-		$layout  = teenglow_get_sidebar_layout();
+	function barabi_get_page_grid_sidebar_classes() {
+		$layout  = barabi_get_sidebar_layout();
 		$classes = array();
 
 		switch ( $layout ) {
@@ -84,6 +84,6 @@ if ( ! function_exists( 'teenglow_get_page_grid_sidebar_classes' ) ) {
 				break;
 		}
 
-		return implode( ' ', apply_filters( 'teenglow_filter_page_grid_sidebar_classes', $classes, $layout ) );
+		return implode( ' ', apply_filters( 'barabi_filter_page_grid_sidebar_classes', $classes, $layout ) );
 	}
 }

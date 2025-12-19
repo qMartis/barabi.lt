@@ -1,3 +1,3 @@
 <?php
 
-include_once TEENGLOW_INC_ROOT_DIR . '/mobile-header/helper.php'; // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
+include_once BARABI_INC_ROOT_DIR . '/mobile-header/helper.php'; // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound

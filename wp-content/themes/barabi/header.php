@@ -14,12 +14,12 @@
 	}
 
 	// Hook to include additional content after body tag open
-	do_action( 'teenglow_action_after_body_tag_open' );
+	do_action( 'barabi_action_after_body_tag_open' );
 	?>
-	<div id="qodef-page-wrapper" class="<?php echo esc_attr( teenglow_get_page_wrapper_classes() ); ?>">
+	<div id="qodef-page-wrapper" class="<?php echo esc_attr( barabi_get_page_wrapper_classes() ); ?>">
 		<?php
 		// Hook to include page header template
-		do_action( 'teenglow_action_page_header_template' );
+		do_action( 'barabi_action_page_header_template' );
 		?>
 		<div id="qodef-page-outer">
 			<?php
@@ -27,6 +27,6 @@
 			get_template_part( 'title' );
 
 			// Hook to include additional content before page inner content
-			do_action( 'teenglow_action_before_page_inner' );
+			do_action( 'barabi_action_before_page_inner' );
 			?>
-			<div id="qodef-page-inner" class="<?php echo esc_attr( teenglow_get_page_inner_classes() ); ?>">
+			<div id="qodef-page-inner" class="<?php echo esc_attr( barabi_get_page_inner_classes() ); ?>">

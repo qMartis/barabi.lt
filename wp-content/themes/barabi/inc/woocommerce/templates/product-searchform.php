@@ -21,10 +21,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 ?>
 <form role="search" method="get" class="qodef-search-form qodef-woo-product-search" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-	<label class="screen-reader-text" for="woocommerce-product-search-field-<?php echo isset( $index ) ? absint( $index ) : 0; ?>"><?php esc_html_e( 'Search for:', 'teenglow' ); ?></label>
+	<label class="screen-reader-text" for="woocommerce-product-search-field-<?php echo isset( $index ) ? absint( $index ) : 0; ?>"><?php esc_html_e( 'Search for:', 'barabi' ); ?></label>
 	<div class="qodef-search-form-inner clear">
-		<input type="search" id="woocommerce-product-search-field-<?php echo isset( $index ) ? absint( $index ) : 0; ?>" class="qodef-search-form-field" placeholder="<?php esc_attr_e( 'Search', 'teenglow' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
-		<button type="submit" class="qodef-search-form-button qodef--button-inside qodef--has-icon"><?php teenglow_render_svg_icon( 'search' ); ?></button>
+		<input type="search" id="woocommerce-product-search-field-<?php echo isset( $index ) ? absint( $index ) : 0; ?>" class="qodef-search-form-field" placeholder="<?php esc_attr_e( 'Search', 'barabi' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
+		<button type="submit" class="qodef-search-form-button qodef--button-inside qodef--has-icon"><?php barabi_render_svg_icon( 'search' ); ?></button>
 	</div>
 	<input type="hidden" name="post_type" value="product" />
 </form>

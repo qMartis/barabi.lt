@@ -1,6 +1,6 @@
 <?php
 
-if ( ! function_exists( 'teenglow_is_installed' ) ) {
+if ( ! function_exists( 'barabi_is_installed' ) ) {
 	/**
 	 * Function that checks if forward plugin installed
 	 *
@@ -8,13 +8,13 @@ if ( ! function_exists( 'teenglow_is_installed' ) ) {
 	 *
 	 * @return bool
 	 */
-	function teenglow_is_installed( $plugin ) {
+	function barabi_is_installed( $plugin ) {
 
 		switch ( $plugin ) {
 			case 'framework':
 				return class_exists( 'QodeFramework' );
 			case 'core':
-				return class_exists( 'TeenglowCore' );
+				return class_exists( 'BarabiCore' );
 			case 'woocommerce':
 				return class_exists( 'WooCommerce' );
 			case 'gutenberg-page':
@@ -29,7 +29,7 @@ if ( ! function_exists( 'teenglow_is_installed' ) ) {
 	}
 }
 
-if ( ! function_exists( 'teenglow_include_theme_is_installed' ) ) {
+if ( ! function_exists( 'barabi_include_theme_is_installed' ) ) {
 	/**
 	 * Function that set case is installed element for framework functionality
 	 *
@@ -38,19 +38,19 @@ if ( ! function_exists( 'teenglow_include_theme_is_installed' ) ) {
 	 *
 	 * @return bool
 	 */
-	function teenglow_include_theme_is_installed( $installed, $plugin ) {
+	function barabi_include_theme_is_installed( $installed, $plugin ) {
 
 		if ( 'theme' === $plugin ) {
-			return class_exists( 'Teenglow_Handler' );
+			return class_exists( 'Barabi_Handler' );
 		}
 
 		return $installed;
 	}
 
-	add_filter( 'qode_framework_filter_is_plugin_installed', 'teenglow_include_theme_is_installed', 10, 2 );
+	add_filter( 'qode_framework_filter_is_plugin_installed', 'barabi_include_theme_is_installed', 10, 2 );
 }
 
-if ( ! function_exists( 'teenglow_template_part' ) ) {
+if ( ! function_exists( 'barabi_template_part' ) ) {
 	/**
 	 * Function that echo module template part.
 	 *
@@ -59,12 +59,12 @@ if ( ! function_exists( 'teenglow_template_part' ) ) {
 	 * @param string $slug
 	 * @param array  $params   array of parameters to pass to template
 	 */
-	function teenglow_template_part( $module, $template, $slug = '', $params = array() ) {
-		echo teenglow_get_template_part( $module, $template, $slug, $params ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	function barabi_template_part( $module, $template, $slug = '', $params = array() ) {
+		echo barabi_get_template_part( $module, $template, $slug, $params ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 }
 
-if ( ! function_exists( 'teenglow_get_template_part' ) ) {
+if ( ! function_exists( 'barabi_get_template_part' ) ) {
 	/**
 	 * Function that load module template part.
 	 *
@@ -75,10 +75,10 @@ if ( ! function_exists( 'teenglow_get_template_part' ) ) {
 	 *
 	 * @return string - string containing html of template
 	 */
-	function teenglow_get_template_part( $module, $template, $slug = '', $params = array() ) {
+	function barabi_get_template_part( $module, $template, $slug = '', $params = array() ) {
 		// HTML Content from template
 		$html          = '';
-		$template_path = TEENGLOW_INC_ROOT_DIR . '/' . $module;
+		$template_path = BARABI_INC_ROOT_DIR . '/' . $module;
 
 		$temp = $template_path . '/' . $template;
 
@@ -111,36 +111,36 @@ if ( ! function_exists( 'teenglow_get_template_part' ) ) {
 	}
 }
 
-if ( ! function_exists( 'teenglow_get_page_id' ) ) {
+if ( ! function_exists( 'barabi_get_page_id' ) ) {
 	/**
 	 * Function that returns current page id
 	 * Additional conditional is to check if current page is any wp archive page (archive, category, tag, date etc.) and returns -1
 	 *
 	 * @return int
 	 */
-	function teenglow_get_page_id() {
+	function barabi_get_page_id() {
 		$page_id = get_queried_object_id();
 
-		if ( teenglow_is_wp_template() ) {
+		if ( barabi_is_wp_template() ) {
 			$page_id = - 1;
 		}
 
-		return apply_filters( 'teenglow_filter_page_id', $page_id );
+		return apply_filters( 'barabi_filter_page_id', $page_id );
 	}
 }
 
-if ( ! function_exists( 'teenglow_is_wp_template' ) ) {
+if ( ! function_exists( 'barabi_is_wp_template' ) ) {
 	/**
 	 * Function that checks if current page default wp page
 	 *
 	 * @return bool
 	 */
-	function teenglow_is_wp_template() {
+	function barabi_is_wp_template() {
 		return is_archive() || is_search() || is_404() || ( is_front_page() && is_home() );
 	}
 }
 
-if ( ! function_exists( 'teenglow_get_ajax_status' ) ) {
+if ( ! function_exists( 'barabi_get_ajax_status' ) ) {
 	/**
 	 * Function that return status from ajax functions
 	 *
@@ -149,7 +149,7 @@ if ( ! function_exists( 'teenglow_get_ajax_status' ) ) {
 	 * @param string|array $data     - returned value
 	 * @param string       $redirect - url address
 	 */
-	function teenglow_get_ajax_status( $status, $message, $data = null, $redirect = '' ) {
+	function barabi_get_ajax_status( $status, $message, $data = null, $redirect = '' ) {
 		$response = array(
 			'status'   => esc_attr( $status ),
 			'message'  => esc_html( $message ),
@@ -163,7 +163,7 @@ if ( ! function_exists( 'teenglow_get_ajax_status' ) ) {
 	}
 }
 
-if ( ! function_exists( 'teenglow_get_button_element' ) ) {
+if ( ! function_exists( 'barabi_get_button_element' ) ) {
 	/**
 	 * Function that returns button with provided params
 	 *
@@ -171,9 +171,9 @@ if ( ! function_exists( 'teenglow_get_button_element' ) ) {
 	 *
 	 * @return string - string representing button html
 	 */
-	function teenglow_get_button_element( $params ) {
-		if ( class_exists( 'TeenglowCore_Button_Shortcode' ) ) {
-			return TeenglowCore_Button_Shortcode::call_shortcode( $params );
+	function barabi_get_button_element( $params ) {
+		if ( class_exists( 'BarabiCore_Button_Shortcode' ) ) {
+			return BarabiCore_Button_Shortcode::call_shortcode( $params );
 		} else {
 			$link   = isset( $params['link'] ) ? $params['link'] : '#';
 			$target = isset( $params['target'] ) ? $params['target'] : '_self';
@@ -184,29 +184,29 @@ if ( ! function_exists( 'teenglow_get_button_element' ) ) {
 	}
 }
 
-if ( ! function_exists( 'teenglow_render_button_element' ) ) {
+if ( ! function_exists( 'barabi_render_button_element' ) ) {
 	/**
 	 * Function that render button with provided params
 	 *
 	 * @param array $params - array of parameters
 	 */
-	function teenglow_render_button_element( $params ) {
-		echo teenglow_get_button_element( $params ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	function barabi_render_button_element( $params ) {
+		echo barabi_get_button_element( $params ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 }
 
-if ( ! function_exists( 'teenglow_class_attribute' ) ) {
+if ( ! function_exists( 'barabi_class_attribute' ) ) {
 	/**
 	 * Function that render class attribute
 	 *
 	 * @param string|array $class
 	 */
-	function teenglow_class_attribute( $class ) {
-		echo teenglow_get_class_attribute( $class ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	function barabi_class_attribute( $class ) {
+		echo barabi_get_class_attribute( $class ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 }
 
-if ( ! function_exists( 'teenglow_get_class_attribute' ) ) {
+if ( ! function_exists( 'barabi_get_class_attribute' ) ) {
 	/**
 	 * Function that return class attribute
 	 *
@@ -214,12 +214,12 @@ if ( ! function_exists( 'teenglow_get_class_attribute' ) ) {
 	 *
 	 * @return string
 	 */
-	function teenglow_get_class_attribute( $class ) {
-		return teenglow_is_installed( 'framework' ) ? qode_framework_get_class_attribute( $class ) : '';
+	function barabi_get_class_attribute( $class ) {
+		return barabi_is_installed( 'framework' ) ? qode_framework_get_class_attribute( $class ) : '';
 	}
 }
 
-if ( ! function_exists( 'teenglow_get_inline_style' ) ) {
+if ( ! function_exists( 'barabi_get_inline_style' ) ) {
 	/**
 	 * Function that return inline style attribute
 	 *
@@ -227,12 +227,12 @@ if ( ! function_exists( 'teenglow_get_inline_style' ) ) {
 	 *
 	 * @return string
 	 */
-	function teenglow_get_inline_style( $style ) {
-		return teenglow_is_installed( 'framework' ) ? qode_framework_get_inline_style( $style ) : '';
+	function barabi_get_inline_style( $style ) {
+		return barabi_is_installed( 'framework' ) ? qode_framework_get_inline_style( $style ) : '';
 	}
 }
 
-if ( ! function_exists( 'teenglow_get_post_value_through_levels' ) ) {
+if ( ! function_exists( 'barabi_get_post_value_through_levels' ) ) {
 	/**
 	 * Function that returns meta value if exists
 	 *
@@ -241,12 +241,12 @@ if ( ! function_exists( 'teenglow_get_post_value_through_levels' ) ) {
 	 *
 	 * @return string value of option
 	 */
-	function teenglow_get_post_value_through_levels( $name, $post_id = null ) {
-		return teenglow_is_installed( 'framework' ) && teenglow_is_installed( 'core' ) ? teenglow_core_get_post_value_through_levels( $name, $post_id ) : '';
+	function barabi_get_post_value_through_levels( $name, $post_id = null ) {
+		return barabi_is_installed( 'framework' ) && barabi_is_installed( 'core' ) ? barabi_core_get_post_value_through_levels( $name, $post_id ) : '';
 	}
 }
 
-if ( ! function_exists( 'teenglow_get_space_value' ) ) {
+if ( ! function_exists( 'barabi_get_space_value' ) ) {
 	/**
 	 * Function that returns spacing value based on selected option
 	 *
@@ -254,12 +254,12 @@ if ( ! function_exists( 'teenglow_get_space_value' ) ) {
 	 *
 	 * @return int
 	 */
-	function teenglow_get_space_value( $text_value ) {
-		return teenglow_is_installed( 'core' ) ? teenglow_core_get_space_value( $text_value ) : 0;
+	function barabi_get_space_value( $text_value ) {
+		return barabi_is_installed( 'core' ) ? barabi_core_get_space_value( $text_value ) : 0;
 	}
 }
 
-if ( ! function_exists( 'teenglow_get_gutter_custom_styles' ) ) {
+if ( ! function_exists( 'barabi_get_gutter_custom_styles' ) ) {
 	/**
 	 * Function that returns gutter custom styles
 	 *
@@ -270,12 +270,12 @@ if ( ! function_exists( 'teenglow_get_gutter_custom_styles' ) ) {
 	 *
 	 * @return array
 	 */
-	function teenglow_get_gutter_custom_styles( $option_name = '', $meta_name = '', $atts = array(), $set_meta_as_vertical = false ) {
-		return teenglow_is_installed( 'framework' ) && teenglow_is_installed( 'core' ) ? teenglow_core_get_gutter_custom_styles( $option_name, $meta_name, $atts, $set_meta_as_vertical ) : array();
+	function barabi_get_gutter_custom_styles( $option_name = '', $meta_name = '', $atts = array(), $set_meta_as_vertical = false ) {
+		return barabi_is_installed( 'framework' ) && barabi_is_installed( 'core' ) ? barabi_core_get_gutter_custom_styles( $option_name, $meta_name, $atts, $set_meta_as_vertical ) : array();
 	}
 }
 
-if ( ! function_exists( 'teenglow_get_gutter_custom_inline_style' ) ) {
+if ( ! function_exists( 'barabi_get_gutter_custom_inline_style' ) ) {
 	/**
 	 * Function that returns gutter custom inline style
 	 *
@@ -285,12 +285,12 @@ if ( ! function_exists( 'teenglow_get_gutter_custom_inline_style' ) ) {
 	 *
 	 * @return string
 	 */
-	function teenglow_get_gutter_custom_inline_style( $value, $stage = '', $vertical = false ) {
-		return teenglow_is_installed( 'framework' ) && teenglow_is_installed( 'core' ) ? teenglow_core_get_gutter_custom_inline_style( $value, $stage, $vertical ) : '';
+	function barabi_get_gutter_custom_inline_style( $value, $stage = '', $vertical = false ) {
+		return barabi_is_installed( 'framework' ) && barabi_is_installed( 'core' ) ? barabi_core_get_gutter_custom_inline_style( $value, $stage, $vertical ) : '';
 	}
 }
 
-if ( ! function_exists( 'teenglow_wp_kses_html' ) ) {
+if ( ! function_exists( 'barabi_wp_kses_html' ) ) {
 	/**
 	 * Function that does escape of specific html.
 	 * It uses wp_kses function with predefined attributes array.
@@ -302,24 +302,24 @@ if ( ! function_exists( 'teenglow_wp_kses_html' ) ) {
 	 * @see wp_kses()
 	 *
 	 */
-	function teenglow_wp_kses_html( $type, $content ) {
-		return teenglow_is_installed( 'framework' ) ? qode_framework_wp_kses_html( $type, $content ) : $content;
+	function barabi_wp_kses_html( $type, $content ) {
+		return barabi_is_installed( 'framework' ) ? qode_framework_wp_kses_html( $type, $content ) : $content;
 	}
 }
 
-if ( ! function_exists( 'teenglow_render_svg_icon' ) ) {
+if ( ! function_exists( 'barabi_render_svg_icon' ) ) {
 	/**
 	 * Function that print svg html icon
 	 *
 	 * @param string $name       - icon name
 	 * @param string $class_name - custom html tag class name
 	 */
-	function teenglow_render_svg_icon( $name, $class_name = '' ) {
-		echo teenglow_get_svg_icon( $name, $class_name ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	function barabi_render_svg_icon( $name, $class_name = '' ) {
+		echo barabi_get_svg_icon( $name, $class_name ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 }
 
-if ( ! function_exists( 'teenglow_get_svg_icon' ) ) {
+if ( ! function_exists( 'barabi_get_svg_icon' ) ) {
 	/**
 	 * Returns svg html
 	 *
@@ -328,16 +328,16 @@ if ( ! function_exists( 'teenglow_get_svg_icon' ) ) {
 	 *
 	 * @return string - string containing svg html
 	 */
-	function teenglow_get_svg_icon( $name, $class_name = '' ) {
+	function barabi_get_svg_icon( $name, $class_name = '' ) {
 		$class = 'qodef-svg--' . $name;
 		$class = isset( $class_name ) && ! empty( $class_name ) ? $class . ' ' . $class_name : $class;
 
-		$html = teenglow_get_template_part( 'svg', 'templates/' . $name, '', array( 'class' => $class ) );
+		$html = barabi_get_template_part( 'svg', 'templates/' . $name, '', array( 'class' => $class ) );
 
 		// remove white spaces from loaded svg markup
 		$html = preg_replace( '~>\s+<~', '><', $html );
 		$html = trim( $html );
 
-		return apply_filters( 'teenglow_filter_svg_icon', $html );
+		return apply_filters( 'barabi_filter_svg_icon', $html );
 	}
 }

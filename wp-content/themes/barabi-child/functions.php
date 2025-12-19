@@ -1,16 +1,16 @@
 <?php
 
-if ( ! function_exists( 'teenglow_child_theme_enqueue_scripts' ) ) {
+if ( ! function_exists( 'barabi_child_theme_enqueue_scripts' ) ) {
 	/**
 	 * Function that enqueue theme's child style
 	 */
-	function teenglow_child_theme_enqueue_scripts() {
-		$main_style = 'teenglow-main';
+	function barabi_child_theme_enqueue_scripts() {
+		$main_style = 'barabi-main';
 
-		wp_enqueue_style( 'teenglow-child-style', get_stylesheet_directory_uri() . '/style.css', array( $main_style ) );
+		wp_enqueue_style( 'barabi-child-style', get_stylesheet_directory_uri() . '/style.css', array( $main_style ) );
 	}
 
-	add_action( 'wp_enqueue_scripts', 'teenglow_child_theme_enqueue_scripts' );
+	add_action( 'wp_enqueue_scripts', 'barabi_child_theme_enqueue_scripts' );
 }
 
 // Barabi woo images watermark logic add

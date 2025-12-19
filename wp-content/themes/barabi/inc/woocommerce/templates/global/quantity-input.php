@@ -22,7 +22,7 @@ if ( ! isset( $input_id ) ) {
 }
 
 /* translators: %s: Quantity. */
-$label = ! empty( $args['product_name'] ) ? sprintf( esc_html__( '%s quantity', 'teenglow' ), wp_strip_all_tags( $args['product_name'] ) ) : esc_html__( 'Quantity', 'teenglow' );
+$label = ! empty( $args['product_name'] ) ? sprintf( esc_html__( '%s quantity', 'barabi' ), wp_strip_all_tags( $args['product_name'] ) ) : esc_html__( 'Quantity', 'barabi' );
 
 // In some cases we wish to display the quantity but not allow for it to be changed.
 if ( $max_value && $min_value === $max_value ) {
@@ -42,15 +42,15 @@ if ( $max_value && $min_value === $max_value ) {
 	do_action( 'woocommerce_before_quantity_input_field' );
 	?>
 	<label class="screen-reader-text" for="<?php echo esc_attr( $input_id ); ?>"><?php echo esc_attr( $label ); ?></label>
-	<span class="qodef-quantity-minus"><?php teenglow_render_svg_icon( 'minus' ); ?></span>
+	<span class="qodef-quantity-minus"><?php barabi_render_svg_icon( 'minus' ); ?></span>
 	<input
-		type="<?php echo esc_attr( apply_filters( 'teenglow_filter_woo_quantity_input_type', 'text' ) ); ?>"
+		type="<?php echo esc_attr( apply_filters( 'barabi_filter_woo_quantity_input_type', 'text' ) ); ?>"
 		<?php echo esc_attr( $is_readonly ) ? 'readonly="readonly"' : ''; ?>
 		id="<?php echo esc_attr( $input_id ); ?>"
 		class="<?php echo esc_attr( join( ' ', (array) $classes ) ); ?> qodef-quantity-input"
 		name="<?php echo esc_attr( $input_name ); ?>"
 		value="<?php echo esc_attr( ! empty( $input_value ) ? $input_value : 0 ); ?>"
-		title="<?php echo esc_attr_x( 'Qty', 'Product quantity input tooltip', 'teenglow' ); ?>"
+		title="<?php echo esc_attr_x( 'Qty', 'Product quantity input tooltip', 'barabi' ); ?>"
 		size="4"
 		data-min="<?php echo esc_attr( $min_value ); ?>"
 		data-max="<?php echo esc_attr( 0 < $max_value ? $max_value : '' ); ?>"
@@ -61,7 +61,7 @@ if ( $max_value && $min_value === $max_value ) {
 			autocomplete="<?php echo esc_attr( isset( $autocomplete ) ? $autocomplete : 'on' ); ?>"
 		<?php endif; ?>
 	/>
-	<span class="qodef-quantity-plus"><?php teenglow_render_svg_icon( 'plus' ); ?></span>
+	<span class="qodef-quantity-plus"><?php barabi_render_svg_icon( 'plus' ); ?></span>
 	<?php
 	/**
 	 * Hook to output something after quantity input field

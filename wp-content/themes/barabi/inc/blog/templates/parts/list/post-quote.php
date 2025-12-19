@@ -2,7 +2,7 @@
 	<div class="qodef-e-inner">
 		<?php
 		// Include post format part
-		teenglow_template_part( 'blog', 'templates/parts/post-format/quote' );
+		barabi_template_part( 'blog', 'templates/parts/post-format/quote' );
 		?>
 	</div>
 </article>

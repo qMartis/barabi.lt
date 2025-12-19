@@ -1,6 +1,6 @@
 <?php
 
-if ( ! function_exists( 'teenglow_get_filter_items' ) ) {
+if ( ! function_exists( 'barabi_get_filter_items' ) ) {
 	/**
 	 * Function that return filter items from query parameters
 	 *
@@ -8,7 +8,7 @@ if ( ! function_exists( 'teenglow_get_filter_items' ) ) {
 	 *
 	 * @return array
 	 */
-	function teenglow_get_filter_items( $params ) {
+	function barabi_get_filter_items( $params ) {
 		$taxonomy = isset( $params['taxonomy_filter'] ) && ! empty( $params['taxonomy_filter'] ) ? esc_attr( $params['taxonomy_filter'] ) : 'category';
 
 		// Check is taxonomy set through option and set that value instead of the default one
@@ -49,6 +49,6 @@ if ( ! function_exists( 'teenglow_get_filter_items' ) ) {
 		$terms = get_terms( $args );
 		$items = ! empty( $terms ) ? $terms : '';
 
-		return apply_filters( 'teenglow_filter_get_filter_items', $items, $params );
+		return apply_filters( 'barabi_filter_get_filter_items', $items, $params );
 	}
 }

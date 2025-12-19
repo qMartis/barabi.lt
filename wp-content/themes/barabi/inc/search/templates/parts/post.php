@@ -2,15 +2,15 @@
 	<div class="qodef-e-inner">
 		<?php
 		// Include post title
-		teenglow_template_part( 'search', 'templates/parts/post-info/image' );
+		barabi_template_part( 'search', 'templates/parts/post-info/image' );
 		?>
 		<div class="qodef-e-content">
 			<?php
 			// Include post title
-			teenglow_template_part( 'search', 'templates/parts/post-info/title' );
+			barabi_template_part( 'search', 'templates/parts/post-info/title' );
 
 			// Include post excerpt
-			teenglow_template_part( 'search', 'templates/parts/post-info/excerpt' );
+			barabi_template_part( 'search', 'templates/parts/post-info/excerpt' );
 			?>
 		</div>
 	</div>

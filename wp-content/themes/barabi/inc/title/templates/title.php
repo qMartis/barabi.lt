@@ -1,16 +1,16 @@
-<div class="qodef-page-title qodef-m <?php echo esc_attr( teenglow_get_page_title_classes() ); ?>">
+<div class="qodef-page-title qodef-m <?php echo esc_attr( barabi_get_page_title_classes() ); ?>">
 	<?php
 	// Hook to include additional content before page title inner
-	do_action( 'teenglow_action_before_page_title_inner' );
+	do_action( 'barabi_action_before_page_title_inner' );
 	?>
 	<div class="qodef-m-inner">
 		<?php
 		// Include module content template
-		echo apply_filters( 'teenglow_filter_title_content_template', teenglow_get_template_part( 'title', 'templates/title-content' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo apply_filters( 'barabi_filter_title_content_template', barabi_get_template_part( 'title', 'templates/title-content' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		?>
 	</div>
 	<?php
 	// Hook to include additional content after page title inner
-	do_action( 'teenglow_action_after_page_title_inner' );
+	do_action( 'barabi_action_after_page_title_inner' );
 	?>
 </div>

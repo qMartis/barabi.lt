@@ -37,7 +37,7 @@
 	);
 
 	$( document ).on(
-		'teenglow_trigger_get_new_posts',
+		'barabi_trigger_get_new_posts',
 		function () {
 			qodefSwiper.init();
 			qodefMagnificPopup.init();
@@ -388,7 +388,7 @@
 						$holder.addClass( 'qodef-swiper--initialized' );
 
 						qodef.body.trigger(
-							'teenglow_trigger_swiper_is_initialized',
+							'barabi_trigger_swiper_is_initialized',
 							[$holder, options]
 						);
 
@@ -848,7 +848,7 @@
 	);
 
 	$( document ).on(
-		'teenglow_trigger_get_new_posts',
+		'barabi_trigger_get_new_posts',
 		function ( e, $holder ) {
 			if ( $holder.hasClass( 'qodef-blog' ) ) {
 				qodefReInitMediaElementPostFormats.resize( $holder );
@@ -935,7 +935,7 @@
 	);
 
 	$( document ).on(
-		'teenglow_trigger_get_new_posts',
+		'barabi_trigger_get_new_posts',
 		function ( e, $holder ) {
 			if ( $holder.hasClass( 'qodef-filter--on' ) ) {
 				$holder.removeClass( 'qodef--filter-loading' );
@@ -1012,7 +1012,7 @@
 			};
 
 			qodef.body.trigger(
-				'teenglow_trigger_load_more',
+				'barabi_trigger_load_more',
 				[$holder, 1]
 			);
 		},
@@ -1058,7 +1058,7 @@
 	);
 
 	$( document ).on(
-		'teenglow_trigger_get_new_posts',
+		'barabi_trigger_get_new_posts',
 		function ( e, $holder ) {
 			if ( $holder.hasClass( 'qodef-layout--masonry' ) ) {
 				qodefMasonryLayout.init();
@@ -1350,7 +1350,7 @@
 	);
 
 	$( document ).on(
-		'teenglow_trigger_load_more',
+		'barabi_trigger_load_more',
 		function ( e, $holder, nextPage, customLoadingClass ) {
 			qodefPagination.triggerLoadMore( $holder, nextPage, customLoadingClass );
 		}
@@ -1570,7 +1570,7 @@
 							setTimeout(
 								function () {
 									qodef.body.trigger(
-										'teenglow_trigger_get_new_posts',
+										'barabi_trigger_get_new_posts',
 										[$holder, response.data, nextPage]
 									);
 								},
@@ -2019,7 +2019,7 @@
 						success: function ( response ) {
 							if ( response.status === 'success' ) {
 								$holder.replaceWith( response.data );
-								qodefCore.shortcodes.teenglow_core_progress_bar.qodefProgressBar.init();
+								qodefCore.shortcodes.barabi_core_progress_bar.qodefProgressBar.init();
 							}
 						},
 						error: function () {
@@ -2045,7 +2045,7 @@
 	);
 
 	$( document ).on(
-		'teenglow_trigger_get_new_posts',
+		'barabi_trigger_get_new_posts',
 		function () {
 			qodefJustifiedGallery.init();
 		}

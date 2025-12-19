@@ -6,5 +6,5 @@ if ( post_password_required() ) {
 
 if ( comments_open() || get_comments_number() ) {
 	// Hook to include page comments template
-	do_action( 'teenglow_action_page_comments_template' );
+	do_action( 'barabi_action_page_comments_template' );
 }

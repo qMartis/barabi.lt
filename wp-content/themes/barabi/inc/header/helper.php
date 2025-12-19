@@ -1,40 +1,40 @@
 <?php
 
-if ( ! function_exists( 'teenglow_load_page_header' ) ) {
+if ( ! function_exists( 'barabi_load_page_header' ) ) {
 	/**
 	 * Function which loads page template module
 	 */
-	function teenglow_load_page_header() {
+	function barabi_load_page_header() {
 		// Include header template
-		echo apply_filters( 'teenglow_filter_header_template', teenglow_get_template_part( 'header', 'templates/header' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo apply_filters( 'barabi_filter_header_template', barabi_get_template_part( 'header', 'templates/header' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 
-	add_action( 'teenglow_action_page_header_template', 'teenglow_load_page_header' );
+	add_action( 'barabi_action_page_header_template', 'barabi_load_page_header' );
 }
 
-if ( ! function_exists( 'teenglow_register_navigation_menus' ) ) {
+if ( ! function_exists( 'barabi_register_navigation_menus' ) ) {
 	/**
 	 * Function which registers navigation menus
 	 */
-	function teenglow_register_navigation_menus() {
-		$navigation_menus = apply_filters( 'teenglow_filter_register_navigation_menus', array( 'main-navigation' => esc_html__( 'Main Navigation', 'teenglow' ) ) );
+	function barabi_register_navigation_menus() {
+		$navigation_menus = apply_filters( 'barabi_filter_register_navigation_menus', array( 'main-navigation' => esc_html__( 'Main Navigation', 'barabi' ) ) );
 
 		if ( ! empty( $navigation_menus ) ) {
 			register_nav_menus( $navigation_menus );
 		}
 	}
 
-	add_action( 'teenglow_action_after_include_modules', 'teenglow_register_navigation_menus' );
+	add_action( 'barabi_action_after_include_modules', 'barabi_register_navigation_menus' );
 }
 
-if ( ! function_exists( 'teenglow_get_header_logo_image' ) ) {
+if ( ! function_exists( 'barabi_get_header_logo_image' ) ) {
 	/**
 	 * Function that return header logo image html
 	 *
 	 * @return string containing html of logo image
 	 */
-	function teenglow_get_header_logo_image() {
-		$logo_image      = '<img itemprop="logo" class="qodef-header-logo-image qodef--main" src="' . esc_url( TEENGLOW_ASSETS_ROOT . '/img/logo.png' ) . '" alt="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" />';
+	function barabi_get_header_logo_image() {
+		$logo_image      = '<img itemprop="logo" class="qodef-header-logo-image qodef--main" src="' . esc_url( BARABI_ASSETS_ROOT . '/img/logo.png' ) . '" alt="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" />';
 		$customizer_logo = get_custom_logo();
 
 		if ( ! empty( $customizer_logo ) ) {
@@ -55,6 +55,6 @@ if ( ! function_exists( 'teenglow_get_header_logo_image' ) ) {
 			}
 		}
 
-		return apply_filters( 'teenglow_filter_header_logo_image', $logo_image );
+		return apply_filters( 'barabi_filter_header_logo_image', $logo_image );
 	}
 }

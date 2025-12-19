@@ -1,10 +1,10 @@
 <?php
 
 // Hook to include additional content before 404 page content
-do_action( 'teenglow_action_before_404_page_content' );
+do_action( 'barabi_action_before_404_page_content' );
 
 // Include module content template
-echo apply_filters( 'teenglow_filter_404_page_content_template', teenglow_get_template_part( '404', 'templates/404-content', '', teenglow_get_404_page_parameters() ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+echo apply_filters( 'barabi_filter_404_page_content_template', barabi_get_template_part( '404', 'templates/404-content', '', barabi_get_404_page_parameters() ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 // Hook to include additional content after 404 page content
-do_action( 'teenglow_action_after_404_page_content' );
+do_action( 'barabi_action_after_404_page_content' );

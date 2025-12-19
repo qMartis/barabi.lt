@@ -1,43 +1,43 @@
 <?php
 
-if ( ! function_exists( 'teenglow_include_comments_in_templates' ) ) {
+if ( ! function_exists( 'barabi_include_comments_in_templates' ) ) {
 	/**
 	 * Function which includes comments templates on pages/posts
 	 */
-	function teenglow_include_comments_in_templates() {
+	function barabi_include_comments_in_templates() {
 
 		// Include comments template
 		comments_template();
 	}
 
-	add_action( 'teenglow_action_after_page_content', 'teenglow_include_comments_in_templates', 100 ); // permission 100 is set to comment template be at the last place
-	add_action( 'teenglow_action_after_blog_post_item', 'teenglow_include_comments_in_templates', 100 );
+	add_action( 'barabi_action_after_page_content', 'barabi_include_comments_in_templates', 100 ); // permission 100 is set to comment template be at the last place
+	add_action( 'barabi_action_after_blog_post_item', 'barabi_include_comments_in_templates', 100 );
 }
 
-if ( ! function_exists( 'teenglow_is_page_comments_enabled' ) ) {
+if ( ! function_exists( 'barabi_is_page_comments_enabled' ) ) {
 	/**
 	 * Function that check is module enabled
 	 */
-	function teenglow_is_page_comments_enabled() {
-		return apply_filters( 'teenglow_filter_enable_page_comments', true );
+	function barabi_is_page_comments_enabled() {
+		return apply_filters( 'barabi_filter_enable_page_comments', true );
 	}
 }
 
-if ( ! function_exists( 'teenglow_load_page_comments' ) ) {
+if ( ! function_exists( 'barabi_load_page_comments' ) ) {
 	/**
 	 * Function which loads page template module
 	 */
-	function teenglow_load_page_comments() {
+	function barabi_load_page_comments() {
 
-		if ( teenglow_is_page_comments_enabled() ) {
-			teenglow_template_part( 'comments', 'templates/comments' );
+		if ( barabi_is_page_comments_enabled() ) {
+			barabi_template_part( 'comments', 'templates/comments' );
 		}
 	}
 
-	add_action( 'teenglow_action_page_comments_template', 'teenglow_load_page_comments' );
+	add_action( 'barabi_action_page_comments_template', 'barabi_load_page_comments' );
 }
 
-if ( ! function_exists( 'teenglow_get_comments_list_template' ) ) {
+if ( ! function_exists( 'barabi_get_comments_list_template' ) ) {
 	/**
 	 * Function which modify default WordPress comments list template
 	 *
@@ -45,7 +45,7 @@ if ( ! function_exists( 'teenglow_get_comments_list_template' ) ) {
 	 * @param array $args
 	 * @param int $depth
 	 */
-	function teenglow_get_comments_list_template( $comment, $args, $depth ) {
+	function barabi_get_comments_list_template( $comment, $args, $depth ) {
 		global $post;
 
 		$classes = array();
@@ -61,10 +61,10 @@ if ( ! function_exists( 'teenglow_get_comments_list_template' ) ) {
 			$classes[] = 'qodef-comment--' . esc_attr( $comment->comment_type );
 		}
 		?>
-		<li class="qodef-comment-item qodef-e <?php echo esc_attr( implode( ' ', apply_filters( 'teenglow_filter_comment_item_classes', $classes, $comment ) ) ); ?>">
+		<li class="qodef-comment-item qodef-e <?php echo esc_attr( implode( ' ', apply_filters( 'barabi_filter_comment_item_classes', $classes, $comment ) ) ); ?>">
 			<div id="comment-<?php comment_ID(); ?>" class="qodef-e-inner">
 				<?php if ( ! $is_specific_comment ) { ?>
-					<div class="qodef-e-image"><?php echo get_avatar( $comment, apply_filters( 'teenglow_filter_comment_gravatar_size', '94' ) ); ?></div>
+					<div class="qodef-e-image"><?php echo get_avatar( $comment, apply_filters( 'barabi_filter_comment_gravatar_size', '94' ) ); ?></div>
 				<?php } ?>
 				<div class="qodef-e-content">
 					<div class="qodef-e-date commentmetadata">
@@ -80,14 +80,14 @@ if ( ! function_exists( 'teenglow_get_comments_list_template' ) ) {
 							array_merge(
 								$args,
 								array(
-									'reply_text' => '<span class="qodef-e-link-text">' . esc_html__( 'Reply', 'teenglow' ) . '</span>' . teenglow_get_svg_icon( 'pagination-arrow-right' ),
+									'reply_text' => '<span class="qodef-e-link-text">' . esc_html__( 'Reply', 'barabi' ) . '</span>' . barabi_get_svg_icon( 'pagination-arrow-right' ),
 									'depth'      => $depth,
 									'max_depth'  => $args['max_depth'],
 								)
 							)
 						);
 
-						edit_comment_link( '<span class="qodef-e-link-text">' . esc_html__( 'Edit', 'teenglow' ) . '</span>' . teenglow_get_svg_icon( 'pagination-arrow-right' ) );
+						edit_comment_link( '<span class="qodef-e-link-text">' . esc_html__( 'Edit', 'barabi' ) . '</span>' . barabi_get_svg_icon( 'pagination-arrow-right' ) );
 						?>
 					</div>
 				</div>
@@ -97,7 +97,7 @@ if ( ! function_exists( 'teenglow_get_comments_list_template' ) ) {
 	}
 }
 
-if ( ! function_exists( 'teenglow_get_comment_form_args' ) ) {
+if ( ! function_exists( 'barabi_get_comment_form_args' ) ) {
 	/**
 	 * Function that define new comment form args in order to override default WordPress comment form
 	 *
@@ -105,15 +105,15 @@ if ( ! function_exists( 'teenglow_get_comment_form_args' ) ) {
 	 *
 	 * @return array
 	 */
-	function teenglow_get_comment_form_args( $attr = array() ) {
+	function barabi_get_comment_form_args( $attr = array() ) {
 		$qodef_commenter      = wp_get_current_commenter();
 		$qodef_required_attr  = get_option( 'require_name_email' ) ? ' required="required"' : '';
 		$qodef_required_label = get_option( 'require_name_email' ) ? '*' : '';
 
-		$comment_placeholder = isset( $attr['comment_placeholder'] ) && ! empty( $attr['comment_placeholder'] ) ? esc_attr( $attr['comment_placeholder'] ) : esc_attr__( 'Message', 'teenglow' );
+		$comment_placeholder = isset( $attr['comment_placeholder'] ) && ! empty( $attr['comment_placeholder'] ) ? esc_attr( $attr['comment_placeholder'] ) : esc_attr__( 'Message', 'barabi' );
 
 		$args = array(
-			'title_reply'        => esc_html__( 'Leave a Comment:', 'teenglow' ),
+			'title_reply'        => esc_html__( 'Leave a Comment:', 'barabi' ),
 			'title_reply_before' => '<h4 id="reply-title" class="comment-reply-title">',
 			'title_reply_after'  => '</h4>',
 			'comment_field'      => '<p class="comment-form-comment">
@@ -121,35 +121,35 @@ if ( ! function_exists( 'teenglow_get_comment_form_args' ) ) {
                                     </p>',
 			'fields'             => array(
 				'author' => '<p class="comment-form-author">
-                            <input id="author" name="author" placeholder="' . sprintf( '%1s%2s', esc_attr__( 'Name', 'teenglow' ), esc_attr( $qodef_required_label ) ) . '" type="text" value="' . esc_attr( $qodef_commenter['comment_author'] ) . '" size="30" maxlength="245" ' . $qodef_required_attr . ' />
+                            <input id="author" name="author" placeholder="' . sprintf( '%1s%2s', esc_attr__( 'Name', 'barabi' ), esc_attr( $qodef_required_label ) ) . '" type="text" value="' . esc_attr( $qodef_commenter['comment_author'] ) . '" size="30" maxlength="245" ' . $qodef_required_attr . ' />
                             </p>',
 				'email'  => '<p class="comment-form-email">
-                            <input id="email" name="email" placeholder="' . sprintf( '%1s%2s', esc_attr__( 'Email', 'teenglow' ), esc_attr( $qodef_required_label ) ) . '" type="text" value="' . esc_attr( $qodef_commenter['comment_author_email'] ) . '" size="30" maxlength="100" aria-describedby="email-notes" ' . $qodef_required_attr . ' />
+                            <input id="email" name="email" placeholder="' . sprintf( '%1s%2s', esc_attr__( 'Email', 'barabi' ), esc_attr( $qodef_required_label ) ) . '" type="text" value="' . esc_attr( $qodef_commenter['comment_author_email'] ) . '" size="30" maxlength="100" aria-describedby="email-notes" ' . $qodef_required_attr . ' />
                             </p>',
 				'url'    => '<p class="comment-form-url">
-                            <input id="url" name="url" placeholder="' . esc_attr__( 'Website', 'teenglow' ) . '" type="text" value="' . esc_attr( $qodef_commenter['comment_author_url'] ) . '" size="30" maxlength="200" />
+                            <input id="url" name="url" placeholder="' . esc_attr__( 'Website', 'barabi' ) . '" type="text" value="' . esc_attr( $qodef_commenter['comment_author_url'] ) . '" size="30" maxlength="200" />
                             </p>',
 			),
 			'submit_button'      => '<button name="%1$s" type="submit" id="%2$s" class="%3$s" value="%4$s"><span class="qodef-m-text">%4$s</span></button>',
-			'label_submit'       => esc_html__( 'Send Message', 'teenglow'),
+			'label_submit'       => esc_html__( 'Send Message', 'barabi'),
 			'class_submit'       => 'qodef-button qodef-layout--filled',
 			'class_form'         => 'qodef-comment-form',
 		);
 
-		return apply_filters( 'teenglow_filter_comment_form_args', $args );
+		return apply_filters( 'barabi_filter_comment_form_args', $args );
 	}
 }
 
-if ( ! function_exists( 'teenglow_set_gravatar_size' ) ) {
+if ( ! function_exists( 'barabi_set_gravatar_size' ) ) {
 	/**
 	 * Function that set comment/review form gravatar image size
 	 *
 	 * @return int
 	 */
-	function teenglow_set_gravatar_size() {
+	function barabi_set_gravatar_size() {
 		return 94;
 	}
 
-	add_filter( 'teenglow_filter_comment_gravatar_size', 'teenglow_set_gravatar_size' );
-	add_filter( 'woocommerce_review_gravatar_size', 'teenglow_set_gravatar_size' );
+	add_filter( 'barabi_filter_comment_gravatar_size', 'barabi_set_gravatar_size' );
+	add_filter( 'woocommerce_review_gravatar_size', 'barabi_set_gravatar_size' );
 }

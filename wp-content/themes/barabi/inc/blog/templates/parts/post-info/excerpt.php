@@ -6,7 +6,7 @@ if ( post_password_required() ) {
 	$excerpt = get_the_excerpt();
 
 	if ( ! isset( $excerpt_length ) || '' === $excerpt_length ) {
-		$excerpt_length = teenglow_get_blog_list_excerpt_length();
+		$excerpt_length = barabi_get_blog_list_excerpt_length();
 	}
 
 	if ( ! empty( $excerpt ) && 0 !== intval( $excerpt_length ) ) {

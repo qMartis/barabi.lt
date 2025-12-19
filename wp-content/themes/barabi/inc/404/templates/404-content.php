@@ -10,7 +10,7 @@
 			'text' => esc_html( $button_text ),
 		);
 
-		teenglow_render_button_element( $button_params );
+		barabi_render_button_element( $button_params );
 		?>
 	</div>
 </div>

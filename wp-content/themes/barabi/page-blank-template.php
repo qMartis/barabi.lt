@@ -19,29 +19,29 @@ Template Name: Qode Blank Template
 	}
 
 	// Hook to include additional content after body tag open
-	do_action( 'teenglow_action_after_body_tag_open' );
+	do_action( 'barabi_action_after_body_tag_open' );
 	?>
-	<div id="qodef-page-wrapper" class="<?php echo esc_attr( teenglow_get_page_wrapper_classes() ); ?>">
+	<div id="qodef-page-wrapper" class="<?php echo esc_attr( barabi_get_page_wrapper_classes() ); ?>">
 		<div id="qodef-page-outer">
 			<?php
 			// Hook to include additional content before page inner content
-			do_action( 'teenglow_action_before_page_inner' );
+			do_action( 'barabi_action_before_page_inner' );
 			?>
 			<div id="qodef-page-inner" class="qodef-content-full-width">
 				<?php
 				// Include content template
-				teenglow_template_part( 'content', 'templates/content' );
+				barabi_template_part( 'content', 'templates/content' );
 				?>
 			</div><!-- close #qodef-page-inner div from header.php -->
 		</div><!-- close #qodef-page-outer div from header.php -->
 		<?php
 		// Hook to include additional content before wrapper close tag
-		do_action( 'teenglow_action_before_wrapper_close_tag' );
+		do_action( 'barabi_action_before_wrapper_close_tag' );
 		?>
 	</div><!-- close #qodef-page-wrapper div from header.php -->
 	<?php
 	// Hook to include additional content before body tag closed
-	do_action( 'teenglow_action_before_body_tag_close' );
+	do_action( 'barabi_action_before_body_tag_close' );
 	?>
 	<?php wp_footer(); ?>
 </body>

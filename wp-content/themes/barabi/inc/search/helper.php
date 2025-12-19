@@ -1,36 +1,36 @@
 <?php
 
-if ( ! function_exists( 'teenglow_get_search_page_excerpt_length' ) ) {
+if ( ! function_exists( 'barabi_get_search_page_excerpt_length' ) ) {
 	/**
 	 * Function that return number of characters for excerpt on search page
 	 *
 	 * @return int
 	 */
-	function teenglow_get_search_page_excerpt_length() {
-		$length = apply_filters( 'teenglow_filter_post_excerpt_length', 180 );
+	function barabi_get_search_page_excerpt_length() {
+		$length = apply_filters( 'barabi_filter_post_excerpt_length', 180 );
 
 		return intval( $length );
 	}
 }
 
-if ( ! function_exists( 'teenglow_override_search_block_templates' ) ) {
+if ( ! function_exists( 'barabi_override_search_block_templates' ) ) {
 	/**
 	 * Function that override `core/search` block template
 	 *
 	 * @see register_block_core_search()
 	 */
-	function teenglow_override_search_block_templates( $atts ) {
+	function barabi_override_search_block_templates( $atts ) {
 		if ( ! empty( $atts ) && isset( $atts['render_callback'] ) && 'render_block_core_search' === $atts['render_callback'] && function_exists( 'styles_for_block_core_search' ) ) {
-			$atts['render_callback'] = 'teenglow_render_block_core_search';
+			$atts['render_callback'] = 'barabi_render_block_core_search';
 		}
 
 		return $atts;
 	}
 
-	add_filter( 'block_type_metadata_settings', 'teenglow_override_search_block_templates' );
+	add_filter( 'block_type_metadata_settings', 'barabi_override_search_block_templates' );
 }
 
-if ( ! function_exists( 'teenglow_render_block_core_search' ) ) {
+if ( ! function_exists( 'barabi_render_block_core_search' ) ) {
 	/**
 	 * Function that dynamically renders the `core/search` block
 	 *
@@ -40,14 +40,14 @@ if ( ! function_exists( 'teenglow_render_block_core_search' ) ) {
 	 *
 	 * @see render_block_core_search()
 	 */
-	function teenglow_render_block_core_search( $attributes ) {
+	function barabi_render_block_core_search( $attributes ) {
 		static $instance_id = 0;
 
 		$attributes = wp_parse_args(
 			$attributes,
 			array(
-				'label'      => esc_html__( 'Search', 'teenglow' ),
-				'buttonText' => esc_html__( 'Search', 'teenglow' ),
+				'label'      => esc_html__( 'Search', 'barabi' ),
+				'buttonText' => esc_html__( 'Search', 'barabi' ),
 			)
 		);
 
@@ -72,7 +72,7 @@ if ( ! function_exists( 'teenglow_render_block_core_search' ) ) {
 		$label_markup = sprintf(
 			'<label for="%1$s" class="qodef-search-form-label screen-reader-text">%2$s</label>',
 			$input_id,
-			empty( $attributes['label'] ) ? esc_html__( 'Search', 'teenglow' ) : esc_html( $attributes['label'] )
+			empty( $attributes['label'] ) ? esc_html__( 'Search', 'barabi' ) : esc_html( $attributes['label'] )
 		);
 		if ( $show_label && ! empty( $attributes['label'] ) ) {
 			$label_markup = sprintf(
@@ -119,7 +119,7 @@ if ( ! function_exists( 'teenglow_render_block_core_search' ) ) {
 				}
 			} else {
 				$button_classes         .= ' qodef--has-icon';
-				$button_internal_markup = teenglow_get_svg_icon( 'search' );
+				$button_internal_markup = barabi_get_svg_icon( 'search' );
 			}
 
 			$button_markup = sprintf(

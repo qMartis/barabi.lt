@@ -1,11 +1,11 @@
 <?php if ( isset( $enable_filter ) && 'yes' === $enable_filter ) {
-	$filter_items = teenglow_get_filter_items( $params );
+	$filter_items = barabi_get_filter_items( $params );
 	?>
 	<div class="qodef-m-filter">
 		<?php if ( ! empty( $filter_items ) ) { ?>
 			<div class="qodef-m-filter-items">
 				<a class="qodef-m-filter-item qodef--active" href="#" data-taxonomy="<?php echo esc_attr( $taxonomy_filter ); ?>" data-filter="*">
-					<span class="qodef-m-filter-item-name"><?php esc_html_e( 'All', 'teenglow' ); ?></span>
+					<span class="qodef-m-filter-item-name"><?php esc_html_e( 'All', 'barabi' ); ?></span>
 				</a>
 				<?php
 				foreach ( $filter_items as $item ) {
@@ -21,7 +21,7 @@
 	<?php
 	// Include loading spinner
 	if ( ! isset( $pagination_type ) || 'no-pagination' === $pagination_type ) {
-		teenglow_render_svg_icon( 'spinner', 'qodef-filter-pagination-spinner' );
+		barabi_render_svg_icon( 'spinner', 'qodef-filter-pagination-spinner' );
 	}
 	?>
 <?php } ?>

@@ -1,6 +1,6 @@
 <?php
 
-if ( ! function_exists( 'teenglow_add_rest_api_pagination_global_variables' ) ) {
+if ( ! function_exists( 'barabi_add_rest_api_pagination_global_variables' ) ) {
 	/**
 	 * Extend main rest api variables with new case
 	 *
@@ -9,16 +9,16 @@ if ( ! function_exists( 'teenglow_add_rest_api_pagination_global_variables' ) ) 
 	 *
 	 * @return array
 	 */
-	function teenglow_add_rest_api_pagination_global_variables( $global, $namespace ) {
+	function barabi_add_rest_api_pagination_global_variables( $global, $namespace ) {
 		$global['paginationRestRoute'] = $namespace . '/get-posts';
 
 		return $global;
 	}
 
-	add_filter( 'teenglow_filter_rest_api_global_variables', 'teenglow_add_rest_api_pagination_global_variables', 10, 2 );
+	add_filter( 'barabi_filter_rest_api_global_variables', 'barabi_add_rest_api_pagination_global_variables', 10, 2 );
 }
 
-if ( ! function_exists( 'teenglow_add_rest_api_pagination_route' ) ) {
+if ( ! function_exists( 'barabi_add_rest_api_pagination_route' ) ) {
 	/**
 	 * Extend main rest api routes with new case
 	 *
@@ -26,11 +26,11 @@ if ( ! function_exists( 'teenglow_add_rest_api_pagination_route' ) ) {
 	 *
 	 * @return array
 	 */
-	function teenglow_add_rest_api_pagination_route( $routes ) {
+	function barabi_add_rest_api_pagination_route( $routes ) {
 		$routes['pagination'] = array(
 			'route'    => 'get-posts',
 			'methods'  => WP_REST_Server::READABLE,
-			'callback' => 'teenglow_get_new_posts',
+			'callback' => 'barabi_get_new_posts',
 			'args'     => array(
 				'options' => array(
 					'required'          => true,
@@ -38,7 +38,7 @@ if ( ! function_exists( 'teenglow_add_rest_api_pagination_route' ) ) {
 						// Simple solution for validation can be 'is_array' value instead of callback function
 						return is_array( $param ) ? $param : (array) $param;
 					},
-					'description'       => esc_html__( 'Options data is array with all selected shortcode parameters value', 'teenglow' ),
+					'description'       => esc_html__( 'Options data is array with all selected shortcode parameters value', 'barabi' ),
 				),
 			),
 		);
@@ -46,19 +46,19 @@ if ( ! function_exists( 'teenglow_add_rest_api_pagination_route' ) ) {
 		return $routes;
 	}
 
-	add_filter( 'teenglow_filter_rest_api_routes', 'teenglow_add_rest_api_pagination_route' );
+	add_filter( 'barabi_filter_rest_api_routes', 'barabi_add_rest_api_pagination_route' );
 }
 
-if ( ! function_exists( 'teenglow_get_new_posts' ) ) {
+if ( ! function_exists( 'barabi_get_new_posts' ) ) {
 	/**
 	 * Function that load new posts for pagination functionality
 	 *
 	 * @return void
 	 */
-	function teenglow_get_new_posts() {
+	function barabi_get_new_posts() {
 
 		if ( ! isset( $_GET ) || empty( $_GET ) ) {
-			teenglow_get_ajax_status( 'error', esc_html__( 'Get method is invalid', 'teenglow' ) );
+			barabi_get_ajax_status( 'error', esc_html__( 'Get method is invalid', 'barabi' ) );
 		} else {
 			$options = isset( $_GET['options'] ) ? (array) $_GET['options'] : array();
 
@@ -66,7 +66,7 @@ if ( ! function_exists( 'teenglow_get_new_posts' ) ) {
 				$plugin     = $options['plugin'];
 				$module     = $options['module'];
 				$shortcode  = $options['shortcode'];
-				$query_args = teenglow_get_query_params( $options );
+				$query_args = barabi_get_query_params( $options );
 
 				$options['query_result'] = new WP_Query( $query_args );
 				if ( isset( $options['object_class_name'] ) && ! empty( $options['object_class_name'] ) && class_exists( $options['object_class_name'] ) ) {
@@ -78,7 +78,7 @@ if ( ! function_exists( 'teenglow_get_new_posts' ) ) {
 				$get_template_part = $plugin . '_get_template_part';
 
 				// Variable name is function name - escaped no need
-				echo apply_filters( "teenglow_filter_{$get_template_part}", $get_template_part( $module . '/' . $shortcode, 'templates/loop', '', $options ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				echo apply_filters( "barabi_filter_{$get_template_part}", $get_template_part( $module . '/' . $shortcode, 'templates/loop', '', $options ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 				$html = ob_get_contents();
 
@@ -86,11 +86,11 @@ if ( ! function_exists( 'teenglow_get_new_posts' ) ) {
 
 				$pagination_html = '';
 				if ( 'standard' === $options['pagination_type'] ) {
-					$pagination_html = apply_filters( "teenglow_filter_{$get_template_part}_pagination", teenglow_get_template_part( 'pagination', 'templates/pagination', $options['pagination_type'], $options ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					$pagination_html = apply_filters( "barabi_filter_{$get_template_part}_pagination", barabi_get_template_part( 'pagination', 'templates/pagination', $options['pagination_type'], $options ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				}
 
 				$data = apply_filters(
-					'teenglow_filter_pagination_data_return',
+					'barabi_filter_pagination_data_return',
 					array(
 						'html'            => $html,
 						'max_pages_num'   => $options['query_result']->max_num_pages,
@@ -99,15 +99,15 @@ if ( ! function_exists( 'teenglow_get_new_posts' ) ) {
 					$options
 				);
 
-				teenglow_get_ajax_status( 'success', esc_html__( 'Items are loaded', 'teenglow' ), $data );
+				barabi_get_ajax_status( 'success', esc_html__( 'Items are loaded', 'barabi' ), $data );
 			} else {
-				teenglow_get_ajax_status( 'error', esc_html__( 'Options are invalid', 'teenglow' ) );
+				barabi_get_ajax_status( 'error', esc_html__( 'Options are invalid', 'barabi' ) );
 			}
 		}
 	}
 }
 
-if ( ! function_exists( 'teenglow_get_query_params' ) ) {
+if ( ! function_exists( 'barabi_get_query_params' ) ) {
 	/**
 	 * Function that return query parameters
 	 *
@@ -115,7 +115,7 @@ if ( ! function_exists( 'teenglow_get_query_params' ) ) {
 	 *
 	 * @return array
 	 */
-	function teenglow_get_query_params( $params ) {
+	function barabi_get_query_params( $params ) {
 		$post_type      = isset( $params['post_type'] ) && ! empty( $params['post_type'] ) ? $params['post_type'] : 'post';
 		$posts_per_page = isset( $params['posts_per_page'] ) && ! empty( $params['posts_per_page'] ) ? $params['posts_per_page'] : 12;
 
@@ -147,11 +147,11 @@ if ( ! function_exists( 'teenglow_get_query_params' ) ) {
 			}
 		}
 
-		return apply_filters( 'teenglow_filter_query_params', $args, $params );
+		return apply_filters( 'barabi_filter_query_params', $args, $params );
 	}
 }
 
-if ( ! function_exists( 'teenglow_get_pagination_data' ) ) {
+if ( ! function_exists( 'barabi_get_pagination_data' ) ) {
 	/**
 	 * Function that return pagination data
 	 *
@@ -163,7 +163,7 @@ if ( ! function_exists( 'teenglow_get_pagination_data' ) ) {
 	 *
 	 * @return array
 	 */
-	function teenglow_get_pagination_data( $plugin, $module, $shortcode, $post_type, $params ) {
+	function barabi_get_pagination_data( $plugin, $module, $shortcode, $post_type, $params ) {
 		$data = array();
 
 		if ( ! empty( $post_type ) && ! empty( $params ) ) {
@@ -187,17 +187,17 @@ if ( ! function_exists( 'teenglow_get_pagination_data' ) ) {
 			}
 
 			if ( isset( $params['space'] ) && ! empty( $params['space'] ) ) {
-				$params['space_value'] = teenglow_get_space_value( $params['space'] );
+				$params['space_value'] = barabi_get_space_value( $params['space'] );
 			}
 
-			$data = json_encode( array_filter( array_merge( $additional_params, $params ), 'teenglow_validate_pagination_data' ) );
+			$data = json_encode( array_filter( array_merge( $additional_params, $params ), 'barabi_validate_pagination_data' ) );
 		}
 
 		return $data;
 	}
 }
 
-if ( ! function_exists( 'teenglow_validate_pagination_data' ) ) {
+if ( ! function_exists( 'barabi_validate_pagination_data' ) ) {
 	/**
 	 * Function that validate pagination data element
 	 *
@@ -205,7 +205,7 @@ if ( ! function_exists( 'teenglow_validate_pagination_data' ) ) {
 	 *
 	 * @return mixed
 	 */
-	function teenglow_validate_pagination_data( $value ) {
+	function barabi_validate_pagination_data( $value ) {
 		$blocked_values = array(
 			null,
 			false,
@@ -216,14 +216,14 @@ if ( ! function_exists( 'teenglow_validate_pagination_data' ) ) {
 	}
 }
 
-if ( ! function_exists( 'teenglow_add_link_pages_after_content' ) ) {
+if ( ! function_exists( 'barabi_add_link_pages_after_content' ) ) {
 	/**
 	 * Function which add pagination for blog single and page
 	 */
-	function teenglow_add_link_pages_after_content() {
+	function barabi_add_link_pages_after_content() {
 
 		$args_pages = array(
-			'before'      => '<div class="qodef-single-links qodef-m"><span class="qodef-m-single-links-title">' . esc_html__( 'Pages: ', 'teenglow' ) . '</span>',
+			'before'      => '<div class="qodef-single-links qodef-m"><span class="qodef-m-single-links-title">' . esc_html__( 'Pages: ', 'barabi' ) . '</span>',
 			'after'       => '</div>',
 			'link_before' => '<span>',
 			'link_after'  => '</span>',
@@ -233,6 +233,6 @@ if ( ! function_exists( 'teenglow_add_link_pages_after_content' ) ) {
 		wp_link_pages( $args_pages );
 	}
 
-	add_action( 'teenglow_action_after_blog_single_content', 'teenglow_add_link_pages_after_content' );
-	add_action( 'teenglow_action_after_page_content', 'teenglow_add_link_pages_after_content' );
+	add_action( 'barabi_action_after_blog_single_content', 'barabi_add_link_pages_after_content' );
+	add_action( 'barabi_action_after_page_content', 'barabi_add_link_pages_after_content' );
 }

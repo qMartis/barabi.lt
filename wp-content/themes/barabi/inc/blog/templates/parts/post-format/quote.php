@@ -9,7 +9,7 @@ if ( ! empty( $quote_text ) ) {
 	$author_title_tag = isset( $author_title_tag ) && ! empty( $author_title_tag ) ? $author_title_tag : 'span';
 	?>
 	<div class="qodef-e-quote">
-		<?php teenglow_render_svg_icon( 'quote', 'qodef-e-quote-icon' ); ?>
+		<?php barabi_render_svg_icon( 'quote', 'qodef-e-quote-icon' ); ?>
 		<<?php echo esc_attr( $title_tag ); ?> class="qodef-e-quote-text"><?php echo esc_html( $quote_text ); ?></<?php echo esc_attr( $title_tag ); ?>>
 		<?php if ( ! empty( $quote_author ) ) { ?>
 			<<?php echo esc_attr( $author_title_tag ); ?> class="qodef-e-quote-author"><?php echo esc_html( $quote_author ); ?></<?php echo esc_attr( $author_title_tag ); ?>>

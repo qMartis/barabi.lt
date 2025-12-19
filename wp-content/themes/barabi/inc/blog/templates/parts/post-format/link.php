@@ -8,7 +8,7 @@ if ( ! empty( $link_url ) ) {
 	$title_tag = isset( $title_tag ) && ! empty( $title_tag ) ? $title_tag : 'h4';
 	?>
 	<div class="qodef-e-link">
-		<?php teenglow_render_svg_icon( 'link', 'qodef-e-link-icon' ); ?>
+		<?php barabi_render_svg_icon( 'link', 'qodef-e-link-icon' ); ?>
 		<<?php echo esc_attr( $title_tag ); ?> class="qodef-e-link-text">
 			<span>
 				<?php echo esc_html( $link_text ); ?>

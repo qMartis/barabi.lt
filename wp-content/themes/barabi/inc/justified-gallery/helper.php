@@ -1,33 +1,33 @@
 <?php
 
-if ( ! function_exists( 'teenglow_register_justified_gallery_scripts' ) ) {
+if ( ! function_exists( 'barabi_register_justified_gallery_scripts' ) ) {
 	/**
 	 * Function that register module 3rd party scripts
 	 */
-	function teenglow_register_justified_gallery_scripts() {
-		wp_register_script( 'jquery-justified-gallery', TEENGLOW_INC_ROOT . '/justified-gallery/assets/js/plugins/jquery.justifiedGallery.min.js', array( 'jquery' ), true );
+	function barabi_register_justified_gallery_scripts() {
+		wp_register_script( 'jquery-justified-gallery', BARABI_INC_ROOT . '/justified-gallery/assets/js/plugins/jquery.justifiedGallery.min.js', array( 'jquery' ), true );
 	}
 
-	add_action( 'teenglow_action_before_main_js', 'teenglow_register_justified_gallery_scripts' );
+	add_action( 'barabi_action_before_main_js', 'barabi_register_justified_gallery_scripts' );
 }
 
-if ( ! function_exists( 'teenglow_include_justified_gallery_scripts' ) ) {
+if ( ! function_exists( 'barabi_include_justified_gallery_scripts' ) ) {
 	/**
 	 * Function that enqueue modules 3rd party scripts
 	 *
 	 * @param array $atts
 	 */
-	function teenglow_include_justified_gallery_scripts( $atts ) {
+	function barabi_include_justified_gallery_scripts( $atts ) {
 
 		if ( isset( $atts['behavior'] ) && 'justified-gallery' === $atts['behavior'] ) {
 			wp_enqueue_script( 'jquery-justified-gallery' );
 		}
 	}
 
-	add_action( 'teenglow_core_action_list_shortcodes_load_assets', 'teenglow_include_justified_gallery_scripts' );
+	add_action( 'barabi_core_action_list_shortcodes_load_assets', 'barabi_include_justified_gallery_scripts' );
 }
 
-if ( ! function_exists( 'teenglow_register_justified_gallery_scripts_for_list_shortcodes' ) ) {
+if ( ! function_exists( 'barabi_register_justified_gallery_scripts_for_list_shortcodes' ) ) {
 	/**
 	 * Function that set module 3rd party scripts for list shortcodes
 	 *
@@ -35,7 +35,7 @@ if ( ! function_exists( 'teenglow_register_justified_gallery_scripts_for_list_sh
 	 *
 	 * @return array
 	 */
-	function teenglow_register_justified_gallery_scripts_for_list_shortcodes( $scripts ) {
+	function barabi_register_justified_gallery_scripts_for_list_shortcodes( $scripts ) {
 
 		$scripts['jquery-justified-gallery'] = array(
 			'registered' => true,
@@ -44,5 +44,5 @@ if ( ! function_exists( 'teenglow_register_justified_gallery_scripts_for_list_sh
 		return $scripts;
 	}
 
-	add_filter( 'teenglow_core_filter_register_list_shortcode_scripts', 'teenglow_register_justified_gallery_scripts_for_list_shortcodes' );
+	add_filter( 'barabi_core_filter_register_list_shortcode_scripts', 'barabi_register_justified_gallery_scripts_for_list_shortcodes' );
 }

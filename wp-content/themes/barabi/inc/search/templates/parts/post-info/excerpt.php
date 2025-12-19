@@ -6,7 +6,7 @@ if ( post_password_required() ) {
 	$excerpt = get_the_excerpt();
 
 	if ( ! empty( $excerpt ) ) {
-		$excerpt_length = teenglow_get_search_page_excerpt_length();
+		$excerpt_length = barabi_get_search_page_excerpt_length();
 		$new_excerpt    = ( $excerpt_length > 0 ) ? substr( $excerpt, 0, $excerpt_length ) : $excerpt;
 		?>
 		<p itemprop="description" class="qodef-e-excerpt">

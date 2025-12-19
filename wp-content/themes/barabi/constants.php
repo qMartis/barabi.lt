@@ -1,12 +1,12 @@
 <?php
 
-define( 'TEENGLOW_ROOT', get_template_directory_uri() );
-define( 'TEENGLOW_ROOT_DIR', get_template_directory() );
-define( 'TEENGLOW_ASSETS_ROOT', TEENGLOW_ROOT . '/assets' );
-define( 'TEENGLOW_ASSETS_ROOT_DIR', TEENGLOW_ROOT_DIR . '/assets' );
-define( 'TEENGLOW_ASSETS_CSS_ROOT', TEENGLOW_ASSETS_ROOT . '/css' );
-define( 'TEENGLOW_ASSETS_CSS_ROOT_DIR', TEENGLOW_ASSETS_ROOT_DIR . '/css' );
-define( 'TEENGLOW_ASSETS_JS_ROOT', TEENGLOW_ASSETS_ROOT . '/js' );
-define( 'TEENGLOW_ASSETS_JS_ROOT_DIR', TEENGLOW_ASSETS_ROOT_DIR . '/js' );
-define( 'TEENGLOW_INC_ROOT', TEENGLOW_ROOT . '/inc' );
-define( 'TEENGLOW_INC_ROOT_DIR', TEENGLOW_ROOT_DIR . '/inc' );
+define( 'BARABI_ROOT', get_template_directory_uri() );
+define( 'BARABI_ROOT_DIR', get_template_directory() );
+define( 'BARABI_ASSETS_ROOT', BARABI_ROOT . '/assets' );
+define( 'BARABI_ASSETS_ROOT_DIR', BARABI_ROOT_DIR . '/assets' );
+define( 'BARABI_ASSETS_CSS_ROOT', BARABI_ASSETS_ROOT . '/css' );
+define( 'BARABI_ASSETS_CSS_ROOT_DIR', BARABI_ASSETS_ROOT_DIR . '/css' );
+define( 'BARABI_ASSETS_JS_ROOT', BARABI_ASSETS_ROOT . '/js' );
+define( 'BARABI_ASSETS_JS_ROOT_DIR', BARABI_ASSETS_ROOT_DIR . '/js' );
+define( 'BARABI_INC_ROOT', BARABI_ROOT . '/inc' );
+define( 'BARABI_INC_ROOT_DIR', BARABI_ROOT_DIR . '/inc' );

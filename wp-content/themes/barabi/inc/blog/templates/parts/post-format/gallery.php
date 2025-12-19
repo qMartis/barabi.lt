@@ -20,10 +20,10 @@ if ( ! empty( $gallery_meta ) ) { ?>
 				</div>
 			<?php } ?>
 		</div>
-		<div class="swiper-button-prev"><?php teenglow_render_svg_icon( 'slider-arrow-left' ); ?></div>
-		<div class="swiper-button-next"><?php teenglow_render_svg_icon( 'slider-arrow-right' ); ?></div>
+		<div class="swiper-button-prev"><?php barabi_render_svg_icon( 'slider-arrow-left' ); ?></div>
+		<div class="swiper-button-next"><?php barabi_render_svg_icon( 'slider-arrow-right' ); ?></div>
 	</div>
 <?php } else {
 	// Include featured image
-	teenglow_template_part( 'blog', 'templates/parts/post-info/image' );
+	barabi_template_part( 'blog', 'templates/parts/post-info/image' );
 } ?>

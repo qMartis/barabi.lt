@@ -7,12 +7,12 @@ if ( ! empty( $audio_meta ) ) {
 		echo wp_oembed_get( $audio_meta ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	} else {
 		// Include featured image
-		teenglow_template_part( 'blog', 'templates/parts/post-info/image' );
+		barabi_template_part( 'blog', 'templates/parts/post-info/image' );
 		?>
 		<div class="qodef-e-media-audio">
 			<?php
 			// Audio player settings
-			$settings = apply_filters( 'teenglow_filter_audio_post_format_settings', array() );
+			$settings = apply_filters( 'barabi_filter_audio_post_format_settings', array() );
 
 			// Init audio player
 			echo wp_audio_shortcode( array_merge( array( 'src' => esc_url( $audio_meta ) ), $settings ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped

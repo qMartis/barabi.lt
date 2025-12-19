@@ -1,17 +1,17 @@
 <?php
 
-if ( ! class_exists( 'Teenglow_Handler' ) ) {
+if ( ! class_exists( 'Barabi_Handler' ) ) {
 	/**
 	 * Main theme class with configuration
 	 */
-	class Teenglow_Handler {
+	class Barabi_Handler {
 		private static $instance;
 
 		public function __construct() {
 
 			// Include required files
 			require_once get_template_directory() . '/constants.php';
-			require_once TEENGLOW_ROOT_DIR . '/helpers/helper.php';
+			require_once BARABI_ROOT_DIR . '/helpers/helper.php';
 
 			// Include theme's style and inline style
 			add_action( 'wp_enqueue_scripts', array( $this, 'include_css_scripts' ) );
@@ -22,19 +22,19 @@ if ( ! class_exists( 'Teenglow_Handler' ) ) {
 			add_action( 'wp_enqueue_scripts', array( $this, 'localize_js_scripts' ) );
 
 			// Include theme's 3rd party plugins styles
-			add_action( 'teenglow_action_before_main_css', array( $this, 'include_plugins_styles' ) );
+			add_action( 'barabi_action_before_main_css', array( $this, 'include_plugins_styles' ) );
 
 			// Include theme's 3rd party plugins scripts
-			add_action( 'teenglow_action_before_main_js', array( $this, 'include_plugins_scripts' ) );
+			add_action( 'barabi_action_before_main_js', array( $this, 'include_plugins_scripts' ) );
 
 			// Add pingback header
 			add_action( 'wp_head', array( $this, 'add_pingback_header' ), 1 );
 
 			// Include theme's skip link
-			add_action( 'teenglow_action_after_body_tag_open', array( $this, 'add_skip_link' ), 5 );
+			add_action( 'barabi_action_after_body_tag_open', array( $this, 'add_skip_link' ), 5 );
 
 			// Include theme's Google fonts
-			add_action( 'teenglow_action_before_main_css', array( $this, 'include_google_fonts' ) );
+			add_action( 'barabi_action_before_main_css', array( $this, 'include_google_fonts' ) );
 
 			// Add theme's supports feature
 			add_action( 'after_setup_theme', array( $this, 'set_theme_support' ) );
@@ -50,7 +50,7 @@ if ( ! class_exists( 'Teenglow_Handler' ) ) {
 		}
 
 		/**
-		 * @return Teenglow_Handler
+		 * @return Barabi_Handler
 		 */
 		public static function get_instance() {
 			if ( is_null( self::$instance ) ) {
@@ -62,41 +62,41 @@ if ( ! class_exists( 'Teenglow_Handler' ) ) {
 
 		function include_css_scripts() {
 			// CSS dependency variable
-			$main_css_dependency = apply_filters( 'teenglow_filter_main_css_dependency', array( 'swiper' ) );
+			$main_css_dependency = apply_filters( 'barabi_filter_main_css_dependency', array( 'swiper' ) );
 
 			// Hook to include additional scripts before theme's main style
-			do_action( 'teenglow_action_before_main_css' );
+			do_action( 'barabi_action_before_main_css' );
 
 			// Enqueue theme's main style
-			wp_enqueue_style( 'teenglow-main', TEENGLOW_ASSETS_CSS_ROOT . '/main.min.css', $main_css_dependency );
+			wp_enqueue_style( 'barabi-main', BARABI_ASSETS_CSS_ROOT . '/main.min.css', $main_css_dependency );
 
 			// Enqueue theme's style
-			wp_enqueue_style( 'teenglow-style', TEENGLOW_ROOT . '/style.css' );
+			wp_enqueue_style( 'barabi-style', BARABI_ROOT . '/style.css' );
 
 			// Hook to include additional scripts after theme's main style
-			do_action( 'teenglow_action_after_main_css' );
+			do_action( 'barabi_action_after_main_css' );
 		}
 
 		function add_inline_style() {
-			$style = apply_filters( 'teenglow_filter_add_inline_style', '' );
+			$style = apply_filters( 'barabi_filter_add_inline_style', '' );
 
 			if ( ! empty( $style ) ) {
-				wp_add_inline_style( 'teenglow-style', $style );
+				wp_add_inline_style( 'barabi-style', $style );
 			}
 		}
 
 		function include_js_scripts() {
 			// JS dependency variable
-			$main_js_dependency = apply_filters( 'teenglow_filter_main_js_dependency', array( 'jquery' ) );
+			$main_js_dependency = apply_filters( 'barabi_filter_main_js_dependency', array( 'jquery' ) );
 
 			// Hook to include additional scripts before theme's main script
-			do_action( 'teenglow_action_before_main_js', $main_js_dependency );
+			do_action( 'barabi_action_before_main_js', $main_js_dependency );
 
 			// Enqueue theme's main script
-			wp_enqueue_script( 'teenglow-main-js', TEENGLOW_ASSETS_JS_ROOT . '/main.min.js', $main_js_dependency, false, true );
+			wp_enqueue_script( 'barabi-main-js', BARABI_ASSETS_JS_ROOT . '/main.min.js', $main_js_dependency, false, true );
 
 			// Hook to include additional scripts after theme's main script
-			do_action( 'teenglow_action_after_main_js' );
+			do_action( 'barabi_action_after_main_js' );
 
 			// Include comment reply script
 			if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -106,18 +106,18 @@ if ( ! class_exists( 'Teenglow_Handler' ) ) {
 
 		function localize_js_scripts() {
 			$global = apply_filters(
-				'teenglow_filter_localize_main_js',
+				'barabi_filter_localize_main_js',
 				array(
 					'adminBarHeight'     => is_admin_bar_showing() ? 32 : 0,
-					'iconArrowLeft'      => teenglow_get_svg_icon( 'slider-arrow-left' ),
-					'iconArrowRight'     => teenglow_get_svg_icon( 'slider-arrow-right' ),
-					'iconClose'          => teenglow_get_svg_icon( 'close' ),
-					'addToCartRightIcon' => teenglow_get_svg_icon( 'arrow-right' ),
+					'iconArrowLeft'      => barabi_get_svg_icon( 'slider-arrow-left' ),
+					'iconArrowRight'     => barabi_get_svg_icon( 'slider-arrow-right' ),
+					'iconClose'          => barabi_get_svg_icon( 'close' ),
+					'addToCartRightIcon' => barabi_get_svg_icon( 'arrow-right' ),
 				)
 			);
 
 			wp_localize_script(
-				'teenglow-main-js',
+				'barabi-main-js',
 				'qodefGlobal',
 				array(
 					'vars' => $global,
@@ -128,16 +128,16 @@ if ( ! class_exists( 'Teenglow_Handler' ) ) {
 		function include_plugins_styles() {
 
 			// Enqueue 3rd party plugins style
-			wp_enqueue_style( 'swiper', TEENGLOW_ASSETS_ROOT . '/plugins/swiper/swiper.min.css' );
+			wp_enqueue_style( 'swiper', BARABI_ASSETS_ROOT . '/plugins/swiper/swiper.min.css' );
 		}
 
 		function include_plugins_scripts() {
 
 			// JS dependency variables
-			$js_3rd_party_dependency = apply_filters( 'teenglow_filter_js_3rd_party_dependency', 'jquery' );
+			$js_3rd_party_dependency = apply_filters( 'barabi_filter_js_3rd_party_dependency', 'jquery' );
 
 			// Enqueue 3rd party plugins script
-			wp_enqueue_script( 'swiper', TEENGLOW_ASSETS_ROOT . '/plugins/swiper/swiper.min.js', array( $js_3rd_party_dependency ), false, true );
+			wp_enqueue_script( 'swiper', BARABI_ASSETS_ROOT . '/plugins/swiper/swiper.min.js', array( $js_3rd_party_dependency ), false, true );
 		}
 
 		function add_pingback_header() {
@@ -148,11 +148,11 @@ if ( ! class_exists( 'Teenglow_Handler' ) ) {
 		}
 
 		function add_skip_link() {
-			echo '<a class="skip-link screen-reader-text" href="#qodef-page-content">' . esc_html__( 'Skip to the content', 'teenglow' ) . '</a>';
+			echo '<a class="skip-link screen-reader-text" href="#qodef-page-content">' . esc_html__( 'Skip to the content', 'barabi' ) . '</a>';
 		}
 
 		function include_google_fonts() {
-			$is_enabled = boolval( apply_filters( 'teenglow_filter_enable_google_fonts', true ) );
+			$is_enabled = boolval( apply_filters( 'barabi_filter_enable_google_fonts', true ) );
 
 			if ( $is_enabled ) {
 				$font_subset_array = array(
@@ -174,9 +174,9 @@ if ( ! class_exists( 'Teenglow_Handler' ) ) {
 					'DM Sans',
 				);
 
-				$font_weight_str = implode( ',', array_unique( apply_filters( 'teenglow_filter_google_fonts_weight_list', $font_weight_array ) ) );
-				$font_subset_str = implode( ',', array_unique( apply_filters( 'teenglow_filter_google_fonts_subset_list', $font_subset_array ) ) );
-				$fonts_array     = apply_filters( 'teenglow_filter_google_fonts_list', $default_font_family );
+				$font_weight_str = implode( ',', array_unique( apply_filters( 'barabi_filter_google_fonts_weight_list', $font_weight_array ) ) );
+				$font_subset_str = implode( ',', array_unique( apply_filters( 'barabi_filter_google_fonts_subset_list', $font_subset_array ) ) );
+				$fonts_array     = apply_filters( 'barabi_filter_google_fonts_list', $default_font_family );
 
 				if ( ! empty( $fonts_array ) ) {
 					$modified_default_font_family = array();
@@ -194,7 +194,7 @@ if ( ! class_exists( 'Teenglow_Handler' ) ) {
 					);
 
 					$google_fonts_url = add_query_arg( $fonts_full_list_args, 'https://fonts.googleapis.com/css' );
-					wp_enqueue_style( 'teenglow-google-fonts', esc_url_raw( $google_fonts_url ), array(), '1.0.0' );
+					wp_enqueue_style( 'barabi-google-fonts', esc_url_raw( $google_fonts_url ), array(), '1.0.0' );
 				}
 			}
 		}
@@ -202,7 +202,7 @@ if ( ! class_exists( 'Teenglow_Handler' ) ) {
 		function set_theme_support() {
 
 			// Make theme available for translation
-			load_theme_textdomain( 'teenglow', TEENGLOW_ROOT_DIR . '/languages' );
+			load_theme_textdomain( 'barabi', BARABI_ROOT_DIR . '/languages' );
 
 			// Add support for feed links
 			add_theme_support( 'automatic-feed-links' );
@@ -222,14 +222,14 @@ if ( ! class_exists( 'Teenglow_Handler' ) ) {
 			// Set the default content width
 			global $content_width;
 			if ( ! isset( $content_width ) ) {
-				$content_width = apply_filters( 'teenglow_filter_set_content_width', 1300 );
+				$content_width = apply_filters( 'barabi_filter_set_content_width', 1300 );
 			}
 
 			// Add support for post formats
 			add_theme_support( 'post-formats', array( 'gallery', 'video', 'audio', 'link', 'quote' ) );
 
 			// Add theme support for editor style
-			add_editor_style( TEENGLOW_ASSETS_CSS_ROOT . '/editor-style.min.css' );
+			add_editor_style( BARABI_ASSETS_CSS_ROOT . '/editor-style.min.css' );
 		}
 
 		function editor_customizer_styles() {
@@ -238,10 +238,10 @@ if ( ! class_exists( 'Teenglow_Handler' ) ) {
 			$this->include_google_fonts();
 
 			// Add editor customizer style
-			wp_enqueue_style( 'teenglow-editor-customizer-styles', TEENGLOW_ASSETS_CSS_ROOT . '/editor-customizer-style.css' );
+			wp_enqueue_style( 'barabi-editor-customizer-styles', BARABI_ASSETS_CSS_ROOT . '/editor-customizer-style.css' );
 
 			// Add Gutenberg blocks style
-			wp_enqueue_style( 'teenglow-gutenberg-blocks-style', TEENGLOW_INC_ROOT . '/gutenberg/assets/admin/css/gutenberg-blocks.min.css' );
+			wp_enqueue_style( 'barabi-gutenberg-blocks-style', BARABI_INC_ROOT . '/gutenberg/assets/admin/css/gutenberg-blocks.min.css' );
 		}
 
 		function add_body_classes( $classes ) {
@@ -270,22 +270,22 @@ if ( ! class_exists( 'Teenglow_Handler' ) ) {
 			// Set default grid size value
 			$classes['grid_size'] = 'qodef-content-grid-1100';
 
-			return apply_filters( 'teenglow_filter_add_body_classes', $classes );
+			return apply_filters( 'barabi_filter_add_body_classes', $classes );
 		}
 
 		function include_modules() {
 
 			// Hook to include additional files before modules inclusion
-			do_action( 'teenglow_action_before_include_modules' );
+			do_action( 'barabi_action_before_include_modules' );
 
-			foreach ( glob( TEENGLOW_INC_ROOT_DIR . '/*/include.php' ) as $module ) {
+			foreach ( glob( BARABI_INC_ROOT_DIR . '/*/include.php' ) as $module ) {
 				include_once $module; // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 			}
 
 			// Hook to include additional files after modules inclusion
-			do_action( 'teenglow_action_after_include_modules' );
+			do_action( 'barabi_action_after_include_modules' );
 		}
 	}
 
-	Teenglow_Handler::get_instance();
+	Barabi_Handler::get_instance();
 }

@@ -3,7 +3,7 @@
 	$current    = isset( $next_page ) && ! empty( $next_page ) ? intval( $next_page ) : 1;
 	$mid_size   = 2;
 	$end_size   = $total - $current;
-	$dots       = '<span class="qodef-m-pagination-item qodef--dots">' . esc_html__( '&hellip;', 'teenglow' ) . '</span>';
+	$dots       = '<span class="qodef-m-pagination-item qodef--dots">' . esc_html__( '&hellip;', 'barabi' ) . '</span>';
 	$set_dots   = false;
 	$dots_added = false;
 
@@ -19,12 +19,12 @@
 		$next_classes[] = $hidden;
 	}
 	?>
-	<div class="qodef-m-pagination qodef--standard" <?php teenglow_is_installed( 'framework' ) && isset( $pagination_top_margin ) ? qode_framework_inline_style( $pagination_top_margin ) : ''; ?>>
+	<div class="qodef-m-pagination qodef--standard" <?php barabi_is_installed( 'framework' ) && isset( $pagination_top_margin ) ? qode_framework_inline_style( $pagination_top_margin ) : ''; ?>>
 		<div class="qodef-m-pagination-inner">
 			<nav class="qodef-m-pagination-items">
 				<a class="qodef-m-pagination-item qodef--prev <?php echo esc_attr( implode( ' ', $prev_classes ) ); ?>" href="#" data-paged="1">
-                    <?php teenglow_render_svg_icon( 'pagination-arrow-left' ); ?>
-                    <span class="qodef-m-pagination-label"><?php echo esc_html__( 'Previous', 'teenglow' ); ?></span>
+                    <?php barabi_render_svg_icon( 'pagination-arrow-left' ); ?>
+                    <span class="qodef-m-pagination-label"><?php echo esc_html__( 'Previous', 'barabi' ); ?></span>
 				</a>
 				<?php
 				for ( $i = 1; $i <= $total; $i ++ ) {
@@ -79,14 +79,14 @@
 					?>
 				<?php } ?>
 				<a class="qodef-m-pagination-item qodef--next <?php echo esc_attr( implode( ' ', $next_classes ) ); ?>" href="#" data-paged="2">
-                    <span class="qodef-m-pagination-label"><?php echo esc_html__( 'Next', 'teenglow' ); ?></span>
-                    <?php teenglow_render_svg_icon( 'pagination-arrow-right' ); ?>
+                    <span class="qodef-m-pagination-label"><?php echo esc_html__( 'Next', 'barabi' ); ?></span>
+                    <?php barabi_render_svg_icon( 'pagination-arrow-right' ); ?>
 				</a>
 			</nav>
 		</div>
 	</div>
 	<?php
 	// Include loading spinner
-	teenglow_render_svg_icon( 'spinner', 'qodef-m-pagination-spinner' );
+	barabi_render_svg_icon( 'spinner', 'qodef-m-pagination-spinner' );
 	?>
 <?php } ?>

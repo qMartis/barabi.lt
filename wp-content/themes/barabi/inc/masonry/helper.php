@@ -1,59 +1,59 @@
 <?php
 
-if ( ! function_exists( 'teenglow_register_masonry_scripts' ) ) {
+if ( ! function_exists( 'barabi_register_masonry_scripts' ) ) {
 	/**
 	 * Function that include modules 3rd party scripts
 	 */
-	function teenglow_register_masonry_scripts() {
-		wp_register_script( 'isotope', TEENGLOW_INC_ROOT . '/masonry/assets/js/plugins/isotope.pkgd.min.js', array( 'jquery' ), false, true );
-		wp_register_script( 'packery', TEENGLOW_INC_ROOT . '/masonry/assets/js/plugins/packery-mode.pkgd.min.js', array( 'jquery' ), false, true );
+	function barabi_register_masonry_scripts() {
+		wp_register_script( 'isotope', BARABI_INC_ROOT . '/masonry/assets/js/plugins/isotope.pkgd.min.js', array( 'jquery' ), false, true );
+		wp_register_script( 'packery', BARABI_INC_ROOT . '/masonry/assets/js/plugins/packery-mode.pkgd.min.js', array( 'jquery' ), false, true );
 	}
 
-	add_action( 'teenglow_action_before_main_js', 'teenglow_register_masonry_scripts' );
+	add_action( 'barabi_action_before_main_js', 'barabi_register_masonry_scripts' );
 }
 
-if ( ! function_exists( 'teenglow_include_masonry_scripts' ) ) {
+if ( ! function_exists( 'barabi_include_masonry_scripts' ) ) {
 	/**
 	 * Function that include modules 3rd party scripts
 	 */
-	function teenglow_include_masonry_scripts() {
+	function barabi_include_masonry_scripts() {
 		wp_enqueue_script( 'isotope' );
 		wp_enqueue_script( 'packery' );
 	}
 }
 
-if ( ! function_exists( 'teenglow_enqueue_masonry_scripts_for_templates' ) ) {
+if ( ! function_exists( 'barabi_enqueue_masonry_scripts_for_templates' ) ) {
 	/**
 	 * Function that enqueue modules 3rd party scripts for templates
 	 */
-	function teenglow_enqueue_masonry_scripts_for_templates() {
-		$post_type = apply_filters( 'teenglow_filter_allowed_post_type_to_enqueue_masonry_scripts', '' );
+	function barabi_enqueue_masonry_scripts_for_templates() {
+		$post_type = apply_filters( 'barabi_filter_allowed_post_type_to_enqueue_masonry_scripts', '' );
 
 		if ( ! empty( $post_type ) && is_singular( $post_type ) ) {
-			teenglow_include_masonry_scripts();
+			barabi_include_masonry_scripts();
 		}
 	}
 
-	add_action( 'teenglow_action_before_main_js', 'teenglow_enqueue_masonry_scripts_for_templates' );
+	add_action( 'barabi_action_before_main_js', 'barabi_enqueue_masonry_scripts_for_templates' );
 }
 
-if ( ! function_exists( 'teenglow_enqueue_masonry_scripts_for_shortcodes' ) ) {
+if ( ! function_exists( 'barabi_enqueue_masonry_scripts_for_shortcodes' ) ) {
 	/**
 	 * Function that enqueue modules 3rd party scripts for shortcodes
 	 *
 	 * @param array $atts
 	 */
-	function teenglow_enqueue_masonry_scripts_for_shortcodes( $atts ) {
+	function barabi_enqueue_masonry_scripts_for_shortcodes( $atts ) {
 
 		if ( isset( $atts['behavior'] ) && 'masonry' === $atts['behavior'] ) {
-			teenglow_include_masonry_scripts();
+			barabi_include_masonry_scripts();
 		}
 	}
 
-	add_action( 'teenglow_core_action_list_shortcodes_load_assets', 'teenglow_enqueue_masonry_scripts_for_shortcodes' );
+	add_action( 'barabi_core_action_list_shortcodes_load_assets', 'barabi_enqueue_masonry_scripts_for_shortcodes' );
 }
 
-if ( ! function_exists( 'teenglow_register_masonry_scripts_for_list_shortcodes' ) ) {
+if ( ! function_exists( 'barabi_register_masonry_scripts_for_list_shortcodes' ) ) {
 	/**
 	 * Function that set module 3rd party scripts for list shortcodes
 	 *
@@ -61,7 +61,7 @@ if ( ! function_exists( 'teenglow_register_masonry_scripts_for_list_shortcodes' 
 	 *
 	 * @return array
 	 */
-	function teenglow_register_masonry_scripts_for_list_shortcodes( $scripts ) {
+	function barabi_register_masonry_scripts_for_list_shortcodes( $scripts ) {
 
 		$scripts['isotope'] = array(
 			'registered' => true,
@@ -73,5 +73,5 @@ if ( ! function_exists( 'teenglow_register_masonry_scripts_for_list_shortcodes' 
 		return $scripts;
 	}
 
-	add_filter( 'teenglow_core_filter_register_list_shortcode_scripts', 'teenglow_register_masonry_scripts_for_list_shortcodes' );
+	add_filter( 'barabi_core_filter_register_list_shortcode_scripts', 'barabi_register_masonry_scripts_for_list_shortcodes' );
 }

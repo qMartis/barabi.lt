@@ -1,6 +1,6 @@
 <?php
 
-if ( ! function_exists( 'teenglow_nav_item_classes' ) ) {
+if ( ! function_exists( 'barabi_nav_item_classes' ) ) {
 	/**
 	 * Function that add additional classes for menu items
 	 *
@@ -11,7 +11,7 @@ if ( ! function_exists( 'teenglow_nav_item_classes' ) ) {
 	 *
 	 * @return array
 	 */
-	function teenglow_nav_item_classes( $classes, $item, $args, $depth ) {
+	function barabi_nav_item_classes( $classes, $item, $args, $depth ) {
 
 		if ( 0 === $depth && in_array( 'menu-item-has-children', $item->classes, true ) ) {
 			$classes[] = 'qodef-menu-item--narrow';
@@ -20,10 +20,10 @@ if ( ! function_exists( 'teenglow_nav_item_classes' ) ) {
 		return $classes;
 	}
 
-	add_filter( 'nav_menu_css_class', 'teenglow_nav_item_classes', 10, 4 );
+	add_filter( 'nav_menu_css_class', 'barabi_nav_item_classes', 10, 4 );
 }
 
-if ( ! function_exists( 'teenglow_add_nav_item_icon' ) ) {
+if ( ! function_exists( 'barabi_add_nav_item_icon' ) ) {
 	/**
 	 * Function that add additional element after the menu title
 	 *
@@ -33,20 +33,20 @@ if ( ! function_exists( 'teenglow_add_nav_item_icon' ) ) {
 	 *
 	 * @return string
 	 */
-	function teenglow_add_nav_item_icon( $title, $item, $args ) {
+	function barabi_add_nav_item_icon( $title, $item, $args ) {
 		$is_mobile_menu = isset( $args->menu_area ) && 'mobile' === $args->menu_area;
 
 		if ( in_array( 'menu-item-has-children', $item->classes, true ) && ! $is_mobile_menu ) {
-			$title .= teenglow_get_svg_icon( 'menu-arrow', 'qodef-menu-item-arrow' );
+			$title .= barabi_get_svg_icon( 'menu-arrow', 'qodef-menu-item-arrow' );
 		}
 
 		return $title;
 	}
 
-	add_filter( 'nav_menu_item_title', 'teenglow_add_nav_item_icon', 10, 3 );
+	add_filter( 'nav_menu_item_title', 'barabi_add_nav_item_icon', 10, 3 );
 }
 
-if ( ! function_exists( 'teenglow_add_mobile_nav_item_icon' ) ) {
+if ( ! function_exists( 'barabi_add_mobile_nav_item_icon' ) ) {
 	/**
 	 * Function that add additional element after the mobile menu item title
 	 *
@@ -55,16 +55,16 @@ if ( ! function_exists( 'teenglow_add_mobile_nav_item_icon' ) ) {
 	 *
 	 * @return stdClass
 	 */
-	function teenglow_add_mobile_nav_item_icon( $args, $item ) {
+	function barabi_add_mobile_nav_item_icon( $args, $item ) {
 		$is_mobile_menu = isset( $args->menu_area ) && 'mobile' === $args->menu_area;
 
 		$args->after = '';
 		if ( in_array( 'menu-item-has-children', $item->classes, true ) && $is_mobile_menu ) {
-			$args->after = teenglow_get_svg_icon( 'menu-arrow', 'qodef-menu-item-arrow' );
+			$args->after = barabi_get_svg_icon( 'menu-arrow', 'qodef-menu-item-arrow' );
 		}
 
 		return $args;
 	}
 
-	add_filter( 'nav_menu_item_args', 'teenglow_add_mobile_nav_item_icon', 10, 2 );
+	add_filter( 'nav_menu_item_args', 'barabi_add_mobile_nav_item_icon', 10, 2 );
 }

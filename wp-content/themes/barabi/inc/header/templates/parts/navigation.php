@@ -1,5 +1,5 @@
 <?php if ( has_nav_menu( 'main-navigation' ) ) : ?>
-	<nav class="qodef-header-navigation qodef-header-navigation-initial" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'teenglow' ); ?>">
+	<nav class="qodef-header-navigation qodef-header-navigation-initial" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'barabi' ); ?>">
 		<?php
 		wp_nav_menu(
 			array(
