@@ -31,11 +31,10 @@
 						<?php
 						if ( function_exists( 'ini_get' ) && ini_get( 'max_input_vars' ) < 3000 ) {
 							esc_html_e( 'Please contact your hosting service and ask them to increase max_input_vars value to 3000 in order to meet the theme requirements. Then you will be able to save theme options.', 'qode-framework' );
-						} else {
-							?>
+						} 
+						?>
 							<input type="submit" class="qodef-btn qodef-btn-solid qodef-save-reset-button" name="qodef_save" value="<?php esc_attr_e( 'Save Changes', 'qode-framework' ); ?>"/>
 							<?php
-						}
 						?>
 					</div>
 					<div class="qodef-form-reset-holder">
