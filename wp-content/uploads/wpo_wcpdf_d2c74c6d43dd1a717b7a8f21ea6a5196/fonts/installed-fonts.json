@@ -1,0 +1,26 @@
+{
+    "open sans": {
+        "normal": "\/Users\/mantas\/Desktop\/barabi\/wp-content\/uploads\/wpo_wcpdf_d2c74c6d43dd1a717b7a8f21ea6a5196\/fonts\/OpenSans-Normal",
+        "bold": "\/Users\/mantas\/Desktop\/barabi\/wp-content\/uploads\/wpo_wcpdf_d2c74c6d43dd1a717b7a8f21ea6a5196\/fonts\/OpenSans-Bold",
+        "italic": "\/Users\/mantas\/Desktop\/barabi\/wp-content\/uploads\/wpo_wcpdf_d2c74c6d43dd1a717b7a8f21ea6a5196\/fonts\/OpenSans-Italic",
+        "bold_italic": "\/Users\/mantas\/Desktop\/barabi\/wp-content\/uploads\/wpo_wcpdf_d2c74c6d43dd1a717b7a8f21ea6a5196\/fonts\/OpenSans-BoldItalic"
+    },
+    "segoe": {
+        "normal": "\/Users\/mantas\/Desktop\/barabi\/wp-content\/uploads\/wpo_wcpdf_d2c74c6d43dd1a717b7a8f21ea6a5196\/fonts\/Segoe-Normal",
+        "bold": "\/Users\/mantas\/Desktop\/barabi\/wp-content\/uploads\/wpo_wcpdf_d2c74c6d43dd1a717b7a8f21ea6a5196\/fonts\/Segoe-Bold",
+        "italic": "\/Users\/mantas\/Desktop\/barabi\/wp-content\/uploads\/wpo_wcpdf_d2c74c6d43dd1a717b7a8f21ea6a5196\/fonts\/Segoe-Italic",
+        "bold_italic": "\/Users\/mantas\/Desktop\/barabi\/wp-content\/uploads\/wpo_wcpdf_d2c74c6d43dd1a717b7a8f21ea6a5196\/fonts\/Segoe-BoldItalic"
+    },
+    "roboto slab": {
+        "normal": "\/Users\/mantas\/Desktop\/barabi\/wp-content\/uploads\/wpo_wcpdf_d2c74c6d43dd1a717b7a8f21ea6a5196\/fonts\/RobotoSlab-Normal",
+        "bold": "\/Users\/mantas\/Desktop\/barabi\/wp-content\/uploads\/wpo_wcpdf_d2c74c6d43dd1a717b7a8f21ea6a5196\/fonts\/RobotoSlab-Bold",
+        "italic": "\/Users\/mantas\/Desktop\/barabi\/wp-content\/uploads\/wpo_wcpdf_d2c74c6d43dd1a717b7a8f21ea6a5196\/fonts\/RobotoSlab-Italic",
+        "bold_italic": "\/Users\/mantas\/Desktop\/barabi\/wp-content\/uploads\/wpo_wcpdf_d2c74c6d43dd1a717b7a8f21ea6a5196\/fonts\/RobotoSlab-BoldItalic"
+    },
+    "currencies": {
+        "normal": "\/Users\/mantas\/Desktop\/barabi\/wp-content\/uploads\/wpo_wcpdf_d2c74c6d43dd1a717b7a8f21ea6a5196\/fonts\/currencies",
+        "bold": "\/Users\/mantas\/Desktop\/barabi\/wp-content\/uploads\/wpo_wcpdf_d2c74c6d43dd1a717b7a8f21ea6a5196\/fonts\/currencies",
+        "italic": "\/Users\/mantas\/Desktop\/barabi\/wp-content\/uploads\/wpo_wcpdf_d2c74c6d43dd1a717b7a8f21ea6a5196\/fonts\/currencies",
+        "bold_italic": "\/Users\/mantas\/Desktop\/barabi\/wp-content\/uploads\/wpo_wcpdf_d2c74c6d43dd1a717b7a8f21ea6a5196\/fonts\/currencies"
+    }
+}
