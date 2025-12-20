@@ -9,6 +9,74 @@ Text Domain: barabi
 Template: barabi
 */
 
+/* Change mains colors */
+
+#qodef-woo-page.qodef--single .woocommerce-product-rating .woocommerce-review-link, #yith-quick-view-content.single-product .woocommerce-product-rating .woocommerce-review-link, #qodef-woo-page.qodef--single .product_meta .qodef-woo-meta-label, #yith-quick-view-content.single-product .product_meta .qodef-woo-meta-label,
+#qodef-woo-page.qodef--single .qodef-social-share .qodef-social-title, #yith-quick-view-content.single-product .qodef-social-share .qodef-social-title,
+.qodef-breadcrumbs *, [class*="barabi"] .select2-container--default .select2-selection--single .select2-selection__rendered,
+button[type="submit"] span, .qodef-theme-button span, .widget .wp-block-woocommerce-filter-wrapper .wp-block-woocommerce-attribute-filter ul li .wc-block-components-checkbox__label a, .widget .wp-block-woocommerce-filter-wrapper .wp-block-woocommerce-attribute-filter ul li .wc-block-components-checkbox__label span,
+.widget .tagcloud, .widget .wp-block-tag-cloud *, .widget .qodef-search-form-button.qodef--button-inside, #qodef-woo-page .qodef-woo-product-list.qodef-item-layout--info-below .qodef-e-content .added_to_cart, #qodef-woo-page .qodef-woo-product-list.qodef-item-layout--info-below .qodef-e-content .button, .widget .wp-block-woocommerce-filter-wrapper .wp-block-woocommerce-attribute-filter ul li .wc-block-components-checkbox__label,
+#qodef-woo-page .price del, .qodef-woo-shortcode .price del, #yith-quick-view-modal .price del,
+.widget_shopping_cart, .widget_barabi_core_woo_dropdown_cart, .qodef-blog .qodef-e-top-holder .entry-date, .qodef-e-info > *, .qodef-blog.qodef--list .qodef-author-label, blockquote > *, .wp-block-quote > *, .elementor-widget-heading .elementor-heading-title, #qodef-single-post-navigation .qodef-m-nav-label, #qodef-page-comments-list .qodef-comment-item .qodef-e-date a {
+    color: rgb(62, 91, 29) !important;
+}
+
+.qodef-svg--back-to-top circle {
+    fill: rgb(62, 91, 29) !important;
+}
+
+.widget a, .widget_shopping_cart .qodef-m-order-details strong, .widget_shopping_cart .woocommerce-mini-cart__total strong, .widget_barabi_core_woo_dropdown_cart .qodef-m-order-details strong, .widget_barabi_core_woo_dropdown_cart .woocommerce-mini-cart__total strong {
+    color: rgb(62, 91, 29) !important;
+}
+
+.widget_shopping_cart .qodef-m-action a, .widget_shopping_cart .woocommerce-mini-cart__buttons a, .widget_barabi_core_woo_dropdown_cart .qodef-m-action a, .widget_barabi_core_woo_dropdown_cart .woocommerce-mini-cart__buttons a {
+    background-color: rgb(62, 91, 29) !important;
+    color: white !important;
+}
+
+.wc-block-product-categories-list-item__name {
+    color: white !important;
+}
+
+.wc-block-components-button:not(.is-link),
+.tinv-wishlist .product-action .button{
+    background-color: rgb(62, 91, 29) !important;
+    color: white !important;
+    border-radius: 12px;
+}
 
 
+/* Single page color */
+#qodef-woo-page .qodef-quantity-buttons, #yith-quick-view-modal .qodef-quantity-buttons {
+    height: 40px;
+    margin-right: 30px !important;
+    background-color: #F0F77C !important;
+    color: rgb(62, 91, 29) !important;
+}
 
+.single-product .cart {
+    position: relative;
+}
+
+.single-product .tinv-wraper {
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+
+.single-product .tinvwl_add_to_wishlist_button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+#qodef-page-footer *, .qodef-page-bottom-text-holder {
+    background-color: #435c23 !important;
+}
+
+/* icons style menu */
+
+.qodef-extra-header-icons {
+    display: flex;
+    align-items: center;
+}

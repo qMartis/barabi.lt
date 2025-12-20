@@ -1,91 +1,58 @@
 <?php
 
-if ( ! function_exists( 'barabi_child_theme_enqueue_scripts' ) ) {
-	/**
-	 * Function that enqueue theme's child style
-	 */
-	function barabi_child_theme_enqueue_scripts() {
-		$main_style = 'barabi-main';
+if (!function_exists('barabi_child_theme_enqueue_scripts')) {
+    /**
+     * Function that enqueue theme's child style
+     */
+    function barabi_child_theme_enqueue_scripts()
+    {
+        $main_style = 'barabi-main';
 
-		wp_enqueue_style( 'barabi-child-style', get_stylesheet_directory_uri() . '/style.css', array( $main_style ) );
-	}
+        wp_enqueue_style('barabi-child-style', get_stylesheet_directory_uri() . '/style.css', array($main_style));
+    }
 
-	add_action( 'wp_enqueue_scripts', 'barabi_child_theme_enqueue_scripts' );
+    add_action('wp_enqueue_scripts', 'barabi_child_theme_enqueue_scripts');
 }
 
-// Barabi woo images watermark logic add
+// Add extra logic icons to header
 
-add_filter('wp_generate_attachment_metadata', 'watermark_only_for_products', 10, 2);
+add_action('wp_footer', function () {
+    ?>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
 
-function watermark_only_for_products($metadata, $attachment_id) {
-    $is_product = false;
+            const holders = document.querySelectorAll(
+                '.qodef-widget-holder.qodef--one'
+            );
 
-    if (isset($_REQUEST['post_id']) && get_post_type($_REQUEST['post_id']) === 'product') {
-        $is_product = true;
-    } 
-    elseif (isset($_SERVER['HTTP_REFERER']) && strpos($_SERVER['HTTP_REFERER'], 'post_type=product') !== false) {
-        $is_product = true;
-    }
-    elseif (get_post_type(get_post($attachment_id)->post_parent) === 'product') {
-        $is_product = true;
-    }
+            if (!holders.length) return;
 
-    if (!$is_product) return $metadata;
+            holders.forEach(function (holder) {
 
-    $upload_dir = wp_get_upload_dir();
-    $watermark_path = $upload_dir['basedir'] . '/watermark.png';
+                if (holder.querySelector('.qodef-extra-header-icons')) return;
 
-    if (!file_exists($watermark_path)) return $metadata;
+                const wrap = document.createElement('div');
+                wrap.className = 'qodef-extra-header-icons';
 
-    $base_file = $upload_dir['basedir'] . '/' . $metadata['file'];
-    $files = [$base_file];
-    $dir = dirname($base_file) . '/';
+                wrap.innerHTML = `
+				<a href="<?php echo esc_url(home_url('/logins/')); ?>" class="qodef-m-opener" style="padding-top: 4px">
+					<span class="qodef-m-opener-icon" style="margin: 8px 16px 0 0">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5.85 17.1C6.7 16.45 7.65 15.9375 8.7 15.5625C9.75 15.1875 10.85 15 12 15C13.15 15 14.25 15.1875 15.3 15.5625C16.35 15.9375 17.3 16.45 18.15 17.1C18.7333 16.4167 19.1875 15.6417 19.5125 14.775C19.8375 13.9083 20 12.9833 20 12C20 9.78333 19.2208 7.89583 17.6625 6.3375C16.1042 4.77917 14.2167 4 12 4C9.78333 4 7.89583 4.77917 6.3375 6.3375C4.77917 7.89583 4 9.78333 4 12C4 12.9833 4.1625 13.9083 4.4875 14.775C4.8125 15.6417 5.26667 16.4167 5.85 17.1ZM12 13C11.0167 13 10.1875 12.6625 9.5125 11.9875C8.8375 11.3125 8.5 10.4833 8.5 9.5C8.5 8.51667 8.8375 7.6875 9.5125 7.0125C10.1875 6.3375 11.0167 6 12 6C12.9833 6 13.8125 6.3375 14.4875 7.0125C15.1625 7.6875 15.5 8.51667 15.5 9.5C15.5 10.4833 15.1625 11.3125 14.4875 11.9875C13.8125 12.6625 12.9833 13 12 13ZM12 22C10.6167 22 9.31667 21.7375 8.1 21.2125C6.88333 20.6875 5.825 19.975 4.925 19.075C4.025 18.175 3.3125 17.1167 2.7875 15.9C2.2625 14.6833 2 13.3833 2 12C2 10.6167 2.2625 9.31667 2.7875 8.1C3.3125 6.88333 4.025 5.825 4.925 4.925C5.825 4.025 6.88333 3.3125 8.1 2.7875C9.31667 2.2625 10.6167 2 12 2C13.3833 2 14.6833 2.2625 15.9 2.7875C17.1167 3.3125 18.175 4.025 19.075 4.925C19.975 5.825 20.6875 6.88333 21.2125 8.1C21.7375 9.31667 22 10.6167 22 12C22 13.3833 21.7375 14.6833 21.2125 15.9C20.6875 17.1167 19.975 18.175 19.075 19.075C18.175 19.975 17.1167 20.6875 15.9 21.2125C14.6833 21.7375 13.3833 22 12 22Z" fill="#557C23"/>
+</svg>
+					</span>
+				</a>
+				<a href="<?php echo esc_url(home_url('/whistlist/')); ?>" class="qodef-m-opener" style="padding-top: 8px">
+					<span class="qodef-m-opener-icon" style="margin: 8px 12px 0 0">
+						<?php echo barabi_core_get_svg_icon('heart'); ?>
+					</span>
+				</a>
+			`;
 
-    if (!empty($metadata['sizes'])) {
-        foreach ($metadata['sizes'] as $size) {
-            $files[] = $dir . $size['file'];
-        }
-    }
+                holder.prepend(wrap);
+            });
+        });
+    </script>
+    <?php
+});
 
-    foreach ($files as $file_path) {
-        if (!file_exists($file_path)) continue;
-
-        $info = getimagesize($file_path);
-        if (!$info) continue;
-
-        $mime = $info['mime'];
-        $img = null;
-
-        if ($mime == 'image/jpeg') $img = imagecreatefromjpeg($file_path);
-        elseif ($mime == 'image/png') $img = imagecreatefrompng($file_path);
-        elseif ($mime == 'image/webp') $img = imagecreatefromwebp($file_path);
-
-        if (!$img) continue;
-
-        $watermark = imagecreatefrompng($watermark_path);
-        imagealphablending($watermark, false);
-        imagesavealpha($watermark, true);
-
-        $img_w = imagesx($img);
-        $img_h = imagesy($img);
-        $wm_w = imagesx($watermark);
-        $wm_h = imagesy($watermark);
-
-        $pos_x = $img_w - $wm_w - 20;
-        $pos_y = $img_h - $wm_h - 20;
-
-        if ($pos_x > 0 && $pos_y > 0) {
-            imagealphablending($img, true);
-            imagecopy($img, $watermark, $pos_x, $pos_y, 0, 0, $wm_w, $wm_h);
-
-            if ($mime == 'image/jpeg') imagejpeg($img, $file_path, 90);
-            elseif ($mime == 'image/png') imagepng($img, $file_path);
-            elseif ($mime == 'image/webp') imagewebp($img, $file_path, 85);
-        }
-
-        imagedestroy($img);
-        imagedestroy($watermark);
-    }
-
-    return $metadata;
-}

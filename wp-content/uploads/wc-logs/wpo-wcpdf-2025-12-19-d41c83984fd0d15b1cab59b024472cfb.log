@@ -1,0 +1,3 @@
+2025-12-19T14:03:39+00:00 INFO Template setting migrated from /Users/mantas/Desktop/barabi/wp-content/plugins/woocommerce-pdf-invoices-packing-slips/templates/Simple to default/Simple
+2025-12-19T14:03:43+00:00 CRITICAL WPO\IPS\Documents\SequentialNumberStore::init: Table 'wp_barabijp_db.wp_wcpdf_invoice_number' doesn't exist
+2025-12-19T14:03:43+00:00 CRITICAL WPO\IPS\Documents\SequentialNumberStore::get_next: Table 'wp_barabijp_db.wp_wcpdf_invoice_number' doesn't exist

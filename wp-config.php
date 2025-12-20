@@ -21,13 +21,13 @@
 
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'barabi_new' );
+define( 'DB_NAME', 'wp_barabijp_db' );
 
 /** Database username */
-define( 'DB_USER', 'root' );
+define( 'DB_USER', 'wp_barabijp_user' );
 
 /** Database password */
-define( 'DB_PASSWORD', 'root' );
+define( 'DB_PASSWORD', 'wp_barabijp_pw' );
 
 /** Database hostname */
 define( 'DB_HOST', 'localhost' );
@@ -73,8 +73,7 @@ $table_prefix = 'wp_';
 
 /* Add any custom values between this line and the "stop editing" line. */
 
-// Force direct filesystem method instead of FTP
-define( 'FS_METHOD', 'direct' );
+
 
 /**
  * For developers: WordPress debugging mode.
