@@ -32,7 +32,7 @@
 						'layout'              => 'line',
 						'title'               => esc_attr( $item ) . esc_attr__( ' stars', 'barabi-core' ),
 						'number'              => esc_attr( $percentage ),
-						'active_line_color'   => '#0000B4',
+						'active_line_color'   => '#435c23',
 						'inactive_line_color' => '#F5F4F4',
 						'active_line_width'   => 6,
 						'inactive_line_width' => 6,

@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
 
     const input = document.querySelector('.eng-input');
     const overlay = document.querySelector('.eng-text-overlay');
@@ -8,27 +8,68 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (!input || !overlay || !form) return;
 
-    /* TEXT PREVIEW */
-    input.addEventListener('input', function () {
-        overlay.textContent = input.value.substring(0, 20);
+    /* ---------- STATE ---------- */
+    const state = {
+        text: '',
+        font: null,
+        size: null
+    };
+
+    /* ---------- HELPERS ---------- */
+    const getCheckedValue = name => {
+        const el = document.querySelector(`input[name="${name}"]:checked`);
+        return el ? el.value : null;
+    };
+
+    const updatePreview = () => {
+
+        /* text */
+        overlay.textContent = state.text.substring(0, 20);
+
+        /* font */
+        overlay.classList.forEach(cls => {
+            if (cls.startsWith('font-')) overlay.classList.remove(cls);
+        });
+        if (state.font) {
+            overlay.classList.add(`font-${state.font}`);
+        }
+
+        /* size */
+        overlay.classList.toggle('big', state.size === 'big');
+    };
+
+    /* ---------- EVENTS ---------- */
+
+    // TEXT
+    input.addEventListener('input', () => {
+        state.text = input.value;
+        updatePreview();
     });
 
-    /* FONT PREVIEW */
+    // FONT
     fontRadios.forEach(radio => {
-        radio.addEventListener('change', function () {
-            overlay.className = 'eng-text-overlay font-' + this.value;
+        radio.addEventListener('change', () => {
+            state.font = radio.value;
+            updatePreview();
         });
     });
 
-    /* SIZE PREVIEW */
+    // SIZE
     sizeRadios.forEach(radio => {
-        radio.addEventListener('change', function () {
-            overlay.classList.toggle('big', this.value === 'big');
+        radio.addEventListener('change', () => {
+            state.size = radio.value;
+            updatePreview();
         });
     });
 
-    /* COPY DATA INTO CART FORM BEFORE SUBMIT */
-    form.addEventListener('submit', function () {
+    /* ---------- INIT (in case something is preselected) ---------- */
+    state.text = input.value || '';
+    state.font = getCheckedValue('engraving_font');
+    state.size = getCheckedValue('engraving_size');
+    updatePreview();
+
+    /* ---------- COPY DATA TO CART ---------- */
+    form.addEventListener('submit', () => {
 
         const fields = [
             'engraving_text',
@@ -38,17 +79,17 @@ document.addEventListener('DOMContentLoaded', function () {
         ];
 
         fields.forEach(name => {
-            let source;
 
+            let source;
             if (name === 'engraving_font' || name === 'engraving_size') {
-                source = document.querySelector('[name="' + name + '"]:checked');
+                source = document.querySelector(`input[name="${name}"]:checked`);
             } else {
-                source = document.querySelector('[name="' + name + '"]');
+                source = document.querySelector(`[name="${name}"]`);
             }
 
             if (!source || !source.value) return;
 
-            let target = form.querySelector('[name="' + name + '"]');
+            let target = form.querySelector(`[name="${name}"]`);
             if (!target) {
                 target = document.createElement('input');
                 target.type = 'hidden';

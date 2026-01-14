@@ -289,3 +289,101 @@ if ( ! class_exists( 'Barabi_Handler' ) ) {
 
 	Barabi_Handler::get_instance();
 }
+
+
+
+/**
+ * Remove unnecessary admin menu items for Shop Manager role.
+ *
+ * This function hides admin menus that Shop Managers should not access,
+ * while keeping full access for Administrators.
+ */
+function restrictShopManagerAdminMenu(): void
+{
+    if (!current_user_can('shop_manager') || current_user_can('administrator')) {
+        return;
+    }
+
+    // Core
+    remove_menu_page('index.php');                  // Dashboard
+    remove_menu_page('themes.php');                 // Appearance
+    remove_menu_page('plugins.php');                // Plugins
+    remove_menu_page('options-general.php');        // Settings
+    remove_menu_page('users.php');                  // Users
+
+    // Common plugins (safe to remove if installed)
+    remove_menu_page('elementor');
+    remove_menu_page('edit.php?post_type=elementor_library');
+    remove_menu_page('paysera');
+    remove_menu_page('wp_migration');
+    remove_menu_page('visody');
+    remove_menu_page('facebook-feed');
+    remove_menu_page('revslider');
+    remove_menu_page('qi_addons_for_elementor');
+    remove_menu_page('edit.php?post_type=qi_blocks');
+    remove_menu_page('sb-instagram-feed');
+
+    // WooCommerce extras (optional)
+    remove_submenu_page('woocommerce', 'wc-settings');
+    remove_submenu_page('woocommerce', 'wc-status');
+    remove_submenu_page('woocommerce', 'wc-addons');
+	  remove_menu_page('qi_addons_for_elementor_welcome');
+    remove_menu_page('qi_blocks_setup_wizard');
+	 remove_menu_page('ai1wm_export');
+}
+
+add_action('admin_menu', 'restrictShopManagerAdminMenu', 999);
+
+
+
+/**
+ * Remove all dashboard widgets for Shop Manager role.
+ */
+function removeDashboardForShopManager(): void
+{
+    if (!isUserShopManager()) {
+        return;
+    }
+
+    removeAllDashboardWidgets();
+}
+
+/**
+ * Determine if the current user is a Shop Manager.
+ */
+function isUserShopManager(): bool
+{
+    if (!is_user_logged_in()) {
+        return false;
+    }
+
+    $user = wp_get_current_user();
+
+    return in_array('shop_manager', (array) $user->roles, true);
+}
+
+/**
+ * Remove all default and plugin dashboard widgets.
+ */
+function removeAllDashboardWidgets(): void
+{
+    global $wp_meta_boxes;
+
+    if (!is_array($wp_meta_boxes)) {
+        return;
+    }
+
+    $wp_meta_boxes['dashboard'] = [];
+}
+
+add_action('wp_dashboard_setup', 'removeDashboardForShopManager', 999);
+
+
+function removeSliderRevolutionFromProductsEverywhere(): void
+{
+    remove_meta_box('slider_revolution_metabox', 'product', 'normal');
+    remove_meta_box('slider_revolution_metabox', 'product', 'advanced');
+    remove_meta_box('slider_revolution_metabox', 'product', 'side');
+}
+
+add_action('add_meta_boxes', 'removeSliderRevolutionFromProductsEverywhere', 100);

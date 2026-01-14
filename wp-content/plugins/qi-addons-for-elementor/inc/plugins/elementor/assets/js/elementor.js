@@ -115,7 +115,7 @@
 											'qi-addons-for-elementor'
 										),
 										title,
-										'<a class="qodef-dialog-box-link" target="_blank" href="https://qodeinteractive.com/products/plugins/">',
+										'<a class="qodef-dialog-box-link" target="_blank" href="https://barabi.jp/products/plugins/">',
 										'</a>'
 									);
 								}

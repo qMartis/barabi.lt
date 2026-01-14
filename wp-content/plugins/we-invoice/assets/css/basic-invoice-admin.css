@@ -1,0 +1,261 @@
+/**
+ * Basic Invoice Admin Styles
+ */
+
+.we-invoice-actions {
+    margin-top: 15px;
+    padding: 15px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.we-invoice-actions h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #23282d;
+    font-size: 14px;
+}
+
+.we-invoice-actions .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.we-invoice-actions .button {
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.we-invoice-actions .invoice-info {
+    margin-bottom: 15px;
+}
+
+.we-invoice-actions .invoice-info p {
+    margin: 5px 0;
+    font-size: 13px;
+}
+
+.invoice-status {
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.invoice-status-generated {
+    background: #e1f5fe;
+    color: #0277bd;
+}
+
+.invoice-status-sent {
+    background: #e8f5e8;
+    color: #2e7d32;
+}
+
+.invoice-status-failed {
+    background: #ffebee;
+    color: #c62828;
+}
+
+.invoice-status-pending {
+    background: #fff3e0;
+    color: #f57c00;
+}
+
+.invoice-status-paid {
+    background: #e8f5e8;
+    color: #2e7d32;
+    font-weight: bold;
+}
+
+/* Meta box styles */
+.we-invoice-meta-box {
+    padding: 0;
+}
+
+.we-invoice-meta-box .invoice-details table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+.we-invoice-meta-box .invoice-details td {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+    font-size: 13px;
+}
+
+.we-invoice-meta-box .invoice-details td:first-child {
+    font-weight: 600;
+    width: 40%;
+    color: #555;
+}
+
+.we-invoice-meta-box .invoice-actions {
+    margin-top: 15px;
+}
+
+.we-invoice-meta-box .button {
+    margin-bottom: 5px;
+}
+
+.we-invoice-meta-box .button .dashicons {
+    margin-right: 5px;
+}
+
+.we-invoice-meta-box .no-invoice {
+    text-align: center;
+    padding: 20px;
+}
+
+.we-invoice-meta-box .no-invoice p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* Admin notices */
+.notice.we-invoice-notice {
+    margin: 15px 0;
+    padding: 10px 15px;
+    border-left: 4px solid;
+    background: #fff;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+}
+
+.notice.we-invoice-notice.notice-success {
+    border-left-color: #46b450;
+}
+
+.notice.we-invoice-notice.notice-error {
+    border-left-color: #dc3232;
+}
+
+.notice.we-invoice-notice p {
+    margin: 0;
+    font-size: 13px;
+}
+
+/* Button loading states */
+.button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Basic invoice specific styles */
+.basic-invoice-badge {
+    background: #2196f3;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.paid-indicator {
+    background: #4caf50;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 782px) {
+    .we-invoice-actions .button {
+        width: 100%;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    
+    .we-invoice-actions .invoice-actions {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* Order list page styles */
+.wp-list-table .column-invoice_status {
+    width: 120px;
+}
+
+.wp-list-table .invoice-actions {
+    white-space: nowrap;
+}
+
+.wp-list-table .invoice-actions .button {
+    padding: 2px 8px;
+    font-size: 11px;
+    height: auto;
+    line-height: 1.4;
+}
+
+/* Settings page styles */
+.we-invoice-settings-section {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.we-invoice-settings-section h3 {
+    margin-top: 0;
+    color: #23282d;
+}
+
+.we-invoice-settings-section .form-table {
+    margin-bottom: 0;
+}
+
+.we-invoice-settings-section .form-table th {
+    width: 200px;
+    padding-left: 0;
+}
+
+/* Company info in invoices */
+.company-info-preview {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.company-info-preview h4 {
+    margin-top: 0;
+    color: #23282d;
+}
+
+/* Invoice template preview */
+.invoice-template-preview {
+    max-width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.invoice-template-preview iframe {
+    width: 100%;
+    height: 500px;
+    border: none;
+}
+
+/* Basic invoice highlight */
+.basic-invoice-section {
+    border-left: 4px solid #2196f3;
+}
+
+.basic-invoice-section h4 {
+    color: #1976d2;
+}

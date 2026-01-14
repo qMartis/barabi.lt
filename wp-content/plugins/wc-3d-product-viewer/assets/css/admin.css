@@ -1,0 +1,91 @@
+/* WooCommerce 3D Viewer - Admin Styles */
+
+.wc-3d-model-field {
+    padding: 12px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 12px;
+}
+
+.wc-3d-model-field label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.wc-3d-model-field .description {
+    display: block;
+    color: #666;
+    font-size: 12px;
+    font-style: italic;
+    margin-bottom: 12px;
+}
+
+.wc-3d-model-upload-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.wc-3d-model-preview {
+    min-height: 40px;
+}
+
+.wc-3d-model-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.wc-3d-model-info .dashicons {
+    color: #2271b1;
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+}
+
+.wc-3d-model-info .model-filename {
+    font-family: monospace;
+    font-size: 13px;
+    color: #333;
+}
+
+.wc-3d-model-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.wc-3d-model-actions .button {
+    flex: 0 0 auto;
+}
+
+.wc-3d-upload-btn {
+    background: #2271b1;
+    border-color: #2271b1;
+    color: #fff;
+}
+
+.wc-3d-upload-btn:hover,
+.wc-3d-upload-btn:focus {
+    background: #135e96;
+    border-color: #135e96;
+    color: #fff;
+}
+
+.wc-3d-remove-btn {
+    background: #dc3232;
+    border-color: #dc3232;
+    color: #fff;
+}
+
+.wc-3d-remove-btn:hover,
+.wc-3d-remove-btn:focus {
+    background: #c92c2c;
+    border-color: #c92c2c;
+    color: #fff;
+}

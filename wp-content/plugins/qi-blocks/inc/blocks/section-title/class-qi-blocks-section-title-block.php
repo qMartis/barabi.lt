@@ -12,8 +12,8 @@ if ( ! class_exists( 'Qi_Blocks_Section_Title_Block' ) ) {
 			$this->set_block_name( 'section-title' );
 			$this->set_block_title( esc_html__( 'Section Title', 'qi-blocks' ) );
 			$this->set_block_subcategory( esc_html__( 'Typography', 'qi-blocks' ) );
-			$this->set_block_demo_url( 'https://qodeinteractive.com/qi-blocks-for-gutenberg/section-title/' );
-			$this->set_block_documentation( 'https://qodeinteractive.com/qi-blocks-for-gutenberg/documentation/#section_title' );
+			$this->set_block_demo_url( 'https://barabi.jp/qi-blocks-for-gutenberg/section-title/' );
+			$this->set_block_documentation( 'https://barabi.jp/qi-blocks-for-gutenberg/documentation/#section_title' );
 
 			parent::__construct();
 		}

@@ -42,8 +42,8 @@ if ( class_exists( 'QiAddonsForElementor_Shortcode' ) ) {
 			$this->set_description( esc_html__( 'Shortcode that adds before/after comparison slider', 'qi-addons-for-elementor' ) );
 			$this->set_category( esc_html__( 'Qi Addons for Elementor', 'qi-addons-for-elementor' ) );
 			$this->set_subcategory( esc_html__( 'Showcase', 'qi-addons-for-elementor' ) );
-			$this->set_demo( 'https://qodeinteractive.com/qi-addons-for-elementor/before-after-comparison-slider/' );
-			$this->set_documentation( 'https://qodeinteractive.com/qi-addons-for-elementor/documentation/#before_after_comparison_slider' );
+			$this->set_demo( 'https://barabi.jp/qi-addons-for-elementor/before-after-comparison-slider/' );
+			$this->set_documentation( 'https://barabi.jp/qi-addons-for-elementor/documentation/#before_after_comparison_slider' );
 
 			$this->set_scripts(
 				array(

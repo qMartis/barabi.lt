@@ -42,8 +42,8 @@ if ( class_exists( 'QiAddonsForElementor_List_Shortcode' ) ) {
 			$this->set_description( esc_html__( 'Shortcode that adds pinterest image gallery element', 'qi-addons-for-elementor' ) );
 			$this->set_category( esc_html__( 'Qi Addons for Elementor', 'qi-addons-for-elementor' ) );
 			$this->set_subcategory( esc_html__( 'Showcase', 'qi-addons-for-elementor' ) );
-			$this->set_demo( 'https://qodeinteractive.com/qi-addons-for-elementor/pinterest-image-gallery/' );
-			$this->set_documentation( 'https://qodeinteractive.com/qi-addons-for-elementor/documentation/#pinterest_image_gallery' );
+			$this->set_demo( 'https://barabi.jp/qi-addons-for-elementor/pinterest-image-gallery/' );
+			$this->set_documentation( 'https://barabi.jp/qi-addons-for-elementor/documentation/#pinterest_image_gallery' );
 			$this->set_scripts(
 				apply_filters(
 					'qi_addons_for_elementor_filter_image_gallery_pinterest_register_scripts',

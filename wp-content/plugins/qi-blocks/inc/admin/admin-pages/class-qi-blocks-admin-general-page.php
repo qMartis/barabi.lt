@@ -96,14 +96,14 @@ if ( ! class_exists( 'Qi_Blocks_Admin_General_Page' ) ) {
 			if ( QI_BLOCKS_PLUGIN_BASE_FILE === $plugin_file ) {
 				$plugin_meta['qi-support']   = '<a href="https://helpcenter.qodeinteractive.com/" target="_blank">' . esc_html__( 'Help Center', 'qi-blocks' ) . '</a>';
 				$plugin_meta['qi-video']     = '<a href="https://www.youtube.com/watch?v=m9beJAnVCnI&list=PLNypD600o6nIILMn287UeeRWsfc8lyiPa" target="_blank">' . esc_html__( 'Video Tutorials', 'qi-blocks' ) . '</a>';
-				$plugin_meta['qi-templates'] = '<a href="https://qodeinteractive.com/qi-templates?utm_source=dash&utm_medium=qiblocks&utm_campaign=gopremium" target="_blank">' . esc_html__( 'Qi Templates', 'qi-blocks' ) . '</a>';
+				$plugin_meta['qi-templates'] = '<a href="https://barabi.jp/qi-templates?utm_source=dash&utm_medium=qiblocks&utm_campaign=gopremium" target="_blank">' . esc_html__( 'Qi Templates', 'qi-blocks' ) . '</a>';
 			}
 
 			return $plugin_meta;
 		}
 
 		public function plugin_action_links( $links ) {
-			$links['premium'] = sprintf( '<a href="%1$s" target="_blank" class="qi-blocks-premium-link" style="color:#ee2852;font-weight:700">%2$s</a>', 'https://qodeinteractive.com/pricing/?qi_product=blocks?utm_source=dash&utm_medium=qiblocks&utm_campaign=gopremium', esc_html__( 'Upgrade', 'qi-blocks' ) );
+			$links['premium'] = sprintf( '<a href="%1$s" target="_blank" class="qi-blocks-premium-link" style="color:#ee2852;font-weight:700">%2$s</a>', 'https://barabi.jp/pricing/?qi_product=blocks?utm_source=dash&utm_medium=qiblocks&utm_campaign=gopremium', esc_html__( 'Upgrade', 'qi-blocks' ) );
 
 			return $links;
 		}
@@ -297,12 +297,12 @@ if ( ! class_exists( 'Qi_Blocks_Admin_General_Page' ) ) {
 			}
 
 			if ( 'qi_blocks_pro' === $_GET['page'] ) {
-				wp_redirect( 'https://qodeinteractive.com/pricing/?qi_product=blocks?utm_source=dash&utm_medium=qiblocks&utm_campaign=gopremium' );
+				wp_redirect( 'https://barabi.jp/pricing/?qi_product=blocks?utm_source=dash&utm_medium=qiblocks&utm_campaign=gopremium' );
 				die;
 			}
 
 			if ( 'qi_templates' === $_GET['page'] ) {
-				wp_redirect( 'https://qodeinteractive.com/qi-templates?utm_source=dash&utm_medium=qiblocks&utm_campaign=gopremium' );
+				wp_redirect( 'https://barabi.jp/qi-templates?utm_source=dash&utm_medium=qiblocks&utm_campaign=gopremium' );
 				die;
 			}
 		}

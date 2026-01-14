@@ -12,8 +12,8 @@ if ( ! class_exists( 'Qi_Blocks_Testimonials_List_Block' ) ) {
 			$this->set_block_name( 'testimonials-list' );
 			$this->set_block_title( esc_html__( 'Testimonials', 'qi-blocks' ) );
 			$this->set_block_subcategory( esc_html__( 'Business', 'qi-blocks' ) );
-			$this->set_block_demo_url( 'https://qodeinteractive.com/qi-blocks-for-gutenberg/testimonials/' );
-			$this->set_block_documentation( 'https://qodeinteractive.com/qi-blocks-for-gutenberg/documentation/#testimonials' );
+			$this->set_block_demo_url( 'https://barabi.jp/qi-blocks-for-gutenberg/testimonials/' );
+			$this->set_block_documentation( 'https://barabi.jp/qi-blocks-for-gutenberg/documentation/#testimonials' );
 
 			parent::__construct();
 		}

@@ -32,8 +32,8 @@ if ( class_exists( 'QiAddonsForElementor_Shortcode' ) ) {
 			$this->set_description( esc_html__( 'Shortcode that displays contact form 7 with provided parameters', 'qi-addons-for-elementor' ) );
 			$this->set_category( esc_html__( 'Qi Addons for Elementor', 'qi-addons-for-elementor' ) );
 			$this->set_subcategory( esc_html__( 'Form Style', 'qi-addons-for-elementor' ) );
-			$this->set_demo( 'https://qodeinteractive.com/qi-addons-for-elementor/contact-form-7/' );
-			$this->set_documentation( 'https://qodeinteractive.com/qi-addons-for-elementor/documentation/#7_contact_form_7' );
+			$this->set_demo( 'https://barabi.jp/qi-addons-for-elementor/contact-form-7/' );
+			$this->set_documentation( 'https://barabi.jp/qi-addons-for-elementor/documentation/#7_contact_form_7' );
 			$this->set_video( 'https://www.youtube.com/watch?v=mjWBuQeXfr8' );
 			$this->set_option(
 				array(

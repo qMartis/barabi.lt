@@ -380,7 +380,7 @@ if ( ! function_exists( 'barabi_core_woo_get_progress_bar' ) ) {
 						'number'              => intval( ( $cart_subtotal / $free_shipping_amount ) * 100 ),
 						'title'               => '',
 						'active_line_width'   => 10,
-						'active_line_color'   => '#0000b4',
+						'active_line_color'   => '#435c23',
 						'inactive_line_width' => 10,
 						'inactive_line_color' => '#e6e6e6',
 					);

@@ -5,6 +5,8 @@ if ( ! function_exists( 'barabi_core_add_product_single_meta_box' ) ) {
 	 * Function that add general options for this module
 	 */
 	function barabi_core_add_product_single_meta_box() {
+
+		return;
 		$qode_framework = qode_framework_get_framework_root();
 
 		$page = $qode_framework->add_options_page(

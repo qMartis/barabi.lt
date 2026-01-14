@@ -47,8 +47,8 @@ if ( class_exists( 'QiAddonsForElementor_Shortcode' ) ) {
 			$this->set_description( esc_html__( 'Shortcode that adds icon with text element', 'qi-addons-for-elementor' ) );
 			$this->set_category( esc_html__( 'Qi Addons for Elementor', 'qi-addons-for-elementor' ) );
 			$this->set_subcategory( esc_html__( 'Typography', 'qi-addons-for-elementor' ) );
-			$this->set_demo( 'https://qodeinteractive.com/qi-addons-for-elementor/icon-with-text/' );
-			$this->set_documentation( 'https://qodeinteractive.com/qi-addons-for-elementor/documentation/#icon_with_text' );
+			$this->set_demo( 'https://barabi.jp/qi-addons-for-elementor/icon-with-text/' );
+			$this->set_documentation( 'https://barabi.jp/qi-addons-for-elementor/documentation/#icon_with_text' );
 			$this->set_video( 'https://www.youtube.com/watch?v=CJGx8d_MPgI' );
 			$this->set_necessary_styles( qi_addons_for_elementor_icon_necessary_styles() );
 

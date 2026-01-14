@@ -1,4 +1,4 @@
-# Copyright (C) 2025 Qode Interactive
+# Copyright (C) 2025 Barabi
 # This file is distributed under the same license as the Qi Addons for Elementor plugin.
 msgid ""
 msgstr ""
@@ -84,11 +84,11 @@ msgid "Qi Addons for Elementor"
 msgstr ""
 
 #. Plugin URI of the plugin
-msgid "https://qodeinteractive.com/qi-addons-for-elementor/"
+msgid "https://barabi.jp/qi-addons-for-elementor/"
 msgstr ""
 
 #. Description of the plugin
-msgid "Qi Addons for Elementor is a comprehensive library of 60 custom, flexible & easily styled widgets for Elementor developed by Qode Interactive."
+msgid "Qi Addons for Elementor is a comprehensive library of 60 custom, flexible & easily styled widgets for Elementor developed by Barabi."
 msgstr ""
 
 #. Author of the plugin
@@ -98,11 +98,11 @@ msgstr ""
 #: inc/admin/inc/admin-pages/templates/parts/sidebar/market.php:18
 #: inc/admin/inc/dashboard-widgets/templates/widget.php:12
 #: inc/admin/inc/dashboard-widgets/templates/widget.php:13
-msgid "Qode Interactive"
+msgid "Barabi"
 msgstr ""
 
 #. Author URI of the plugin
-msgid "https://qodeinteractive.com/"
+msgid "https://barabi.jp/"
 msgstr ""
 
 #: class-qiaddonsforelementor.php:287
@@ -958,11 +958,11 @@ msgid "Take advantage of the practical on-demand widget loading feature & make y
 msgstr ""
 
 #: inc/admin/inc/admin-pages/templates/footer.php:10
-msgid "Qode Interactive Logo"
+msgid "Barabi Logo"
 msgstr ""
 
 #: inc/admin/inc/admin-pages/templates/footer.php:14
-msgid "Copyright &copy; 2021 Qode Interactive, All rights reserved"
+msgid "Copyright &copy; 2021 Barabi, All rights reserved"
 msgstr ""
 
 #: inc/admin/inc/admin-pages/templates/header.php:9
@@ -971,7 +971,7 @@ msgstr ""
 
 #: inc/admin/inc/admin-pages/templates/header.php:16
 #: inc/admin/inc/admin-pages/templates/parts/sidebar/widgets.php:11
-msgid "Admin Qode Interactive image"
+msgid "Admin Barabi image"
 msgstr ""
 
 #: inc/admin/inc/admin-pages/templates/parts/all-qode-products.php:10
@@ -983,7 +983,7 @@ msgid "view all"
 msgstr ""
 
 #: inc/admin/inc/admin-pages/templates/parts/footer-text.php:8
-msgid "Copyright © 2024 Qode Interactive, All rights reserved"
+msgid "Copyright © 2024 Barabi, All rights reserved"
 msgstr ""
 
 #: inc/admin/inc/admin-pages/templates/parts/free-demos.php:13
@@ -1154,7 +1154,7 @@ msgid "Discover more about each widget from our exhaustive widget-specific tutor
 msgstr ""
 
 #: inc/admin/inc/dashboard-widgets/class-qiaddonsforelementor-dashboard-widgets.php:41
-msgid "Qode Interactive News"
+msgid "Barabi News"
 msgstr ""
 
 #: inc/admin/inc/dashboard-widgets/templates/widget.php:19

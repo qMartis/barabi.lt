@@ -12,8 +12,8 @@ if ( ! class_exists( 'Qi_Blocks_Text_Marquee_Block' ) ) {
 			$this->set_block_name( 'text-marquee' );
 			$this->set_block_title( esc_html__( 'Text Marquee', 'qi-blocks' ) );
 			$this->set_block_subcategory( esc_html__( 'Creative', 'qi-blocks' ) );
-			$this->set_block_demo_url( 'https://qodeinteractive.com/qi-blocks-for-gutenberg/text-marquee/' );
-			$this->set_block_documentation( 'https://qodeinteractive.com/qi-blocks-for-gutenberg/documentation/#text_marquee' );
+			$this->set_block_demo_url( 'https://barabi.jp/qi-blocks-for-gutenberg/text-marquee/' );
+			$this->set_block_documentation( 'https://barabi.jp/qi-blocks-for-gutenberg/documentation/#text_marquee' );
 
 			parent::__construct();
 		}

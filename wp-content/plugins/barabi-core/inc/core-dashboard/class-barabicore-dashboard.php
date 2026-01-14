@@ -84,7 +84,7 @@ if ( ! class_exists( 'BarabiCore_Dashboard' ) ) {
 
 		function load_dashboard_template() {
 			$params                 = array();
-			$params['theme_name']   = qode_framework_is_installed( 'theme' ) ? esc_html( wp_get_theme()->get( 'Name' ) ) : esc_html__( 'Qode Interactive', 'barabi-core' );
+			$params['theme_name']   = qode_framework_is_installed( 'theme' ) ? esc_html( wp_get_theme()->get( 'Name' ) ) : esc_html__( 'Barabi', 'barabi-core' );
 			$params['system_info']  = BarabiCore_Dashboard_System_Info_Page::get_instance()->get_system_info();
 			$params['info']         = $this->purchased_code_info();
 			$params['is_activated'] = ! empty( $this->get_purchased_code() );

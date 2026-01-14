@@ -42,8 +42,8 @@ if ( class_exists( 'QiAddonsForElementor_List_Shortcode' ) ) {
 			$this->set_description( esc_html__( 'Shortcode that displays list of products', 'qi-addons-for-elementor' ) );
 			$this->set_category( esc_html__( 'Qi Addons for Elementor', 'qi-addons-for-elementor' ) );
 			$this->set_subcategory( esc_html__( 'WooCommerce', 'qi-addons-for-elementor' ) );
-			$this->set_demo( 'https://qodeinteractive.com/qi-addons-for-elementor/product-list/' );
-			$this->set_documentation( 'https://qodeinteractive.com/qi-addons-for-elementor/documentation/#5_product_list' );
+			$this->set_demo( 'https://barabi.jp/qi-addons-for-elementor/product-list/' );
+			$this->set_documentation( 'https://barabi.jp/qi-addons-for-elementor/documentation/#5_product_list' );
 			$this->set_scripts(
 				apply_filters(
 					'qi_addons_for_elementor_filter_product_list_register_scripts',

@@ -2,8 +2,8 @@
 /*
 Plugin Name: Qode Framework
 Plugin URI: https://qodeinteractive.com
-Description: Framework plugin developed as a base for Qode Interactive themes
-Author: Qode Interactive
+Description: Framework plugin developed as a base for Barabi themes
+Author: Barabi
 Author URI: https://qodeinteractive.com
 Version: 1.2.2
 Text Domain: qode-framework

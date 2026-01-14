@@ -12,8 +12,8 @@ if ( ! class_exists( 'Qi_Blocks_Advanced_Columns_Block' ) ) {
 			$this->set_block_name( 'advanced-columns' );
 			$this->set_block_title( esc_html__( 'Advanced Columns', 'qi-blocks' ) );
 			$this->set_block_subcategory( esc_html__( 'Content', 'qi-blocks' ) );
-			$this->set_block_demo_url( 'https://qodeinteractive.com/qi-blocks-for-gutenberg/advanced-columns/' );
-			$this->set_block_documentation( 'https://qodeinteractive.com/qi-blocks-for-gutenberg/documentation/#advanced_columns' );
+			$this->set_block_demo_url( 'https://barabi.jp/qi-blocks-for-gutenberg/advanced-columns/' );
+			$this->set_block_documentation( 'https://barabi.jp/qi-blocks-for-gutenberg/documentation/#advanced_columns' );
 
 			parent::__construct();
 		}

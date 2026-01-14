@@ -12,8 +12,8 @@ if ( ! class_exists( 'Qi_Blocks_Info_Box_Block' ) ) {
 			$this->set_block_name( 'info-box' );
 			$this->set_block_title( esc_html__( 'Info Box', 'qi-blocks' ) );
 			$this->set_block_subcategory( esc_html__( 'Business', 'qi-blocks' ) );
-			$this->set_block_demo_url( 'https://qodeinteractive.com/qi-blocks-for-gutenberg/info-box/' );
-			$this->set_block_documentation( 'https://qodeinteractive.com/qi-blocks-for-gutenberg/documentation/#info_box' );
+			$this->set_block_demo_url( 'https://barabi.jp/qi-blocks-for-gutenberg/info-box/' );
+			$this->set_block_documentation( 'https://barabi.jp/qi-blocks-for-gutenberg/documentation/#info_box' );
 
 			parent::__construct();
 		}

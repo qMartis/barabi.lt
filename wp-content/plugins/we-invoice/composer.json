@@ -1,0 +1,20 @@
+{
+    "name": "we-invoice/we-invoice",
+    "description": "WordPress invoice generation plugin for WooCommerce",
+    "type": "wordpress-plugin",
+    "require": {
+        "php": ">=7.4",
+        "dompdf/dompdf": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "WeInvoice\\": "includes/"
+        },
+        "classmap": [
+            "includes/"
+        ]
+    },
+    "config": {
+        "vendor-dir": "vendor"
+    }
+}

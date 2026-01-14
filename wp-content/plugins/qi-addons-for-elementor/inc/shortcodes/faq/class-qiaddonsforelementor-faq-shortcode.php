@@ -42,8 +42,8 @@ if ( class_exists( 'QiAddonsForElementor_Shortcode' ) ) {
 			$this->set_description( esc_html__( 'Shortcode that adds FAQs holder', 'qi-addons-for-elementor' ) );
 			$this->set_category( esc_html__( 'Qi Addons for Elementor', 'qi-addons-for-elementor' ) );
 			$this->set_subcategory( esc_html__( 'SEO', 'qi-addons-for-elementor' ) );
-			$this->set_demo( 'https://qodeinteractive.com/qi-addons-for-elementor/faqs/' );
-			$this->set_documentation( 'https://qodeinteractive.com/qi-addons-for-elementor/documentation/#faqs' );
+			$this->set_demo( 'https://barabi.jp/qi-addons-for-elementor/faqs/' );
+			$this->set_documentation( 'https://barabi.jp/qi-addons-for-elementor/documentation/#faqs' );
 			$this->set_necessary_styles( qi_addons_for_elementor_icon_necessary_styles() );
 
 			$this->set_scripts(

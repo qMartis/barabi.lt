@@ -32,8 +32,8 @@ if ( class_exists( 'QiAddonsForElementor_Shortcode' ) ) {
 			$this->set_description( esc_html__( 'Shortcode that displays add to cart button', 'qi-addons-for-elementor' ) );
 			$this->set_category( esc_html__( 'Qi Addons for Elementor', 'qi-addons-for-elementor' ) );
 			$this->set_subcategory( esc_html__( 'WooCommerce', 'qi-addons-for-elementor' ) );
-			$this->set_demo( 'https://qodeinteractive.com/qi-addons-for-elementor/add-to-cart-button/' );
-			$this->set_documentation( 'https://qodeinteractive.com/qi-addons-for-elementor/documentation/#add_to_cart_button' );
+			$this->set_demo( 'https://barabi.jp/qi-addons-for-elementor/add-to-cart-button/' );
+			$this->set_documentation( 'https://barabi.jp/qi-addons-for-elementor/documentation/#add_to_cart_button' );
 			$this->set_option(
 				array(
 					'field_type' => 'text',

@@ -16,7 +16,7 @@ if ( ! class_exists( 'QiAddonsForElementor_Dashboard_Widgets' ) ) {
 
 		private function __construct() {
 
-			$this->magazine_url           = 'https://qodeinteractive.com/magazine/';
+			$this->magazine_url           = 'https://barabi.jp/magazine/';
 			$this->magazine_transient     = 'qi_addons_for_elementor_magazine_posts';
 			$this->special_post_transient = 'qi_addons_for_elementor_special_post';
 
@@ -38,7 +38,7 @@ if ( ! class_exists( 'QiAddonsForElementor_Dashboard_Widgets' ) ) {
 		public function add_dashboard_widgets() {
 			wp_add_dashboard_widget(
 				'qi_addons_for_elementor_dashboard_widget',
-				esc_html__( 'Qode Interactive News', 'qi-addons-for-elementor' ),
+				esc_html__( 'Barabi News', 'qi-addons-for-elementor' ),
 				array( $this, 'dashboard_widget_render' )
 			);
 		}

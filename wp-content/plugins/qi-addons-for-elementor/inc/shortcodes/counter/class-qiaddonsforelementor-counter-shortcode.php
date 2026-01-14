@@ -42,8 +42,8 @@ if ( class_exists( 'QiAddonsForElementor_Shortcode' ) ) {
 			$this->set_description( esc_html__( 'Shortcode that displays counters with provided parameters', 'qi-addons-for-elementor' ) );
 			$this->set_category( esc_html__( 'Qi Addons for Elementor', 'qi-addons-for-elementor' ) );
 			$this->set_subcategory( esc_html__( 'Infographics', 'qi-addons-for-elementor' ) );
-			$this->set_demo( 'https://qodeinteractive.com/qi-addons-for-elementor/counters/' );
-			$this->set_documentation( 'https://qodeinteractive.com/qi-addons-for-elementor/documentation/#counters' );
+			$this->set_demo( 'https://barabi.jp/qi-addons-for-elementor/counters/' );
+			$this->set_documentation( 'https://barabi.jp/qi-addons-for-elementor/documentation/#counters' );
 			$this->set_video( 'https://www.youtube.com/watch?v=JzyY-mtl7Tk' );
 
 			$options_map = qi_addons_for_elementor_get_variations_options_map( $this->get_layouts() );

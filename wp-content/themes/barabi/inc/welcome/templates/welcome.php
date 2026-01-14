@@ -43,7 +43,7 @@
 					<a href="https://barabi.qodeinteractive.com/documentation/" target="_blank"><?php esc_html_e( 'Theme Documentation', 'barabi' ); ?></a>
 				</li>
 				<li>
-					<a href="https://qodeinteractive.com/" target="_blank"><?php esc_html_e( 'All Our Themes', 'barabi' ); ?></a>
+					<a href="https://barabi.jp/" target="_blank"><?php esc_html_e( 'All Our Themes', 'barabi' ); ?></a>
 				</li>
 				<li>
 					<a href="<?php echo add_query_arg( array( 'page' => 'install-required-plugins&plugin_status=install' ), esc_url( admin_url( 'themes.php' ) ) ); ?>"><?php esc_html_e( 'Install Required Plugins', 'barabi' ); ?></a>

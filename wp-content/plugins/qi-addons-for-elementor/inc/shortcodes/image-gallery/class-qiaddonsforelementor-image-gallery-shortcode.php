@@ -42,8 +42,8 @@ if ( class_exists( 'QiAddonsForElementor_List_Shortcode' ) ) {
 			$this->set_description( esc_html__( 'Shortcode that adds image gallery element', 'qi-addons-for-elementor' ) );
 			$this->set_category( esc_html__( 'Qi Addons for Elementor', 'qi-addons-for-elementor' ) );
 			$this->set_subcategory( esc_html__( 'Showcase', 'qi-addons-for-elementor' ) );
-			$this->set_demo( 'https://qodeinteractive.com/qi-addons-for-elementor/image-gallery/' );
-			$this->set_documentation( 'https://qodeinteractive.com/qi-addons-for-elementor/documentation/#image_gallery' );
+			$this->set_demo( 'https://barabi.jp/qi-addons-for-elementor/image-gallery/' );
+			$this->set_documentation( 'https://barabi.jp/qi-addons-for-elementor/documentation/#image_gallery' );
 			$this->set_video( 'https://www.youtube.com/watch?v=7YIXRTlY7s0' );
 			$this->set_scripts(
 				apply_filters(

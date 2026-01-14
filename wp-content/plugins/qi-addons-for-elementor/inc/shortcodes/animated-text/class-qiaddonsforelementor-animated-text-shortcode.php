@@ -36,8 +36,8 @@ if ( class_exists( 'QiAddonsForElementor_Shortcode' ) ) {
 			$this->set_description( esc_html__( 'Shortcode that adds animated text element', 'qi-addons-for-elementor' ) );
 			$this->set_category( esc_html__( 'Qi Addons for Elementor', 'qi-addons-for-elementor' ) );
 			$this->set_subcategory( esc_html__( 'Typography', 'qi-addons-for-elementor' ) );
-			$this->set_demo( 'https://qodeinteractive.com/qi-addons-for-elementor/animated-text/' );
-			$this->set_documentation( 'https://qodeinteractive.com/qi-addons-for-elementor/documentation/#animated_text' );
+			$this->set_demo( 'https://barabi.jp/qi-addons-for-elementor/animated-text/' );
+			$this->set_documentation( 'https://barabi.jp/qi-addons-for-elementor/documentation/#animated_text' );
 			$this->set_video( 'https://www.youtube.com/watch?v=qC_J-2ppdf0' );
 			$this->set_option(
 				array(

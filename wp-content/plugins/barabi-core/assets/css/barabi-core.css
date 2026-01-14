@@ -522,7 +522,7 @@
   line-height: 1.92em;
   font-weight: 600;
   letter-spacing: 0.1em;
-  color: #0000B4;
+  color: #435c23;
   text-transform: uppercase;
 }
 
@@ -667,7 +667,7 @@
   font-size: 14px;
   line-height: 1.785em;
   font-weight: 500;
-  color: #0000b4;
+  color: #435c23;
   display: inline-flex;
   vertical-align: middle;
   flex-wrap: wrap;
@@ -828,7 +828,7 @@
 
 .qodef-page-bottom-text-holder {
   position: relative;
-  background-color: #0000B4;
+  background-color: #435c23;
   color: #F9F9F9;
   height: 249px;
   overflow: hidden;
@@ -837,7 +837,7 @@
 
 .qodef-footer-skin--dark .qodef-page-bottom-text-holder {
   background-color: #F9F9F9;
-  color: #0000B4;
+  color: #435c23;
 }
 
 .qodef-page-bottom-text-holder .qodef-page-bottom-text {
@@ -1038,7 +1038,7 @@
 .qodef-fullscreen-menu > ul > li > a {
   font-family: "Inter", sans-serif;
   letter-spacing: -0.02em;
-  color: #0000B4;
+  color: #435c23;
   font-size: 60px;
   line-height: 1.13333em;
   font-weight: 700;
@@ -1322,7 +1322,7 @@
 #qodef-page-header .qodef-header-logo-link.qodef-source--textual {
   font-family: "Inter", sans-serif;
   letter-spacing: -0.02em;
-  color: #0000B4;
+  color: #435c23;
   font-size: 31px;
   line-height: 1.22581em;
   font-weight: 600;
@@ -1676,7 +1676,7 @@
   line-height: 1.92em;
   font-weight: 600;
   letter-spacing: 0.1em;
-  color: #0000B4;
+  color: #435c23;
   text-transform: uppercase;
 }
 
@@ -1855,7 +1855,7 @@
   font-size: 30px;
   font-weight: 700;
   text-align: center;
-  color: #0000B4;
+  color: #435c23;
 }
 
 .qodef-cluster-marker svg {
@@ -2088,7 +2088,7 @@
 #qodef-page-mobile-header .qodef-mobile-header-logo-link.qodef-source--textual {
   font-family: "Inter", sans-serif;
   letter-spacing: -0.02em;
-  color: #0000B4;
+  color: #435c23;
   font-size: 31px;
   line-height: 1.22581em;
   font-weight: 600;
@@ -2978,7 +2978,7 @@ html.elementor-html .qodef-instagram-list #sb_instagram #sbi_images .sbi_item.sb
 .qodef-twitter-list.qodef-layout--columns #ctf .ctf-author-name {
   font-family: "Inter", sans-serif;
   letter-spacing: -0.02em;
-  color: #0000B4;
+  color: #435c23;
   font-size: 22px;
   line-height: 1.36364em;
   font-weight: 600;
@@ -2997,7 +2997,7 @@ html.elementor-html .qodef-instagram-list #sb_instagram #sbi_images .sbi_item.sb
   font-size: 16px;
   line-height: 1.5em;
   font-weight: 500;
-  color: #0000B4;
+  color: #435c23;
   margin-right: 4px;
   margin-left: 0;
 }
@@ -3256,7 +3256,7 @@ html.elementor-html .qodef-instagram-list #sb_instagram #sbi_images .sbi_item.sb
   padding: 5px 8px;
   font-size: 12px;
   font-weight: 500;
-  color: #0000B4;
+  color: #435c23;
 }
 
 .qodef-yith-wccl--predefined .select_box .select_option .yith_wccl_tooltip.top span:after {
@@ -3276,7 +3276,7 @@ html.elementor-html .qodef-instagram-list #sb_instagram #sbi_images .sbi_item.sb
 }
 
 .qodef-yith-wccl--predefined .select_box.select_box_colorpicker .select_option.selected {
-  border-color: #0000B4;
+  border-color: #435c23;
 }
 
 .qodef-yith-wccl--predefined .select_box.select_box_image .select_option {
@@ -3298,7 +3298,7 @@ html.elementor-html .qodef-instagram-list #sb_instagram #sbi_images .sbi_item.sb
 }
 
 .qodef-yith-wccl--predefined .select_box.select_box_image .select_option:hover, .qodef-yith-wccl--predefined .select_box.select_box_image .select_option.selected {
-  border-color: #0000B4;
+  border-color: #435c23;
 }
 
 .qodef-yith-wccl--predefined .select_box.select_box_label > * {
@@ -3308,11 +3308,11 @@ html.elementor-html .qodef-instagram-list #sb_instagram #sbi_images .sbi_item.sb
   font-size: 16px;
   line-height: 1.5em;
   font-weight: 500;
-  color: #0000B4;
+  color: #435c23;
   display: inline-flex;
   vertical-align: middle;
   flex-wrap: wrap;
-  color: #0000B4;
+  color: #435c23;
 }
 
 .qodef-yith-wccl--predefined .select_box.select_box_label .select_option {
@@ -3471,7 +3471,7 @@ html.elementor-html .qodef-instagram-list #sb_instagram #sbi_images .sbi_item.sb
   align-items: center;
   justify-content: center;
   opacity: 1;
-  color: #0000B4;
+  color: #435c23;
 }
 
 #yith-quick-view-modal #yith-quick-view-close:after {
@@ -3555,7 +3555,7 @@ body:not([class*="barabi-core"]) #yith-quick-view-modal #yith-quick-view-close:a
 .yith-wcwl-form .shop_table th {
   font-family: "Inter", sans-serif;
   letter-spacing: -0.02em;
-  color: #0000B4;
+  color: #435c23;
   font-size: 22px;
   line-height: 1.36364em;
   font-weight: 600;
@@ -3643,7 +3643,7 @@ body:not([class*="barabi-core"]) #yith-quick-view-modal #yith-quick-view-close:a
 
 .yith-wcwl-form .wishlist_table.shop_table tr td {
   background: transparent !important;
-  color: #0000B4 !important;
+  color: #435c23 !important;
   border-color: transparent !important;
 }
 
@@ -3672,7 +3672,7 @@ body:not([class*="barabi-core"]) #yith-quick-view-modal #yith-quick-view-close:a
   z-index: 3 !important;
   white-space: nowrap;
   color: #ffffff !important;
-  background-color: #0000B4 !important;
+  background-color: #435c23 !important;
   border: 1px solid transparent !important;
 }
 
@@ -3714,7 +3714,7 @@ body:not([class*="barabi-core"]) #yith-quick-view-modal #yith-quick-view-close:a
 }
 
 .yith-wcwl-form .wishlist_table .product-stock-status span.wishlist-in-stock {
-  color: #0000B4;
+  color: #435c23;
 }
 
 .yith-wcwl-form .wishlist_table .product-stock-status span.wishlist-out-of-stock {
@@ -3860,7 +3860,7 @@ body:not([class*="barabi-core"]) #yith-quick-view-modal #yith-quick-view-close:a
   line-height: 1.92em;
   font-weight: 600;
   letter-spacing: 0.1em;
-  color: #0000B4;
+  color: #435c23;
   text-transform: uppercase;
 }
 
@@ -4144,7 +4144,7 @@ body:not([class*="barabi-core"]) #yith-quick-view-modal #yith-quick-view-close:a
   font-size: 16px;
   padding: 0 !important;
   background-color: transparent;
-  color: #0000B4;
+  color: #435c23;
   border: 0;
   border-radius: 0;
   position: relative;
@@ -4276,11 +4276,11 @@ body:not([class*="barabi-core"]) #yith-quick-view-modal #yith-quick-view-close:a
 }
 
 .qodef-woo-product-list.qodef-item-layout--presentational .qodef-e .qodef-e-product-buttons-holder .yith-wcqv-button {
-  color: #0000B4;
+  color: #435c23;
 }
 
 .qodef-woo-product-list.qodef-item-layout--presentational .qodef-e .qodef-e-product-buttons-holder .yith-wcqv-button:hover {
-  color: #0000B4;
+  color: #435c23;
 }
 
 .qodef-woo-product-list.qodef-item-layout--presentational .qodef-e .qodef-woo-ratings-holder {
@@ -4776,7 +4776,7 @@ header .widget_shopping_cart .widget_shopping_cart_content, header
   outline: none;
   transition: color 0.3s ease-out, background-color 0.3s ease-out, border-color 0.3s ease-out;
   color: #ffffff;
-  background-color: #0000B4;
+  background-color: #435c23;
   border: 1px solid transparent;
   padding: 9px 20px 8px;
   font-size: 16px;
@@ -4828,7 +4828,7 @@ header .widget_shopping_cart:hover .widget_shopping_cart_content, header
    ========================================================================== */
 .widget_shopping_cart,
 .widget_barabi_core_woo_dropdown_cart {
-  color: #0000B4;
+  color: #435c23;
 }
 
 .widget_shopping_cart .widget_shopping_cart_content,
@@ -4840,7 +4840,7 @@ header .widget_shopping_cart:hover .widget_shopping_cart_content, header
 
 .widget_shopping_cart .woocommerce-mini-cart-item a,
 .widget_barabi_core_woo_dropdown_cart .woocommerce-mini-cart-item a {
-  color: #0000B4;
+  color: #435c23;
 }
 
 .widget_shopping_cart .woocommerce-mini-cart-item a:hover,
@@ -4850,7 +4850,7 @@ header .widget_shopping_cart:hover .widget_shopping_cart_content, header
 
 .widget_shopping_cart .qodef-woo-mini-cart .qodef-e-title a,
 .widget_barabi_core_woo_dropdown_cart .qodef-woo-mini-cart .qodef-e-title a {
-  color: #0000B4;
+  color: #435c23;
 }
 
 .widget_shopping_cart .qodef-woo-mini-cart .qodef-e-title a:hover,
@@ -4866,7 +4866,7 @@ header .widget_shopping_cart:hover .widget_shopping_cart_content, header
 .widget_barabi_core_woo_dropdown_cart .woocommerce-mini-cart .qodef-woo-mini-cart-item .remove,
 .widget_barabi_core_woo_dropdown_cart .qodef-woo-mini-cart .woocommerce-mini-cart-item .remove,
 .widget_barabi_core_woo_dropdown_cart .qodef-woo-mini-cart .qodef-woo-mini-cart-item .remove {
-  color: #0000B4;
+  color: #435c23;
 }
 
 .widget_shopping_cart .woocommerce-mini-cart .woocommerce-mini-cart-item .remove:hover,
@@ -4884,7 +4884,7 @@ header .widget_shopping_cart:hover .widget_shopping_cart_content, header
 .widget_shopping_cart .qodef-m-order-details strong,
 .widget_barabi_core_woo_dropdown_cart .woocommerce-mini-cart__total strong,
 .widget_barabi_core_woo_dropdown_cart .qodef-m-order-details strong {
-  color: #0000B4;
+  color: #435c23;
 }
 
 #qodef-top-area .widget_shopping_cart, #qodef-top-area
@@ -5130,7 +5130,7 @@ header .widget_shopping_cart:hover .widget_shopping_cart_content, header
   outline: none;
   transition: color 0.3s ease-out, background-color 0.3s ease-out, border-color 0.3s ease-out;
   color: #ffffff;
-  background-color: #0000B4;
+  background-color: #435c23;
   border: 1px solid transparent;
 }
 
@@ -5558,7 +5558,7 @@ header .widget_shopping_cart:hover .widget_shopping_cart_content, header
   line-height: 1em;
   font-weight: 600;
   letter-spacing: 0.1em;
-  color: #0000B4;
+  color: #435c23;
   text-transform: uppercase;
   margin-top: 1px;
 }
@@ -5610,7 +5610,7 @@ header .widget_shopping_cart:hover .widget_shopping_cart_content, header
   line-height: 1.92em;
   font-weight: 600;
   letter-spacing: 0.1em;
-  color: #0000B4;
+  color: #435c23;
   text-transform: uppercase;
   margin: 0 0 11px;
 }
@@ -5869,7 +5869,7 @@ header .widget_shopping_cart:hover .widget_shopping_cart_content, header
   font-weight: 600;
   display: inline-flex;
   align-items: center;
-  color: #0000B4;
+  color: #435c23;
 }
 
 .qodef-reviews-average-rating svg {
@@ -5941,7 +5941,7 @@ header .widget_shopping_cart:hover .widget_shopping_cart_content, header
 .qodef-reviews-per-mark .qodef-rating-percentage-wrapper .percentCount {
   font-family: "Inter", sans-serif;
   letter-spacing: -0.02em;
-  color: #0000B4;
+  color: #435c23;
   font-size: 22px;
   line-height: 1.36364em;
   font-weight: 600;
@@ -5956,7 +5956,7 @@ header .widget_shopping_cart:hover .widget_shopping_cart_content, header
 .qodef-reviews-per-mark .qodef-reviews-count {
   font-family: "Inter", sans-serif;
   letter-spacing: -0.02em;
-  color: #0000B4;
+  color: #435c23;
   font-size: 31px;
   line-height: 1.22581em;
   font-weight: 600;
@@ -6063,7 +6063,7 @@ header.qodef-show-upwards .qodef-search-cover-form {
   top: 0;
   border: none;
   background-color: transparent;
-  color: #0000B4;
+  color: #435c23;
   opacity: 0;
   transition: color .2s ease-out;
 }
@@ -6075,13 +6075,13 @@ header.qodef-show-upwards .qodef-search-cover-form {
 
 .qodef-search-cover-form .qodef-m-form-submit:hover {
   background-color: transparent;
-  color: #0000B4;
+  color: #435c23;
 }
 
 .qodef-search-cover-form .qodef-m-form-field {
   padding: 0 0 8px;
   margin-bottom: 0;
-  color: #0000B4;
+  color: #435c23;
   background-color: transparent;
   border: 0;
   border-radius: 0;
@@ -6089,7 +6089,7 @@ header.qodef-show-upwards .qodef-search-cover-form {
 }
 
 .qodef-search-cover-form .qodef-m-form-field:focus {
-  color: #0000B4;
+  color: #435c23;
 }
 
 .qodef-search-cover-form .qodef-m-form-field:-ms-input-placeholder {
@@ -6117,7 +6117,7 @@ header.qodef-show-upwards .qodef-search-cover-form {
 .qodef-search-cover-form .qodef-search-label {
   font-family: "Inter", sans-serif;
   letter-spacing: -0.02em;
-  color: #0000B4;
+  color: #435c23;
   font-size: 40px;
   line-height: 1.2em;
   font-weight: 600;
@@ -6500,7 +6500,7 @@ body:not(.qodef-header--sticky-display) .qodef-header-sticky-inner > .qodef-sear
 
 .qodef-button.qodef-layout--filled.qodef-html--link {
   color: #ffffff;
-  background-color: #0000B4;
+  background-color: #435c23;
   border: 1px solid transparent;
 }
 
@@ -6547,7 +6547,7 @@ body:not(.qodef-header--sticky-display) .qodef-header-sticky-inner > .qodef-sear
   font-size: 16px;
   padding: 0 !important;
   background-color: transparent;
-  color: #0000B4;
+  color: #435c23;
   border: 0;
   border-radius: 0;
   position: relative;
@@ -6683,7 +6683,7 @@ body:not(.qodef-header--sticky-display) .qodef-header-sticky-inner > .qodef-sear
   font-weight: 600;
   font-size: 75px;
   line-height: 1;
-  color: #0000B4;
+  color: #435c23;
 }
 
 .qodef-counter.qodef-layout--simple .qodef-m-title {
@@ -6726,7 +6726,7 @@ body:not(.qodef-header--sticky-display) .qodef-header-sticky-inner > .qodef-sear
   margin: 0 10px 5px 0;
   font-family: "Inter", sans-serif;
   letter-spacing: -0.02em;
-  color: #0000B4;
+  color: #435c23;
   font-size: 48px;
   line-height: 1.125em;
   font-weight: 600;
@@ -6744,7 +6744,7 @@ body:not(.qodef-header--sticky-display) .qodef-header-sticky-inner > .qodef-sear
   line-height: 1.22581em;
   font-weight: 600;
   color: #fff;
-  background-color: #0000B4;
+  background-color: #435c23;
 }
 
 .qodef-dropcaps.qodef-type--circle .qodef-m-letter {
@@ -6783,7 +6783,7 @@ body:not(.qodef-header--sticky-display) .qodef-header-sticky-inner > .qodef-sear
 .qodef-highlight .qodef-highlight-text {
   padding: 0 5px;
   color: #fff;
-  background-color: #0000B4;
+  background-color: #435c23;
 }
 
 /* ==========================================================================
@@ -6988,7 +6988,7 @@ body:not(.qodef-header--sticky-display) .qodef-header-sticky-inner > .qodef-sear
 }
 
 .qodef-icon-holder.qodef-layout--circle:hover, .qodef-icon-holder.qodef-layout--square:hover {
-  background-color: #0000B4;
+  background-color: #435c23;
 }
 
 .qodef-icon-holder.qodef-layout--circle {
@@ -7248,7 +7248,7 @@ body:not(.qodef-header--sticky-display) .qodef-header-sticky-inner > .qodef-sear
   margin: 0;
   font-family: "Inter", sans-serif;
   letter-spacing: -0.02em;
-  color: #0000B4;
+  color: #435c23;
   font-size: 22px;
   line-height: 1.36364em;
   font-weight: 600;
@@ -7503,7 +7503,7 @@ body:not(.qodef-header--sticky-display) .qodef-header-sticky-inner > .qodef-sear
   line-height: 1.92em;
   font-weight: 600;
   letter-spacing: 0.1em;
-  color: #0000B4;
+  color: #435c23;
   text-transform: uppercase;
   margin: 31px 0 0;
 }
@@ -8151,7 +8151,7 @@ body:not(.qodef-header--sticky-display) .qodef-header-sticky-inner > .qodef-sear
   line-height: 1.92em;
   font-weight: 600;
   letter-spacing: 0.1em;
-  color: #0000B4;
+  color: #435c23;
   text-transform: uppercase;
 }
 
@@ -8327,7 +8327,7 @@ body:not(.qodef-header--sticky-display) .qodef-header-sticky-inner > .qodef-sear
 
 .qodef-social-share.qodef-layout--dropdown.qodef-dropdown--bottom .qodef-social-share-dropdown li a {
   font-size: 20px;
-  color: #0000B4;
+  color: #435c23;
   background-color: #fff;
 }
 
@@ -9751,7 +9751,7 @@ body:not(.qodef-header--sticky-display) .qodef-header-sticky-inner > .qodef-sear
   line-height: 1.92em;
   font-weight: 600;
   letter-spacing: 0.1em;
-  color: #0000B4;
+  color: #435c23;
   text-transform: uppercase;
 }
 
@@ -9855,11 +9855,11 @@ body:not(.qodef-header--sticky-display) .qodef-header-sticky-inner > .qodef-sear
   font-size: 16px;
   line-height: 1.5em;
   font-weight: 500;
-  color: #0000B4;
+  color: #435c23;
   display: inline-flex;
   vertical-align: middle;
   flex-wrap: wrap;
-  color: #0000B4;
+  color: #435c23;
 }
 
 .qodef-social-icons-group .qodef-icon-holder.qodef--textual a {
@@ -9874,7 +9874,7 @@ body:not(.qodef-header--sticky-display) .qodef-header-sticky-inner > .qodef-sear
 }
 
 .widget.widget_barabi_core_social_icons_group .qodef-icon-holder.qodef-layout--circle:hover, .widget.widget_barabi_core_social_icons_group .qodef-icon-holder.qodef-layout--square:hover {
-  color: #0000B4;
+  color: #435c23;
 }
 
 .widget.widget_barabi_core_social_icons_group .qodef-icon-holder.qodef-layout--circle:hover a, .widget.widget_barabi_core_social_icons_group .qodef-icon-holder.qodef-layout--square:hover a {
@@ -10006,7 +10006,7 @@ body:not(.qodef-header--sticky-display) .qodef-header-sticky-inner > .qodef-sear
   padding: 0 10px;
   font-size: 13px;
   line-height: 30px;
-  color: #0000B4;
+  color: #435c23;
   background-color: #fff;
   border: 1px solid var(--qode-main-color);
   border-radius: 4px;
@@ -10056,11 +10056,11 @@ body:not(.qodef-header--sticky-display) .qodef-header-sticky-inner > .qodef-sear
 }
 
 .qodef-wishlist-dropdown .qodef-m-link {
-  color: #0000B4;
+  color: #435c23;
 }
 
 #qodef-top-area .qodef-wishlist-dropdown .qodef-m-link {
-  color: #0000B4;
+  color: #435c23;
 }
 
 .qodef-wishlist-dropdown .qodef-m-link-icon {

@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="qodef-header-left-inner">
 			<div class="qodef-logo-holder">
 				<a href="https://qodeinteractive.com?utm_source=dash&utm_medium=qiblocks&utm_campaign=welcome" target="_blank">
-					<img height="38" src="<?php echo esc_url( QI_BLOCKS_ADMIN_URL_PATH . '/admin-pages/assets/img/logo-qode-interactive.png' ); ?>" alt="<?php esc_attr_e( 'Qode Interactive Logo', 'qi-blocks' ); ?>"/>
+					<img height="38" src="<?php echo esc_url( QI_BLOCKS_ADMIN_URL_PATH . '/admin-pages/assets/img/logo-qode-interactive.png' ); ?>" alt="<?php esc_attr_e( 'Barabi Logo', 'qi-blocks' ); ?>"/>
 				</a>
 			</div>
 		</div>

@@ -12,8 +12,8 @@ if ( ! class_exists( 'Qi_Blocks_Faq_Block' ) ) {
 			$this->set_block_name( 'faq' );
 			$this->set_block_title( esc_html__( 'FAQs', 'qi-blocks' ) );
 			$this->set_block_subcategory( esc_html__( 'SEO', 'qi-blocks' ) );
-			$this->set_block_demo_url( 'https://qodeinteractive.com/qi-blocks-for-gutenberg/faqs/' );
-			$this->set_block_documentation( 'https://qodeinteractive.com/qi-blocks-for-gutenberg/documentation/#faq' );
+			$this->set_block_demo_url( 'https://barabi.jp/qi-blocks-for-gutenberg/faqs/' );
+			$this->set_block_documentation( 'https://barabi.jp/qi-blocks-for-gutenberg/documentation/#faq' );
 
 			// Set block 3rd party scripts.
 			$this->set_block_3rd_party_scripts(

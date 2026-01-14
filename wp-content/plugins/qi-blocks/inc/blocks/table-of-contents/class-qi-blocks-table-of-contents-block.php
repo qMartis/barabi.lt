@@ -12,8 +12,8 @@ if ( ! class_exists( 'Qi_Blocks_Table_Of_Contents_Block' ) ) {
 			$this->set_block_name( 'table-of-contents' );
 			$this->set_block_title( esc_html__( 'Table of Contents', 'qi-blocks' ) );
 			$this->set_block_subcategory( esc_html__( 'SEO', 'qi-blocks' ) );
-			$this->set_block_demo_url( 'https://qodeinteractive.com/qi-blocks-for-gutenberg/table-of-contents/' );
-			$this->set_block_documentation( 'https://qodeinteractive.com/qi-blocks-for-gutenberg/documentation/#table_of_contents' );
+			$this->set_block_demo_url( 'https://barabi.jp/qi-blocks-for-gutenberg/table-of-contents/' );
+			$this->set_block_documentation( 'https://barabi.jp/qi-blocks-for-gutenberg/documentation/#table_of_contents' );
 
 			parent::__construct();
 		}

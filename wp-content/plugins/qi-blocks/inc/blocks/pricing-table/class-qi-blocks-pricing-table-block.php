@@ -12,8 +12,8 @@ if ( ! class_exists( 'Qi_Blocks_Pricing_Table_Block' ) ) {
 			$this->set_block_name( 'pricing-table' );
 			$this->set_block_title( esc_html__( 'Pricing Table', 'qi-blocks' ) );
 			$this->set_block_subcategory( esc_html__( 'Business', 'qi-blocks' ) );
-			$this->set_block_demo_url( 'https://qodeinteractive.com/qi-blocks-for-gutenberg/pricing-table/' );
-			$this->set_block_documentation( 'https://qodeinteractive.com/qi-blocks-for-gutenberg/documentation/#pricing_table' );
+			$this->set_block_demo_url( 'https://barabi.jp/qi-blocks-for-gutenberg/pricing-table/' );
+			$this->set_block_documentation( 'https://barabi.jp/qi-blocks-for-gutenberg/documentation/#pricing_table' );
 
 			parent::__construct();
 		}

@@ -1,4 +1,4 @@
-# Copyright (C) 2023 Qode Interactive
+# Copyright (C) 2023 Barabi
 # This file is distributed under the same license as the Barabi Core plugin.
 msgid ""
 msgstr ""
@@ -29,7 +29,7 @@ msgstr ""
 
 #. Author of the plugin
 #: inc/core-dashboard/class-barabicore-dashboard.php:87
-msgid "Qode Interactive"
+msgid "Barabi"
 msgstr ""
 
 #: class-barabicore.php:71
@@ -2241,7 +2241,7 @@ msgid "Video Tutorials"
 msgstr ""
 
 #: inc/core-dashboard/templates/core-dashboard.php:93
-msgid "Qode Interactive Themes"
+msgid "Barabi Themes"
 msgstr ""
 
 #: inc/elements/dashboard/admin/elements-options.php:16

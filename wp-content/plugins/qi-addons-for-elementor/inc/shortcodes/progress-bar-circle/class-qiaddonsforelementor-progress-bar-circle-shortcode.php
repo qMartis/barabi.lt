@@ -36,8 +36,8 @@ if ( class_exists( 'QiAddonsForElementor_Shortcode' ) ) {
 			$this->set_description( esc_html__( 'Shortcode that displays radial progress bar with provided parameters', 'qi-addons-for-elementor' ) );
 			$this->set_category( esc_html__( 'Qi Addons for Elementor', 'qi-addons-for-elementor' ) );
 			$this->set_subcategory( esc_html__( 'Infographics', 'qi-addons-for-elementor' ) );
-			$this->set_demo( 'https://qodeinteractive.com/qi-addons-for-elementor/radial-progress-bar/' );
-			$this->set_documentation( 'https://qodeinteractive.com/qi-addons-for-elementor/documentation/#radial_progress_bar' );
+			$this->set_demo( 'https://barabi.jp/qi-addons-for-elementor/radial-progress-bar/' );
+			$this->set_documentation( 'https://barabi.jp/qi-addons-for-elementor/documentation/#radial_progress_bar' );
 			$this->set_video( 'https://www.youtube.com/watch?v=wmuYN2VIVRw' );
 			$this->set_scripts(
 				array(

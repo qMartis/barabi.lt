@@ -1,0 +1,16 @@
+# Composer dependencies
+/vendor/
+composer.lock
+
+# WordPress uploads
+*.log
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db

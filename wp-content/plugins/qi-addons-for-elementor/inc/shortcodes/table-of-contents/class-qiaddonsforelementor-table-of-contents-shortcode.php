@@ -36,8 +36,8 @@ if ( class_exists( 'QiAddonsForElementor_Shortcode' ) ) {
 			$this->set_description( esc_html__( 'Shortcode that adds section title element', 'qi-addons-for-elementor' ) );
 			$this->set_category( esc_html__( 'Qi Addons for Elementor', 'qi-addons-for-elementor' ) );
 			$this->set_subcategory( esc_html__( 'SEO', 'qi-addons-for-elementor' ) );
-			$this->set_demo( 'https://qodeinteractive.com/qi-addons-for-elementor/table-of-contents/' );
-			$this->set_documentation( 'https://qodeinteractive.com/qi-addons-for-elementor/documentation/#table_of_contents' );
+			$this->set_demo( 'https://barabi.jp/qi-addons-for-elementor/table-of-contents/' );
+			$this->set_documentation( 'https://barabi.jp/qi-addons-for-elementor/documentation/#table_of_contents' );
 			$this->set_option(
 				array(
 					'field_type' => 'text',

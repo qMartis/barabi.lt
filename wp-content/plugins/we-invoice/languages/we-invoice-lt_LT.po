@@ -1,0 +1,119 @@
+# Lithuanian translation for We Invoice
+# Copyright (C) 2025 We Invoice
+# This file is distributed under the same license as the We Invoice package.
+msgid ""
+msgstr ""
+"Project-Id-Version: We Invoice 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-12 12:00+0000\n"
+"PO-Revision-Date: 2025-08-12 12:00+0000\n"
+"Last-Translator: Admin <admin@example.com>\n"
+"Language-Team: Lithuanian\n"
+"Language: lt_LT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: templates/invoices/basic-invoice.php:42
+msgid "Invoice"
+msgstr "Sąskaita faktūra"
+
+#: templates/invoices/proforma-invoice.php:42
+msgid "Proforma Invoice"
+msgstr "Išankstinė sąskaita faktūra"
+
+#: templates/invoices/basic-invoice.php:46
+#: templates/invoices/proforma-invoice.php:46
+msgid "Buyer Information:"
+msgstr "Pirkėjo informacija:"
+
+#: templates/invoices/basic-invoice.php:87
+#: templates/invoices/proforma-invoice.php:87
+msgid "Seller Information:"
+msgstr "Pardavėjo informacija:"
+
+#: templates/invoices/basic-invoice.php:93
+#: templates/invoices/proforma-invoice.php:93
+msgid "Company Code:"
+msgstr "Įmonės kodas:"
+
+#: templates/invoices/basic-invoice.php:97
+#: templates/invoices/proforma-invoice.php:97
+msgid "VAT Code:"
+msgstr "PVM kodas:"
+
+#: templates/invoices/basic-invoice.php:108
+#: templates/invoices/proforma-invoice.php:108
+msgid "Phone:"
+msgstr "Telefonas:"
+
+#: templates/invoices/basic-invoice.php:112
+#: templates/invoices/proforma-invoice.php:112
+msgid "Email:"
+msgstr "El. paštas:"
+
+#: templates/invoices/basic-invoice.php:125
+#: templates/invoices/proforma-invoice.php:125
+msgid "Invoice Number:"
+msgstr "Sąskaitos numeris:"
+
+#: templates/invoices/basic-invoice.php:129
+#: templates/invoices/proforma-invoice.php:129
+msgid "Invoice Date:"
+msgstr "Sąskaitos data:"
+
+#: templates/invoices/basic-invoice.php:133
+#: templates/invoices/proforma-invoice.php:133
+msgid "Order Number:"
+msgstr "Užsakymo numeris:"
+
+#: templates/invoices/basic-invoice.php:137
+#: templates/invoices/proforma-invoice.php:137
+msgid "Order Date:"
+msgstr "Užsakymo data:"
+
+#: templates/invoices/basic-invoice.php:146
+#: templates/invoices/proforma-invoice.php:146
+msgid "Products"
+msgstr "Produktai"
+
+#: templates/invoices/basic-invoice.php:147
+#: templates/invoices/proforma-invoice.php:147
+msgid "Quantity"
+msgstr "Kiekis"
+
+#: templates/invoices/basic-invoice.php:148
+#: templates/invoices/proforma-invoice.php:148
+msgid "Price"
+msgstr "Kaina"
+
+#: templates/invoices/basic-invoice.php:155
+#: templates/invoices/proforma-invoice.php:155
+msgid "SKU:"
+msgstr "Prekės kodas:"
+
+#: templates/invoices/basic-invoice.php:165
+#: templates/invoices/proforma-invoice.php:165
+msgid "Subtotal:"
+msgstr "Tarpinė suma:"
+
+#: templates/invoices/basic-invoice.php:169
+#: templates/invoices/proforma-invoice.php:169
+msgid "Shipping:"
+msgstr "Pristatymas:"
+
+#: templates/invoices/basic-invoice.php:175
+#: templates/invoices/proforma-invoice.php:175
+msgid "Tax:"
+msgstr "Mokesčiai:"
+
+#: templates/invoices/basic-invoice.php:180
+#: templates/invoices/proforma-invoice.php:180
+msgid "Total:"
+msgstr "Viso:"
+
+#: templates/invoices/basic-invoice.php:187
+#: templates/invoices/proforma-invoice.php:187
+msgid "Customer Notes:"
+msgstr "Kliento pastabos:"

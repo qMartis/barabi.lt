@@ -12,8 +12,8 @@ if ( ! class_exists( 'Qi_Blocks_Banner_Block' ) ) {
 			$this->set_block_name( 'banner' );
 			$this->set_block_title( esc_html__( 'Banners', 'qi-blocks' ) );
 			$this->set_block_subcategory( esc_html__( 'Business', 'qi-blocks' ) );
-			$this->set_block_demo_url( 'https://qodeinteractive.com/qi-blocks-for-gutenberg/banners/' );
-			$this->set_block_documentation( 'https://qodeinteractive.com/qi-blocks-for-gutenberg/documentation/#banners' );
+			$this->set_block_demo_url( 'https://barabi.jp/qi-blocks-for-gutenberg/banners/' );
+			$this->set_block_documentation( 'https://barabi.jp/qi-blocks-for-gutenberg/documentation/#banners' );
 			$this->set_block_video( 'https://www.youtube.com/watch?v=_CHN9e-TepM' );
 
 			parent::__construct();

@@ -12,8 +12,8 @@ if ( ! class_exists( 'Qi_Blocks_Image_Gallery_Block' ) ) {
 			$this->set_block_name( 'image-gallery' );
 			$this->set_block_title( esc_html__( 'Image Gallery', 'qi-blocks' ) );
 			$this->set_block_subcategory( esc_html__( 'Showcase/Presentational', 'qi-blocks' ) );
-			$this->set_block_demo_url( 'https://qodeinteractive.com/qi-blocks-for-gutenberg/image-gallery/' );
-			$this->set_block_documentation( 'https://qodeinteractive.com/qi-blocks-for-gutenberg/documentation/#image_gallery' );
+			$this->set_block_demo_url( 'https://barabi.jp/qi-blocks-for-gutenberg/image-gallery/' );
+			$this->set_block_documentation( 'https://barabi.jp/qi-blocks-for-gutenberg/documentation/#image_gallery' );
 			$this->set_block_video( 'https://www.youtube.com/watch?v=8PYeKfAf5G0' );
 
 			// Set block 3rd party scripts.

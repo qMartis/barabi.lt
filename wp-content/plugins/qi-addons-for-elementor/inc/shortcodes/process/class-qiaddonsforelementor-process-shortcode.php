@@ -43,8 +43,8 @@ if ( class_exists( 'QiAddonsForElementor_List_Shortcode' ) ) {
 			$this->set_description( esc_html__( 'Shortcode that displays list of process', 'qi-addons-for-elementor' ) );
 			$this->set_category( esc_html__( 'Qi Addons for Elementor', 'qi-addons-for-elementor' ) );
 			$this->set_subcategory( esc_html__( 'Infographics', 'qi-addons-for-elementor' ) );
-			$this->set_demo( 'https://qodeinteractive.com/qi-addons-for-elementor/process/' );
-			$this->set_documentation( 'https://qodeinteractive.com/qi-addons-for-elementor/documentation/#process' );
+			$this->set_demo( 'https://barabi.jp/qi-addons-for-elementor/process/' );
+			$this->set_documentation( 'https://barabi.jp/qi-addons-for-elementor/documentation/#process' );
 			$this->set_video( 'https://www.youtube.com/watch?v=colSjAmnAQU' );
 			$this->set_option(
 				array(

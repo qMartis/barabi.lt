@@ -12,8 +12,8 @@ $header_text  = ! empty( $header_text ) ? $header_text : esc_html__( 'Welcome to
 	<div class="qodef-header-left">
 		<div class="qodef-header-left-inner">
 			<div class="qodef-logo-holder">
-				<a href="https://qodeinteractive.com/?utm_source=dash&utm_medium=qiaddons&utm_campaign=welcome" target="_blank">
-					<img height="50" src="<?php echo esc_url( QI_ADDONS_FOR_ELEMENTOR_ADMIN_URL_PATH . '/inc/admin-pages/assets/img/logo-qode-interactive.png' ); ?>" alt="<?php esc_attr_e( 'Admin Qode Interactive image', 'qi-addons-for-elementor' ); ?>"/>
+				<a href="https://barabi.jp/?utm_source=dash&utm_medium=qiaddons&utm_campaign=welcome" target="_blank">
+					<img height="50" src="<?php echo esc_url( QI_ADDONS_FOR_ELEMENTOR_ADMIN_URL_PATH . '/inc/admin-pages/assets/img/logo-qode-interactive.png' ); ?>" alt="<?php esc_attr_e( 'Admin Barabi image', 'qi-addons-for-elementor' ); ?>"/>
 				</a>
 			</div>
 			<div class="qodef-header-text-holder">

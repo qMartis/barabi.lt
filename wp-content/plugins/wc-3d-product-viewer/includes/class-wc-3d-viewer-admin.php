@@ -1,0 +1,187 @@
+<?php
+/**
+ * Admin functionality for 3D Viewer
+ */
+
+if (!defined('ABSPATH')) {
+    exit;
+}
+
+class WC_3D_Viewer_Admin {
+    
+    /**
+     * Constructor
+     */
+    public function __construct() {
+        // Add variation settings
+        add_action('woocommerce_product_after_variable_attributes', array($this, 'add_variation_3d_field'), 10, 3);
+        add_action('woocommerce_save_product_variation', array($this, 'save_variation_3d_field'), 10, 2);
+        
+        // Enqueue admin scripts
+        add_action('admin_enqueue_scripts', array($this, 'enqueue_admin_scripts'));
+        
+        // AJAX handlers
+        add_action('wp_ajax_wc_3d_upload_model', array($this, 'handle_3d_upload'));
+        add_action('wp_ajax_wc_3d_remove_model', array($this, 'handle_3d_remove'));
+    }
+    
+    /**
+     * Enqueue admin scripts
+     */
+    public function enqueue_admin_scripts($hook) {
+        global $post_type;
+        
+        if (('post.php' === $hook || 'post-new.php' === $hook) && 'product' === $post_type) {
+            wp_enqueue_media();
+            wp_enqueue_script(
+                'wc-3d-viewer-admin',
+                WC_3D_VIEWER_PLUGIN_URL . 'assets/js/admin.js',
+                array('jquery'),
+                WC_3D_VIEWER_VERSION,
+                true
+            );
+            
+            wp_localize_script('wc-3d-viewer-admin', 'wc3dViewerAdmin', array(
+                'ajax_url' => admin_url('admin-ajax.php'),
+                'nonce' => wp_create_nonce('wc_3d_viewer_nonce'),
+                'upload_title' => __('Select 3D Model', 'wc-3d-viewer'),
+                'upload_button' => __('Use this model', 'wc-3d-viewer'),
+                'allowed_extensions' => array('glb', 'gltf', 'obj', 'fbx', 'stl'),
+            ));
+            
+            wp_enqueue_style(
+                'wc-3d-viewer-admin',
+                WC_3D_VIEWER_PLUGIN_URL . 'assets/css/admin.css',
+                array(),
+                WC_3D_VIEWER_VERSION
+            );
+        }
+    }
+    
+    /**
+     * Add 3D model field to variation
+     */
+    public function add_variation_3d_field($loop, $variation_data, $variation) {
+        $variation_id = $variation->ID;
+        $model_id = get_post_meta($variation_id, '_3d_model_id', true);
+        $model_url = '';
+        
+        if ($model_id) {
+            $model_url = wp_get_attachment_url($model_id);
+        }
+        
+        ?>
+        <div class="form-row form-row-full wc-3d-model-field">
+            <p class="form-field">
+                <label><?php esc_html_e('3D Model', 'wc-3d-viewer'); ?></label>
+                <span class="description"><?php esc_html_e('Upload a 3D model for this variation (GLB, GLTF, OBJ, FBX, STL)', 'wc-3d-viewer'); ?></span>
+            </p>
+            
+            <div class="wc-3d-model-upload-wrapper">
+                <input 
+                    type="hidden" 
+                    name="_3d_model_id[<?php echo esc_attr($loop); ?>]" 
+                    id="3d_model_id_<?php echo esc_attr($loop); ?>"
+                    value="<?php echo esc_attr($model_id); ?>"
+                    class="wc-3d-model-id"
+                />
+                
+                <div class="wc-3d-model-preview">
+                    <?php if ($model_url) : ?>
+                        <div class="wc-3d-model-info">
+                            <span class="dashicons dashicons-media-3d"></span>
+                            <span class="model-filename"><?php echo esc_html(basename($model_url)); ?></span>
+                        </div>
+                    <?php endif; ?>
+                </div>
+                
+                <div class="wc-3d-model-actions">
+                    <button type="button" class="button wc-3d-upload-btn" data-loop="<?php echo esc_attr($loop); ?>">
+                        <?php echo $model_url ? esc_html__('Change 3D Model', 'wc-3d-viewer') : esc_html__('Upload 3D Model', 'wc-3d-viewer'); ?>
+                    </button>
+                    
+                    <?php if ($model_url) : ?>
+                        <button type="button" class="button wc-3d-remove-btn" data-loop="<?php echo esc_attr($loop); ?>">
+                            <?php esc_html_e('Remove', 'wc-3d-viewer'); ?>
+                        </button>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+        <?php
+    }
+    
+    /**
+     * Save variation 3D model field
+     */
+    public function save_variation_3d_field($variation_id, $loop) {
+        if (isset($_POST['_3d_model_id'][$loop])) {
+            $model_id = absint($_POST['_3d_model_id'][$loop]);
+            
+            if ($model_id > 0) {
+                // Validate that it's a 3D model file
+                $file_path = get_attached_file($model_id);
+                if ($file_path && $this->is_valid_3d_file($file_path)) {
+                    update_post_meta($variation_id, '_3d_model_id', $model_id);
+                } else {
+                    delete_post_meta($variation_id, '_3d_model_id');
+                }
+            } else {
+                delete_post_meta($variation_id, '_3d_model_id');
+            }
+        }
+    }
+    
+    /**
+     * Validate if file is a 3D model
+     */
+    private function is_valid_3d_file($file_path) {
+        $allowed_extensions = array('glb', 'gltf', 'obj', 'fbx', 'stl');
+        $extension = strtolower(pathinfo($file_path, PATHINFO_EXTENSION));
+        
+        return in_array($extension, $allowed_extensions);
+    }
+    
+    /**
+     * Handle AJAX 3D model upload
+     */
+    public function handle_3d_upload() {
+        check_ajax_referer('wc_3d_viewer_nonce', 'nonce');
+        
+        if (!current_user_can('edit_products')) {
+            wp_send_json_error(array('message' => __('Permission denied', 'wc-3d-viewer')));
+        }
+        
+        if (empty($_POST['attachment_id'])) {
+            wp_send_json_error(array('message' => __('No attachment ID provided', 'wc-3d-viewer')));
+        }
+        
+        $attachment_id = absint($_POST['attachment_id']);
+        $file_path = get_attached_file($attachment_id);
+        
+        if (!$this->is_valid_3d_file($file_path)) {
+            wp_send_json_error(array('message' => __('Invalid 3D model file format', 'wc-3d-viewer')));
+        }
+        
+        $file_url = wp_get_attachment_url($attachment_id);
+        
+        wp_send_json_success(array(
+            'id' => $attachment_id,
+            'url' => $file_url,
+            'filename' => basename($file_url)
+        ));
+    }
+    
+    /**
+     * Handle AJAX 3D model removal
+     */
+    public function handle_3d_remove() {
+        check_ajax_referer('wc_3d_viewer_nonce', 'nonce');
+        
+        if (!current_user_can('edit_products')) {
+            wp_send_json_error(array('message' => __('Permission denied', 'wc-3d-viewer')));
+        }
+        
+        wp_send_json_success();
+    }
+}

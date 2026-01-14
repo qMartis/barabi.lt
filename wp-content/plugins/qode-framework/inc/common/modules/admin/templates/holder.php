@@ -5,7 +5,7 @@
 				<div class="qodef-header-left-inner">
 					<div class="qodef-logo-holder">
 						<a href="https://qodeinteractive.com" target="_blank">
-							<img src="<?php echo esc_url( QODE_FRAMEWORK_INC_URL_PATH . '/common/modules/admin/assets/img/logo-qode-interactive.png' ); ?>" alt="<?php esc_attr_e( 'Admin Qode Interactive image', 'qode-framework' ); ?>"/>
+							<img src="<?php echo esc_url( QODE_FRAMEWORK_INC_URL_PATH . '/common/modules/admin/assets/img/logo-qode-interactive.png' ); ?>" alt="<?php esc_attr_e( 'Admin Barabi image', 'qode-framework' ); ?>"/>
 						</a>
 					</div>
 					<div class="qodef-help-center-holder">

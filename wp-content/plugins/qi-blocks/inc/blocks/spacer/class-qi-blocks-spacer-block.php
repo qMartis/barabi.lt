@@ -12,8 +12,8 @@ if ( ! class_exists( 'Qi_Blocks_Spacer_Block' ) ) {
 			$this->set_block_name( 'spacer' );
 			$this->set_block_title( esc_html__( 'Spacer', 'qi-blocks' ) );
 			$this->set_block_subcategory( esc_html__( 'Content', 'qi-blocks' ) );
-			$this->set_block_demo_url( 'https://qodeinteractive.com/qi-blocks-for-gutenberg/spacer/' );
-			$this->set_block_documentation( 'https://qodeinteractive.com/qi-blocks-for-gutenberg/documentation/#spacer' );
+			$this->set_block_demo_url( 'https://barabi.jp/qi-blocks-for-gutenberg/spacer/' );
+			$this->set_block_documentation( 'https://barabi.jp/qi-blocks-for-gutenberg/documentation/#spacer' );
 
 			parent::__construct();
 		}

@@ -42,8 +42,8 @@ if ( class_exists( 'QiAddonsForElementor_Slider_Shortcode' ) ) {
 			$this->set_description( esc_html__( 'Shortcode that displays carousel of clients', 'qi-addons-for-elementor' ) );
 			$this->set_category( esc_html__( 'Qi Addons for Elementor', 'qi-addons-for-elementor' ) );
 			$this->set_subcategory( esc_html__( 'Business', 'qi-addons-for-elementor' ) );
-			$this->set_demo( 'https://qodeinteractive.com/qi-addons-for-elementor/clients-carousel/' );
-			$this->set_documentation( 'https://qodeinteractive.com/qi-addons-for-elementor/documentation/#clients_carousel' );
+			$this->set_demo( 'https://barabi.jp/qi-addons-for-elementor/clients-carousel/' );
+			$this->set_documentation( 'https://barabi.jp/qi-addons-for-elementor/documentation/#clients_carousel' );
 			$this->set_video( 'https://www.youtube.com/watch?v=WT8ngVYlJ_0' );
 			$this->set_necessary_styles( qi_addons_for_elementor_icon_necessary_styles() );
 			$this->set_option(

@@ -12,8 +12,8 @@ if ( ! class_exists( 'Qi_Blocks_Progress_Bar_Vertical_Block' ) ) {
 			$this->set_block_name( 'progress-bar-vertical' );
 			$this->set_block_title( esc_html__( 'Vertical Progress Bar', 'qi-blocks' ) );
 			$this->set_block_subcategory( esc_html__( 'Infographics', 'qi-blocks' ) );
-			$this->set_block_demo_url( 'https://qodeinteractive.com/qi-blocks-for-gutenberg/vertical-progress-bar/' );
-			$this->set_block_documentation( 'https://qodeinteractive.com/qi-blocks-for-gutenberg/documentation/#vertical_progress_bar' );
+			$this->set_block_demo_url( 'https://barabi.jp/qi-blocks-for-gutenberg/vertical-progress-bar/' );
+			$this->set_block_documentation( 'https://barabi.jp/qi-blocks-for-gutenberg/documentation/#vertical_progress_bar' );
 
 			// Set block 3rd party scripts.
 			$this->set_block_3rd_party_scripts(

@@ -788,7 +788,7 @@ class QiAddonsForElementor_Framework_Elementor_Translator {
 			array(
 				'type'            => \Elementor\Controls_Manager::RAW_HTML,
 				/* translators: %s admin link */
-				'raw'             => sprintf( esc_html__( '%1$s Live Demos %2$s', 'qi-addons-for-elementor' ), '<a href="https://qodeinteractive.com/qi-theme/#demos" target="_blank" rel="noopener">', '</a>' ),
+				'raw'             => sprintf( esc_html__( '%1$s Live Demos %2$s', 'qi-addons-for-elementor' ), '<a href="https://barabi.jp/qi-theme/#demos" target="_blank" rel="noopener">', '</a>' ),
 				'content_classes' => 'qodef-elementor-admin-widget-help qodef-elementor-admin-style-' . $theme_style,
 			)
 		);
@@ -846,7 +846,7 @@ class QiAddonsForElementor_Framework_Elementor_Translator {
 				array(
 					'type'            => \Elementor\Controls_Manager::RAW_HTML,
 					/* translators: %s admin link */
-					'raw'             => sprintf( esc_html__( ' %1$sQi Addons for Elementor Premium %2$s is now available with another 40+ advanced widgets.', 'qi-addons-for-elementor' ), '<a href="https://qodeinteractive.com/qi-addons-for-elementor/?utm_source=getmore&utm_medium=qi-addons&utm_campaign=gopremium" target="_blank" rel="noopener">', '</a>' ),
+					'raw'             => sprintf( esc_html__( ' %1$sQi Addons for Elementor Premium %2$s is now available with another 40+ advanced widgets.', 'qi-addons-for-elementor' ), '<a href="https://barabi.jp/qi-addons-for-elementor/?utm_source=getmore&utm_medium=qi-addons&utm_campaign=gopremium" target="_blank" rel="noopener">', '</a>' ),
 					'content_classes' => 'qodef-elementor-admin-widget-promotion qodef-elementor-admin-style-' . $theme_style,
 				)
 			);

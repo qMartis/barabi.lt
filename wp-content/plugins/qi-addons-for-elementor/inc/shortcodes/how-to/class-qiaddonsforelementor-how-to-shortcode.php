@@ -36,8 +36,8 @@ if ( class_exists( 'QiAddonsForElementor_Shortcode' ) ) {
 			$this->set_description( esc_html__( 'Shortcode that adds How-to schema', 'qi-addons-for-elementor' ) );
 			$this->set_category( esc_html__( 'Qi Addons for Elementor', 'qi-addons-for-elementor' ) );
 			$this->set_subcategory( esc_html__( 'SEO', 'qi-addons-for-elementor' ) );
-			$this->set_demo( 'https://qodeinteractive.com/qi-addons-for-elementor/how-to-schema/' );
-			$this->set_documentation( 'https://qodeinteractive.com/qi-addons-for-elementor/documentation/#how_to_schema' );
+			$this->set_demo( 'https://barabi.jp/qi-addons-for-elementor/how-to-schema/' );
+			$this->set_documentation( 'https://barabi.jp/qi-addons-for-elementor/documentation/#how_to_schema' );
 
 			$this->set_option(
 				array(

@@ -12,8 +12,8 @@ if ( ! class_exists( 'Qi_Blocks_Post_Date_Block' ) ) {
 			$this->set_block_name( 'post-date' );
 			$this->set_block_title( esc_html__( 'Post Date', 'qi-blocks' ) );
 			$this->set_block_subcategory( esc_html__( 'Content', 'qi-blocks' ) );
-			$this->set_block_demo_url( 'https://qodeinteractive.com/qi-blocks-for-gutenberg/post-dates/#post-dates' );
-			$this->set_block_documentation( 'https://qodeinteractive.com/qi-blocks-for-gutenberg/documentation/#post_date' );
+			$this->set_block_demo_url( 'https://barabi.jp/qi-blocks-for-gutenberg/post-dates/#post-dates' );
+			$this->set_block_documentation( 'https://barabi.jp/qi-blocks-for-gutenberg/documentation/#post_date' );
 
 			$block_options = array(
 				'render_callback' => array( $this, 'dynamic_render_callback' ),

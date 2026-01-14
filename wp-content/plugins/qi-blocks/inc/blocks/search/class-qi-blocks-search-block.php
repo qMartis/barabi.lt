@@ -12,8 +12,8 @@ if ( ! class_exists( 'Qi_Blocks_Search_Block' ) ) {
 			$this->set_block_name( 'search' );
 			$this->set_block_title( esc_html__( 'Search', 'qi-blocks' ) );
 			$this->set_block_subcategory( esc_html__( 'Content', 'qi-blocks' ) );
-			$this->set_block_demo_url( 'https://qodeinteractive.com/qi-blocks-for-gutenberg/search/#search' );
-			$this->set_block_documentation( 'https://qodeinteractive.com/qi-blocks-for-gutenberg/documentation/#search' );
+			$this->set_block_demo_url( 'https://barabi.jp/qi-blocks-for-gutenberg/search/#search' );
+			$this->set_block_documentation( 'https://barabi.jp/qi-blocks-for-gutenberg/documentation/#search' );
 
 			$block_options = array(
 				'render_callback' => array( $this, 'dynamic_render_callback' ),

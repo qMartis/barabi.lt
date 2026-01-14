@@ -90,7 +90,7 @@
 							<a href="https://www.youtube.com/QodeInteractiveVideos" target="_blank"><?php esc_html_e( 'Video Tutorials', 'barabi-core' ); ?></a>
 						</li>
 						<li>
-							<a href="https://qodeinteractive.com" target="_blank"><?php esc_html_e( 'Qode Interactive Themes', 'barabi-core' ); ?></a>
+							<a href="https://qodeinteractive.com" target="_blank"><?php esc_html_e( 'Barabi Themes', 'barabi-core' ); ?></a>
 						</li>
 					</ul>
 				</div>

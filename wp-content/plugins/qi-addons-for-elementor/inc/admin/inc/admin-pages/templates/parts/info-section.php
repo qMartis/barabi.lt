@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<p><?php echo esc_html__( 'Detailed & carefully compiled Qi Addons for Elementor widget user guide', 'qi-addons-for-elementor' ); ?></p>
 				</div>
 				<div class="qodef-info-section-bottom">
-					<a class="qodef-btn qodef-btn-simple qodef-no-icon" href="https://qodeinteractive.com/qi-addons-for-elementor/documentation/?utm_source=dash&amp;utm_medium=qiaddons&amp;utm_campaign=welcome" target="_blank"><?php esc_html_e( 'read more', 'qi-addons-for-elementor' ); ?></a>
+					<a class="qodef-btn qodef-btn-simple qodef-no-icon" href="https://barabi.jp/qi-addons-for-elementor/documentation/?utm_source=dash&amp;utm_medium=qiaddons&amp;utm_campaign=welcome" target="_blank"><?php esc_html_e( 'read more', 'qi-addons-for-elementor' ); ?></a>
 				</div>
 			</div>
 		</div>
@@ -31,7 +31,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<p><?php echo esc_html__( 'Reach out to our support team if you have any questions or concerns', 'qi-addons-for-elementor' ); ?></p>
 				</div>
 				<div class="qodef-info-section-bottom">
-					<a class="qodef-btn qodef-btn-simple qodef-no-icon" href="https://qodeinteractive.com/submit-a-request/?utm_source=dash&utm_medium=qiaddons&utm_campaign=welcome" target="_blank"><?php esc_html_e( 'submit a ticket', 'qi-addons-for-elementor' ); ?></a>
+					<a class="qodef-btn qodef-btn-simple qodef-no-icon" href="https://barabi.jp/submit-a-request/?utm_source=dash&utm_medium=qiaddons&utm_campaign=welcome" target="_blank"><?php esc_html_e( 'submit a ticket', 'qi-addons-for-elementor' ); ?></a>
 				</div>
 			</div>
 		</div>

@@ -47,8 +47,8 @@ if ( class_exists( 'QiAddonsForElementor_Shortcode' ) ) {
 			$this->set_description( esc_html__( 'Shortcode that adds blockquote element', 'qi-addons-for-elementor' ) );
 			$this->set_category( esc_html__( 'Qi Addons for Elementor', 'qi-addons-for-elementor' ) );
 			$this->set_subcategory( esc_html__( 'Typography', 'qi-addons-for-elementor' ) );
-			$this->set_demo( 'https://qodeinteractive.com/qi-addons-for-elementor/blockquote/' );
-			$this->set_documentation( 'https://qodeinteractive.com/qi-addons-for-elementor/documentation/#blockquote' );
+			$this->set_demo( 'https://barabi.jp/qi-addons-for-elementor/blockquote/' );
+			$this->set_documentation( 'https://barabi.jp/qi-addons-for-elementor/documentation/#blockquote' );
 			$this->set_video( 'https://www.youtube.com/watch?v=LxHZ2d9HejY' );
 			$this->set_necessary_styles( qi_addons_for_elementor_icon_necessary_styles() );
 			$this->set_option(

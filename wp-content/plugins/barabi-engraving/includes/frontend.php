@@ -47,57 +47,67 @@ function barabi_render_engraving() {
                     Personalize your product. Type in names, initials, or numbers.
                 </div>
 
-                <input
-                        type="text"
-                        class="eng-input"
-                        name="engraving_text"
-                        maxlength="20"
-                >
+                <div id="engravings">
+                    <div class="text-engraving">
+                        <input
+                                type="text"
+                                class="eng-input"
+                                name="engraving_text"
+                                maxlength="20"
+                        >
 
-                <input
-                        type="hidden"
-                        name="engraving_image_id"
-                        value="<?php echo esc_attr($image_id); ?>"
-                >
+                        <input
+                                type="hidden"
+                                name="engraving_image_id"
+                                value="<?php echo esc_attr($image_id); ?>"
+                        >
 
-                <div class="eng-limit">20 symbols maximum.</div>
+                        <div class="eng-limit">20 symbols maximum.</div>
 
-                <div class="eng-row">
-                    <div class="eng-label">Font:</div>
-                    <div class="eng-btns">
-                        <label>
-                            <input type="radio" name="engraving_font" value="poster" checked>
-                            <span>Poster</span>
-                        </label>
-                        <label>
-                            <input type="radio" name="engraving_font" value="default">
-                            <span>Default</span>
-                        </label>
-                        <label>
-                            <input type="radio" name="engraving_font" value="handwriting">
-                            <span class="font-hw">Handwriting</span>
-                        </label>
+                        <div class="eng-row">
+                            <div class="eng-label">Font:</div>
+                            <div class="eng-btns">
+                                <label>
+                                    <input type="radio" name="engraving_font" value="poster" checked>
+                                    <span>Poster</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="engraving_font" value="default">
+                                    <span>Default</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="engraving_font" value="handwriting">
+                                    <span class="font-hw">Handwriting</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="eng-row">
+                            <div class="eng-label">Size:</div>
+                            <div class="eng-btns">
+                                <label>
+                                    <input type="radio" name="engraving_size" value="regular" checked>
+                                    <span>Regular</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="engraving_size" value="big">
+                                    <span>Big</span>
+                                </label>
+                            </div>
+                        </div>
                     </div>
-                </div>
-
-                <div class="eng-row">
-                    <div class="eng-label">Size:</div>
-                    <div class="eng-btns">
-                        <label>
-                            <input type="radio" name="engraving_size" value="regular" checked>
-                            <span>Regular</span>
-                        </label>
-                        <label>
-                            <input type="radio" name="engraving_size" value="big">
-                            <span>Big</span>
-                        </label>
+                    <div class="emoji-engraving">
+                        <div class="eng-title">Emoji engraving:</div>
+                        <div class="emoji-selection">
+                            
+                        </div>
                     </div>
-                </div>
+                </div>  
             </div>
 
             <div class="eng-right-side">
                 <div class="eng-img-box">
-                    <img src="<?php echo esc_url($image); ?>" alt="">
+                    <img src="<?php echo esc_url($image); ?>" alt="engraving image">
                     <div class="eng-text-overlay"></div>
                 </div>
             </div>
@@ -116,7 +126,7 @@ add_filter('woocommerce_add_cart_item_data', function ($cart_item_data) {
                 'text'     => sanitize_text_field($_POST['engraving_text']),
                 'font'     => sanitize_text_field($_POST['engraving_font'] ?? ''),
                 'size'     => sanitize_text_field($_POST['engraving_size'] ?? ''),
-                'image_id' => absint($_POST['engraving_image_id'] ?? 0),
+//                 'image_id' => absint($_POST['engraving_image_id'] ?? 0),
         ];
     }
     return $cart_item_data;
@@ -150,15 +160,15 @@ add_filter('woocommerce_get_item_data', function ($item_data, $cart_item) {
         ];
     }
 
-    if (!empty($e['image_id'])) {
-        $img = wp_get_attachment_image_url($e['image_id'], 'thumbnail');
-        if ($img) {
-            $item_data[] = [
-                    'name'  => 'Engraving image',
-                    'value' => '<img src="' . esc_url($img) . '" style="max-width:100px;">',
-            ];
-        }
-    }
+//     if (!empty($e['image_id'])) {
+//         $img = wp_get_attachment_image_url($e['image_id'], 'thumbnail');
+//         if ($img) {
+//             $item_data[] = [
+//                     'name'  => 'Engraving image',
+//                     'value' => '<img src="' . esc_url($img) . '" style="max-width:100px;">',
+//             ];
+//         }
+//     }
 
     return $item_data;
 }, 10, 2);

@@ -1,4 +1,4 @@
-# Copyright (C) 2023 Qode Interactive
+# Copyright (C) 2023 Barabi
 # This file is distributed under the same license as the Qode Framework plugin.
 msgid ""
 msgstr ""
@@ -24,11 +24,11 @@ msgid "https://qodeinteractive.com"
 msgstr ""
 
 #. Description of the plugin
-msgid "Framework plugin developed as a base for Qode Interactive themes"
+msgid "Framework plugin developed as a base for Barabi themes"
 msgstr ""
 
 #. Author of the plugin
-msgid "Qode Interactive"
+msgid "Barabi"
 msgstr ""
 
 #: helpers/helper.php:1089
@@ -141,7 +141,7 @@ msgid "Options reset to default"
 msgstr ""
 
 #: inc/common/modules/admin/templates/holder.php:8
-msgid "Admin Qode Interactive image"
+msgid "Admin Barabi image"
 msgstr ""
 
 #: inc/common/modules/admin/templates/holder.php:13

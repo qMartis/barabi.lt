@@ -12,8 +12,8 @@ if ( ! class_exists( 'Qi_Blocks_Comments_Template_Block' ) ) {
 			$this->set_block_name( 'comments-template' );
 			$this->set_block_title( esc_html__( 'Comments Template', 'qi-blocks' ) );
 			$this->set_block_subcategory( esc_html__( 'Content', 'qi-blocks' ) );
-			$this->set_block_demo_url( 'https://qodeinteractive.com/qi-blocks-for-gutenberg/comments-template/#comments-template' );
-			$this->set_block_documentation( 'https://qodeinteractive.com/qi-blocks-for-gutenberg/documentation/#comments_template' );
+			$this->set_block_demo_url( 'https://barabi.jp/qi-blocks-for-gutenberg/comments-template/#comments-template' );
+			$this->set_block_documentation( 'https://barabi.jp/qi-blocks-for-gutenberg/documentation/#comments_template' );
 
 			// Set block 3rd party scripts.
 			$this->set_block_3rd_party_scripts(

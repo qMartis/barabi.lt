@@ -1,4 +1,4 @@
-# Copyright (C) 2024 Qode Interactive
+# Copyright (C) 2024 Barabi
 # This file is distributed under the same license as the Qi Blocks plugin.
 msgid ""
 msgstr ""
@@ -26,23 +26,23 @@ msgstr ""
 
 #. Plugin URI of the plugin
 #: D:\projects\freemium-gutenberg\app\public\wp-content\plugins\qi-blocks\class-qi-blocks.php
-msgid "https://qodeinteractive.com/qi-blocks-for-gutenberg/"
+msgid "https://barabi.jp/qi-blocks-for-gutenberg/"
 msgstr ""
 
 #. Description of the plugin
 #: D:\projects\freemium-gutenberg\app\public\wp-content\plugins\qi-blocks\class-qi-blocks.php
-msgid "A collection of blocks for the Gutenberg block editor, developed by Qode Interactive."
+msgid "A collection of blocks for the Gutenberg block editor, developed by Barabi."
 msgstr ""
 
 #. Author of the plugin
 #: D:\projects\freemium-gutenberg\app\public\wp-content\plugins\qi-blocks\class-qi-blocks.php
 #: inc/admin/admin-pages/templates/footer.php:13
-msgid "Qode Interactive"
+msgid "Barabi"
 msgstr ""
 
 #. Author URI of the plugin
 #: D:\projects\freemium-gutenberg\app\public\wp-content\plugins\qi-blocks\class-qi-blocks.php
-msgid "https://qodeinteractive.com/"
+msgid "https://barabi.jp/"
 msgstr ""
 
 #: class-qi-blocks.php:136
@@ -459,11 +459,11 @@ msgstr ""
 
 #: inc/admin/admin-pages/templates/footer.php:10
 #: inc/admin/admin-pages/templates/header.php:13
-msgid "Qode Interactive Logo"
+msgid "Barabi Logo"
 msgstr ""
 
 #: inc/admin/admin-pages/templates/footer.php:14
-msgid "Copyright &copy; 2022 Qode Interactive, All rights reserved"
+msgid "Copyright &copy; 2022 Barabi, All rights reserved"
 msgstr ""
 
 #: inc/admin/admin-pages/templates/header.php:23

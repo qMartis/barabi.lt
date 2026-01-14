@@ -79,8 +79,8 @@ msgid "Large size"
 msgstr "Grande taille"
 
 #: inc/admin/inc/dashboard-widgets/class-qiaddonsforelementor-dashboard-widgets.php:41
-msgid "Qode Interactive News"
-msgstr "Nouvelles de Qode Interactive"
+msgid "Barabi News"
+msgstr "Nouvelles de Barabi"
 
 #: inc/admin/inc/dashboard-widgets/templates/widget.php:84
 msgid "Submit Ticket"
@@ -235,16 +235,16 @@ msgid "Knowledge Base"
 msgstr "Base de connaissances"
 
 #: inc/admin/inc/admin-pages/templates/footer.php:14
-msgid "Copyright &copy; 2021 Qode Interactive, All rights reserved"
-msgstr "Copyright © 2021 Qode Interactive, Tous droits réservés"
+msgid "Copyright &copy; 2021 Barabi, All rights reserved"
+msgstr "Copyright © 2021 Barabi, Tous droits réservés"
 
 #: inc/admin/inc/admin-pages/templates/footer.php:10
-msgid "Qode Interactive Logo"
-msgstr "Logo Qode Interactive"
+msgid "Barabi Logo"
+msgstr "Logo Barabi"
 
 #: inc/admin/inc/admin-pages/templates/header.php:16
 #: inc/admin/inc/admin-pages/templates/parts/sidebar/widgets.php:11
-msgid "Admin Qode Interactive image"
+msgid "Admin Barabi image"
 msgstr "Image intéractive Admin Qode"
 
 #: inc/admin/inc/shortcodes/translators/elementor/class-qiaddonsforelementor-framework-elementor-translator.php:443
@@ -8909,8 +8909,8 @@ msgstr "Par défaut"
 
 #. Author URI of the plugin
 #: class-qiaddonsforelementor.php
-msgid "https://qodeinteractive.com/"
-msgstr "https://qodeinteractive.com/"
+msgid "https://barabi.jp/"
+msgstr "https://barabi.jp/"
 
 #. Author of the plugin
 #: class-qiaddonsforelementor.php
@@ -8920,13 +8920,13 @@ msgstr "https://qodeinteractive.com/"
 #: inc/admin/inc/admin-pages/templates/parts/sidebar/market.php:18
 #: inc/admin/inc/dashboard-widgets/templates/widget.php:12
 #: inc/admin/inc/dashboard-widgets/templates/widget.php:13
-msgid "Qode Interactive"
-msgstr "Qode Interactive"
+msgid "Barabi"
+msgstr "Barabi"
 
 #. Description of the plugin
 #: class-qiaddonsforelementor.php
-msgid "Qi Addons for Elementor is a comprehensive library of 60 custom, flexible & easily styled widgets for Elementor developed by Qode Interactive."
-msgstr "Qi Addons for Elementor est une bibliothèque complète de 60 widgets personnalisés, flexibles et personnalisables pour Elementor développés par Qode Interactive."
+msgid "Qi Addons for Elementor is a comprehensive library of 60 custom, flexible & easily styled widgets for Elementor developed by Barabi."
+msgstr "Qi Addons for Elementor est une bibliothèque complète de 60 widgets personnalisés, flexibles et personnalisables pour Elementor développés par Barabi."
 
 #: class-qiaddonsforelementor.php:287
 msgid "Elementor plugin is required for Qi Addons for Elementor plugin to work properly. Please install/activate it first."

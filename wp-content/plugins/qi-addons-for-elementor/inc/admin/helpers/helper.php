@@ -1172,7 +1172,7 @@ if ( ! function_exists( 'qi_addons_for_elementor_extend_plugin_info' ) ) {
 if ( ! function_exists( 'qi_addons_for_elementor_extend_plugin_actions' ) ) {
 
 	function qi_addons_for_elementor_extend_plugin_actions( $links ) {
-		$links['upgrade'] = '<a href="https://qodeinteractive.com/qi-addons-for-elementor/?utm_source=upgrade&utm_medium=qi-addons&utm_campaign=gopremium" target="_blank">' . esc_html__( 'Upgrade', 'qi-addons-for-elementor' ) . '</a>';
+		$links['upgrade'] = '<a href="https://barabi.jp/qi-addons-for-elementor/?utm_source=upgrade&utm_medium=qi-addons&utm_campaign=gopremium" target="_blank">' . esc_html__( 'Upgrade', 'qi-addons-for-elementor' ) . '</a>';
 
 		return apply_filters( 'qi_addons_for_elementor_filter_extend_plugin_actions', $links );
 	}

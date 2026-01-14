@@ -1,10 +1,10 @@
 <?php
 /*
 Plugin Name: Barabi Core
-Plugin URI: https://qodeinteractive.com
+Plugin URI: https://barabi.jp
 Description: Plugin that adds portfolio post type, shortcodes and other modules
-Author: Qode Interactive
-Author URI: https://qodeinteractive.com
+Author: Barabi
+Author URI: https://barabi.jp
 Version: 1.0
 Text Domain: barabi-core
 */

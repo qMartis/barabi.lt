@@ -79,7 +79,7 @@ if ( $templates_flag ) {
 			<div class="qodef-setup-wizard-content qodef-m qodef--elements">
 				<div class="qodef-m-heading">
 					<h3 class="qodef-m-title"><?php esc_html_e( 'Choose the Elements You Wish to Use', 'qi-blocks' ); ?></h3>
-					<a class="qodef-btn qodef-btn-icon" href="https://qodeinteractive.com/qi-blocks-for-gutenberg/all-blocks/" target="_blank">
+					<a class="qodef-btn qodef-btn-icon" href="https://barabi.jp/qi-blocks-for-gutenberg/all-blocks/" target="_blank">
 						<span class="qodef-m-text"><?php esc_html_e( 'Preview All Blocks', 'qi-blocks' ); ?></span>
 						<span class="qodef-m-icon">
 							<svg xml:space="preserve" height="7.5" width="12.8" xmlns="http://www.w3.org/2000/svg"><path d="M.5 3.2h10.4L8.7.9c-.3-.2-.3-.5 0-.7.3-.3.5-.2.7 0l3.2 3.2c.1 0 .1.1.1.2V4c0 .1-.1.1-.1.2L9.4 7.3c-.2.3-.5.3-.7 0-.3-.3-.2-.5 0-.7L11 4.3H.5c-.2 0-.3 0-.4-.1S0 3.9 0 3.8v-.2l.1-.1c.1-.1.3-.3.4-.3z"></path></svg>
@@ -114,7 +114,7 @@ if ( $templates_flag ) {
 				<div class="qodef-setup-wizard-content qodef-m qodef--pro">
 					<div class="qodef-m-heading">
 						<h3 class="qodef-m-title"><?php esc_html_e( 'Unlock 30+ Premium Blocks', 'qi-blocks' ); ?></h3>
-						<a class="qodef-btn qodef-btn-icon" href="https://qodeinteractive.com/qi-blocks-for-gutenberg/all-premium-blocks/" target="_blank">
+						<a class="qodef-btn qodef-btn-icon" href="https://barabi.jp/qi-blocks-for-gutenberg/all-premium-blocks/" target="_blank">
 							<span class="qodef-m-text"><?php esc_html_e( 'Preview Premium Blocks', 'qi-blocks' ); ?></span>
 							<span class="qodef-m-icon">
 								<svg xml:space="preserve" height="7.5" width="12.8" xmlns="http://www.w3.org/2000/svg"><path d="M.5 3.2h10.4L8.7.9c-.3-.2-.3-.5 0-.7.3-.3.5-.2.7 0l3.2 3.2c.1 0 .1.1.1.2V4c0 .1-.1.1-.1.2L9.4 7.3c-.2.3-.5.3-.7 0-.3-.3-.2-.5 0-.7L11 4.3H.5c-.2 0-.3 0-.4-.1S0 3.9 0 3.8v-.2l.1-.1c.1-.1.3-.3.4-.3z"></path></svg>
@@ -122,7 +122,7 @@ if ( $templates_flag ) {
 						</a>
 					</div>
 					<img class="qodef-m-image" src="<?php echo esc_url( QI_BLOCKS_ADMIN_URL_PATH . '/admin-pages/sub-pages/setup-wizard/assets/img/wizard-step-3-bg.png' ); ?>" alt="<?php esc_attr_e( 'Qi Premium Blocks', 'qi-blocks' ); ?>" />
-					<a class="qodef-m-button qodef-btn qodef-btn-solid-red" href="https://qodeinteractive.com/pricing/?qi_product=blocks?utm_source=dash&utm_medium=qiblocks&utm_campaign=wizard" target="_blank"><?php esc_html_e( 'Get Premium', 'qi-blocks' ); ?></a>
+					<a class="qodef-m-button qodef-btn qodef-btn-solid-red" href="https://barabi.jp/pricing/?qi_product=blocks?utm_source=dash&utm_medium=qiblocks&utm_campaign=wizard" target="_blank"><?php esc_html_e( 'Get Premium', 'qi-blocks' ); ?></a>
 				</div>
 			<?php } ?>
 			<?php if ( ! $templates_flag ) { ?>
@@ -136,7 +136,7 @@ if ( $templates_flag ) {
 								<h4 class="qodef-m-item"><?php esc_html_e( '- 232 Qi Patterns', 'qi-blocks' ); ?></h4>
 								<h4 class="qodef-m-item"><?php esc_html_e( '- 32 Qi Wireframes', 'qi-blocks' ); ?></h4>
 							</div>
-							<a class="qodef-m-button qodef-btn qodef-btn-solid-red" href="https://qodeinteractive.com/qi-templates?utm_source=dash&utm_medium=qiblocks&utm_campaign=wizard" target="_blank"><?php esc_html_e( 'Get Qi Templates', 'qi-blocks' ); ?></a>
+							<a class="qodef-m-button qodef-btn qodef-btn-solid-red" href="https://barabi.jp/qi-templates?utm_source=dash&utm_medium=qiblocks&utm_campaign=wizard" target="_blank"><?php esc_html_e( 'Get Qi Templates', 'qi-blocks' ); ?></a>
 						</div>
 						<div class="qodef-m-image">
 							<img src="<?php echo esc_url( QI_BLOCKS_ADMIN_URL_PATH . '/admin-pages/sub-pages/setup-wizard/assets/img/wizard-step-4-bg.png' ); ?>" alt="<?php esc_attr_e( 'Qi Templates', 'qi-blocks' ); ?>" />

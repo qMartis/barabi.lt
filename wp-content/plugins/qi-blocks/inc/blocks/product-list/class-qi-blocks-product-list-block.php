@@ -12,8 +12,8 @@ if ( ! class_exists( 'Qi_Blocks_Product_List_Block' ) ) {
 			$this->set_block_name( 'product-list' );
 			$this->set_block_title( esc_html__( 'Product List', 'qi-blocks' ) );
 			$this->set_block_subcategory( esc_html__( 'WooCommerce', 'qi-blocks' ) );
-			$this->set_block_demo_url( 'https://qodeinteractive.com/qi-blocks-for-gutenberg/product-list/' );
-			$this->set_block_documentation( 'https://qodeinteractive.com/qi-blocks-for-gutenberg/documentation/#product_list' );
+			$this->set_block_demo_url( 'https://barabi.jp/qi-blocks-for-gutenberg/product-list/' );
+			$this->set_block_documentation( 'https://barabi.jp/qi-blocks-for-gutenberg/documentation/#product_list' );
 
 			// Set block 3rd party scripts.
 			$this->set_block_3rd_party_scripts(

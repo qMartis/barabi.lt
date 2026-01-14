@@ -1,10 +1,10 @@
 <?php
 /*
 Plugin Name: Qi Blocks
-Description: A collection of blocks for the Gutenberg block editor, developed by Qode Interactive.
-Author: Qode Interactive
-Author URI: https://qodeinteractive.com/
-Plugin URI: https://qodeinteractive.com/qi-blocks-for-gutenberg/
+Description: A collection of blocks for the Gutenberg block editor, developed by Barabi.
+Author: Barabi
+Author URI: https://barabi.jp
+Plugin URI: https://barabi.jp/
 Version: 1.4.6
 Requires at least: 5.8
 Requires PHP: 7.4
