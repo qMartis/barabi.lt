@@ -138,7 +138,7 @@ class WC_3D_Viewer_Admin {
     }
     
     /**
-     * Add default 3D model field for variable products in General tab
+     * Add 3D model field in General tab for all product types
      */
     public function add_default_3d_field() {
         global $post;
@@ -149,13 +149,20 @@ class WC_3D_Viewer_Admin {
         
         $product = wc_get_product($post->ID);
         
-        // Only show for variable products
-        if (!$product || !$product->is_type('variable')) {
+        if (!$product) {
             return;
         }
         
         $model_id = get_post_meta($post->ID, '_product_3d_model_id', true);
         $model_url = $model_id ? wp_get_attachment_url($model_id) : '';
+        
+        $label = $product->is_type('variable') ? 
+            __('Default 3D Model', 'wc-3d-viewer') : 
+            __('3D Model', 'wc-3d-viewer');
+            
+        $description = $product->is_type('variable') ? 
+            __('Default 3D model shown when no variation is selected. Click the button below to upload.', 'wc-3d-viewer') :
+            __('3D model for this product. Click the button below to upload.', 'wc-3d-viewer');
         
         echo '<div class="options_group">';
         
@@ -163,9 +170,9 @@ class WC_3D_Viewer_Admin {
         
         woocommerce_wp_text_input(array(
             'id' => '_product_3d_model_id_display',
-            'label' => __('Default 3D Model', 'wc-3d-viewer'),
+            'label' => $label,
             'desc_tip' => true,
-            'description' => __('Default 3D model shown when no variation is selected. Click the button below to upload.', 'wc-3d-viewer'),
+            'description' => $description,
             'type' => 'hidden',
             'custom_attributes' => array('readonly' => 'readonly'),
             'value' => $model_url ? basename($model_url) : __('No model uploaded', 'wc-3d-viewer')
