@@ -1,11 +1,41 @@
+// Import Three.js modules
+import * as THREE from './libs/three.module.js';
+import { GLTFLoader } from './libs/GLTFLoader.js';
+import { OBJLoader } from './libs/OBJLoader.js';
+import { OrbitControls } from './libs/OrbitControls.js';
+
 jQuery(document).ready(function($) {
     'use strict';
     
     // Variables
     var currentVariationId = null;
-    var viewer3D = null;
     var scene, camera, renderer, controls;
     var currentModel = null;
+    
+    // Move button and overlay to woocommerce-product-gallery__image on page load
+    var $galleryImage = $('.woocommerce-product-gallery__image:first');
+    var $buttonContainer = $('#wc-3d-viewer-button-container');
+    var $overlay = $('#wc-3d-viewer-overlay');
+    
+    if ($galleryImage.length && $buttonContainer.length && $overlay.length) {
+        // Make gallery image position relative
+        if ($galleryImage.css('position') === 'static') {
+            $galleryImage.css('position', 'relative');
+        }
+        
+        // Append button and overlay to gallery image
+        $galleryImage.append($buttonContainer);
+        $galleryImage.append($overlay);
+    }
+    
+    // For simple products or if default model exists, show button on load
+    if (!wc3dViewer.is_variable && wc3dViewer.product_3d) {
+        // Simple product with 3D model
+        showViewerButton();
+    } else if (wc3dViewer.is_variable && wc3dViewer.product_3d) {
+        // Variable product with default model - show until variation selected
+        showViewerButton();
+    }
     
     /**
      * Initialize 3D viewer when variation is selected
@@ -16,8 +46,33 @@ jQuery(document).ready(function($) {
         // Check if this variation has a 3D model
         if (wc3dViewer.variations_3d && wc3dViewer.variations_3d[currentVariationId]) {
             showViewerButton();
+            
+            // If 3D viewer is already open, reload with new model
+            if ($('#wc-3d-viewer-overlay').is(':visible')) {
+                var modelData = wc3dViewer.variations_3d[currentVariationId];
+                // Clean up current viewer
+                cleanupViewer();
+                // Load new model
+                setTimeout(function() {
+                    init3DViewer(modelData);
+                }, 100);
+            }
+        } else if (wc3dViewer.product_3d) {
+            // No variation model, but default product model exists
+            showViewerButton();
+            // If viewer is open, reload with default model
+            if ($('#wc-3d-viewer-overlay').is(':visible')) {
+                cleanupViewer();
+                setTimeout(function() {
+                    init3DViewer(wc3dViewer.product_3d);
+                }, 100);
+            }
         } else {
             hideViewerButton();
+            // If 3D viewer is open and new variation has no model, close it
+            if ($('#wc-3d-viewer-overlay').is(':visible')) {
+                close3DViewer();
+            }
         }
     });
     
@@ -26,32 +81,30 @@ jQuery(document).ready(function($) {
      */
     $(document).on('reset_data', function() {
         currentVariationId = null;
-        hideViewerButton();
+        
+        // If default product model exists, show button and reload if viewer is open
+        if (wc3dViewer.product_3d) {
+            showViewerButton();
+            if ($('#wc-3d-viewer-overlay').is(':visible')) {
+                cleanupViewer();
+                setTimeout(function() {
+                    init3DViewer(wc3dViewer.product_3d);
+                }, 100);
+            }
+        } else {
+            hideViewerButton();
+            // Close viewer if open
+            if ($('#wc-3d-viewer-overlay').is(':visible')) {
+                close3DViewer();
+            }
+        }
     });
     
     /**
      * Show 3D viewer button
      */
     function showViewerButton() {
-        var $buttonContainer = $('#wc-3d-viewer-button-container');
-        var $productImages = $('.woocommerce-product-gallery');
-        
-        if ($buttonContainer.length && $productImages.length) {
-            // Position button in bottom right of product image
-            $buttonContainer.css({
-                'position': 'absolute',
-                'bottom': '20px',
-                'right': '20px',
-                'z-index': '100'
-            });
-            
-            // Make product gallery position relative if not already
-            if ($productImages.css('position') === 'static') {
-                $productImages.css('position', 'relative');
-            }
-            
-            $buttonContainer.show();
-        }
+        $('#wc-3d-viewer-button-container').show();
     }
     
     /**
@@ -62,20 +115,30 @@ jQuery(document).ready(function($) {
     }
     
     /**
-     * Open 3D viewer modal
+     * Open 3D viewer on top of product image
      */
     $(document).on('click', '#wc-3d-viewer-button', function(e) {
         e.preventDefault();
         
-        if (!currentVariationId || !wc3dViewer.variations_3d[currentVariationId]) {
+        var modelData = null;
+        
+        // Check for variation model first
+        if (currentVariationId && wc3dViewer.variations_3d && wc3dViewer.variations_3d[currentVariationId]) {
+            modelData = wc3dViewer.variations_3d[currentVariationId];
+        } 
+        // Fall back to product-level model (simple product or default for variable)
+        else if (wc3dViewer.product_3d) {
+            modelData = wc3dViewer.product_3d;
+        }
+        
+        if (!modelData) {
             return;
         }
         
-        var modelData = wc3dViewer.variations_3d[currentVariationId];
+        // Hide the button when opening viewer
+        $('#wc-3d-viewer-button-container').hide();
         
-        // Show modal
-        $('#wc-3d-viewer-modal').fadeIn(300);
-        $('body').addClass('wc-3d-modal-open');
+        $('#wc-3d-viewer-overlay').fadeIn(300);
         
         // Initialize 3D viewer
         setTimeout(function() {
@@ -84,9 +147,9 @@ jQuery(document).ready(function($) {
     });
     
     /**
-     * Close 3D viewer modal
+     * Close 3D viewer
      */
-    $(document).on('click', '.wc-3d-modal-close, .wc-3d-modal-overlay', function(e) {
+    $(document).on('click', '#wc-3d-close-btn', function(e) {
         e.preventDefault();
         close3DViewer();
     });
@@ -95,7 +158,7 @@ jQuery(document).ready(function($) {
      * Close on ESC key
      */
     $(document).on('keydown', function(e) {
-        if (e.keyCode === 27 && $('#wc-3d-viewer-modal').is(':visible')) {
+        if (e.keyCode === 27 && $('#wc-3d-viewer-overlay').is(':visible')) {
             close3DViewer();
         }
     });
@@ -107,10 +170,10 @@ jQuery(document).ready(function($) {
         var container = document.getElementById('wc-3d-viewer-container');
         
         if (!container) {
+            console.error('Container not found');
             return;
         }
         
-        // Clear previous content
         container.innerHTML = '';
         
         // Scene
@@ -148,7 +211,7 @@ jQuery(document).ready(function($) {
         scene.add(directionalLight2);
         
         // Controls
-        controls = new THREE.OrbitControls(camera, renderer.domElement);
+        controls = new OrbitControls(camera, renderer.domElement);
         controls.enableDamping = true;
         controls.dampingFactor = 0.05;
         controls.screenSpacePanning = false;
@@ -178,12 +241,15 @@ jQuery(document).ready(function($) {
      * Load 3D model based on format
      */
     function loadModel(url, extension) {
+        console.log('Loading model:', url, 'Format:', extension);
+        
         if (extension === 'glb' || extension === 'gltf') {
             loadGLTFModel(url);
         } else if (extension === 'obj') {
             loadOBJModel(url);
         } else {
-            console.error('Unsupported 3D format: ' + extension);
+            console.error('Unsupported 3D format:', extension);
+            showError('Unsupported 3D file format: ' + extension);
         }
     }
     
@@ -191,22 +257,23 @@ jQuery(document).ready(function($) {
      * Load GLTF/GLB model
      */
     function loadGLTFModel(url) {
-        var loader = new THREE.GLTFLoader();
+        var loader = new GLTFLoader();
         
         loader.load(
             url,
             function(gltf) {
                 currentModel = gltf.scene;
                 scene.add(currentModel);
-                
-                // Center and scale model
                 centerAndScaleModel(currentModel);
+                console.log('GLTF model loaded successfully');
             },
             function(xhr) {
-                console.log((xhr.loaded / xhr.total * 100) + '% loaded');
+                var percent = (xhr.loaded / xhr.total * 100).toFixed(0);
+                console.log(percent + '% loaded');
             },
             function(error) {
                 console.error('Error loading GLTF model:', error);
+                showError('Failed to load 3D model');
             }
         );
     }
@@ -215,14 +282,13 @@ jQuery(document).ready(function($) {
      * Load OBJ model
      */
     function loadOBJModel(url) {
-        var loader = new THREE.OBJLoader();
+        var loader = new OBJLoader();
         
         loader.load(
             url,
             function(obj) {
                 currentModel = obj;
                 
-                // Add basic material to OBJ
                 currentModel.traverse(function(child) {
                     if (child instanceof THREE.Mesh) {
                         child.material = new THREE.MeshStandardMaterial({
@@ -234,15 +300,16 @@ jQuery(document).ready(function($) {
                 });
                 
                 scene.add(currentModel);
-                
-                // Center and scale model
                 centerAndScaleModel(currentModel);
+                console.log('OBJ model loaded successfully');
             },
             function(xhr) {
-                console.log((xhr.loaded / xhr.total * 100) + '% loaded');
+                var percent = (xhr.loaded / xhr.total * 100).toFixed(0);
+                console.log(percent + '% loaded');
             },
             function(error) {
                 console.error('Error loading OBJ model:', error);
+                showError('Failed to load 3D model');
             }
         );
     }
@@ -286,13 +353,19 @@ jQuery(document).ready(function($) {
     }
     
     /**
-     * Close 3D viewer
+     * Show error message
      */
-    function close3DViewer() {
-        $('#wc-3d-viewer-modal').fadeOut(300);
-        $('body').removeClass('wc-3d-modal-open');
-        
-        // Clean up
+    function showError(message) {
+        var container = document.getElementById('wc-3d-viewer-container');
+        if (container) {
+            container.innerHTML = '<div class="wc-3d-error">' + message + '</div>';
+        }
+    }
+    
+    /**
+     * Clean up viewer resources without closing overlay
+     */
+    function cleanupViewer() {
         $(window).off('resize.wc3dviewer');
         
         if (renderer) {
@@ -322,10 +395,54 @@ jQuery(document).ready(function($) {
         controls = null;
         currentModel = null;
         
+        var container = document.getElementById('wc-3d-viewer-container');
+        if (container) {
+            container.innerHTML = '';
+        }
+    }
+    
+    /**
+     * Close 3D viewer
+     */
+    function close3DViewer() {
+        $('#wc-3d-viewer-overlay').fadeOut(300);
+        
+        // Clean up
+        cleanupViewer();
+        
+        if (renderer) {
+            renderer.dispose();
+            renderer = null;
+        }
+        
+        if (scene) {
+            scene.traverse(function(object) {
+                if (object.geometry) {
+                    object.geometry.dispose();
+                }
+                if (object.material) {
+                }
+            });
+            scene = null;
+        }
+        
+        camera = null;
+        controls = null;
+        currentModel = null;
+        
         // Clear container
         var container = document.getElementById('wc-3d-viewer-container');
         if (container) {
             container.innerHTML = '';
+        }
+        
+        // Show button again after closing if there's a model available
+        if (currentVariationId && wc3dViewer.variations_3d && wc3dViewer.variations_3d[currentVariationId]) {
+            $('#wc-3d-viewer-button-container').show();
+        } else if (!wc3dViewer.is_variable && wc3dViewer.product_3d) {
+            $('#wc-3d-viewer-button-container').show();
+        } else if (wc3dViewer.is_variable && wc3dViewer.product_3d && !currentVariationId) {
+            $('#wc-3d-viewer-button-container').show();
         }
     }
 });

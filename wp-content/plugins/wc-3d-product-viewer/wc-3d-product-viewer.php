@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: WooCommerce 3D Product Viewer
- * Plugin URI: https://example.com
+ * Plugin URI: https://weso.lt
  * Description: Add 3D model viewing capability to WooCommerce variable products. Upload 3D models for each variation and display them on the product page.
  * Version: 1.0.0
- * Author: Your Name
- * Author URI: https://example.com
+ * Author: Weso, MB Barabi.lt
+ * Author URI: ttps://weso.lt
  * Text Domain: wc-3d-viewer
  * Domain Path: /languages
  * Requires at least: 5.8

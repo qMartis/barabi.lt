@@ -17,6 +17,11 @@ class WC_3D_Viewer_Admin {
         add_action('woocommerce_product_after_variable_attributes', array($this, 'add_variation_3d_field'), 10, 3);
         add_action('woocommerce_save_product_variation', array($this, 'save_variation_3d_field'), 10, 2);
         
+        // Add product-level 3D model settings
+        add_action('add_meta_boxes', array($this, 'add_product_3d_meta_box'));
+        add_action('woocommerce_product_options_general_product_data', array($this, 'add_default_3d_field'));
+        add_action('woocommerce_process_product_meta', array($this, 'save_product_3d_model'));
+        
         // Enqueue admin scripts
         add_action('admin_enqueue_scripts', array($this, 'enqueue_admin_scripts'));
         
@@ -56,6 +61,155 @@ class WC_3D_Viewer_Admin {
                 WC_3D_VIEWER_VERSION
             );
         }
+    }
+    
+    /**
+     * Add 3D model meta box for simple products
+     */
+    public function add_product_3d_meta_box() {
+        add_meta_box(
+            'wc_3d_product_model',
+            __('3D Model', 'wc-3d-viewer'),
+            array($this, 'render_product_3d_meta_box'),
+            'product',
+            'side',
+            'default'
+        );
+    }
+    
+    /**
+     * Render 3D model meta box
+     */
+    public function render_product_3d_meta_box($post) {
+        $product = wc_get_product($post->ID);
+        
+        // Only show for simple products or as info for variable products
+        if (!$product) {
+            return;
+        }
+        
+        $model_id = get_post_meta($post->ID, '_product_3d_model_id', true);
+        $model_url = $model_id ? wp_get_attachment_url($model_id) : '';
+        
+        if ($product->is_type('variable')) {
+            echo '<p>' . esc_html__('For variable products, set the default 3D model in General tab or add 3D models to individual variations below.', 'wc-3d-viewer') . '</p>';
+            return;
+        }
+        
+        wp_nonce_field('wc_3d_product_model_nonce', 'wc_3d_product_model_nonce');
+        ?>
+        <div class="wc-3d-model-upload-wrapper">
+            <input 
+                type="hidden" 
+                name="_product_3d_model_id" 
+                id="product_3d_model_id"
+                value="<?php echo esc_attr($model_id); ?>"
+                class="wc-3d-model-id"
+            />
+            
+            <div class="wc-3d-model-preview">
+                <?php if ($model_url) : ?>
+                    <div class="wc-3d-model-info">
+                        <span class="dashicons dashicons-media-3d"></span>
+                        <span class="model-filename"><?php echo esc_html(basename($model_url)); ?></span>
+                    </div>
+                <?php else : ?>
+                    <p><?php esc_html_e('No 3D model uploaded', 'wc-3d-viewer'); ?></p>
+                <?php endif; ?>
+            </div>
+            
+            <div class="wc-3d-model-actions">
+                <button type="button" class="button wc-3d-upload-btn" data-loop="product">
+                    <?php echo $model_url ? esc_html__('Change 3D Model', 'wc-3d-viewer') : esc_html__('Upload 3D Model', 'wc-3d-viewer'); ?>
+                </button>
+                
+                <?php if ($model_url) : ?>
+                    <button type="button" class="button wc-3d-remove-btn" data-loop="product">
+                        <?php esc_html_e('Remove', 'wc-3d-viewer'); ?>
+                    </button>
+                <?php endif; ?>
+            </div>
+            
+            <p class="description">
+                <?php esc_html_e('Supported formats: GLB, GLTF, OBJ, FBX, STL', 'wc-3d-viewer'); ?>
+            </p>
+        </div>
+        <?php
+    }
+    
+    /**
+     * Add default 3D model field for variable products in General tab
+     */
+    public function add_default_3d_field() {
+        global $post;
+        
+        if (!$post || !$post->ID) {
+            return;
+        }
+        
+        $product = wc_get_product($post->ID);
+        
+        // Only show for variable products
+        if (!$product || !$product->is_type('variable')) {
+            return;
+        }
+        
+        $model_id = get_post_meta($post->ID, '_product_3d_model_id', true);
+        $model_url = $model_id ? wp_get_attachment_url($model_id) : '';
+        
+        echo '<div class="options_group">';
+        
+        echo '<p class="form-field"><strong>' . esc_html__('3D Model Settings', 'wc-3d-viewer') . '</strong></p>';
+        
+        woocommerce_wp_text_input(array(
+            'id' => '_product_3d_model_id_display',
+            'label' => __('Default 3D Model', 'wc-3d-viewer'),
+            'desc_tip' => true,
+            'description' => __('Default 3D model shown when no variation is selected. Click the button below to upload.', 'wc-3d-viewer'),
+            'type' => 'hidden',
+            'custom_attributes' => array('readonly' => 'readonly'),
+            'value' => $model_url ? basename($model_url) : __('No model uploaded', 'wc-3d-viewer')
+        ));
+        
+        ?>
+        <p class="form-field">
+            <label>&nbsp;</label>
+            <div class="wc-3d-model-upload-wrapper">
+                <input 
+                    type="hidden" 
+                    name="_product_3d_model_id" 
+                    id="product_3d_model_id"
+                    value="<?php echo esc_attr($model_id); ?>"
+                    class="wc-3d-model-id"
+                />
+                
+                <?php if ($model_url) : ?>
+                    <div class="wc-3d-model-preview" style="margin-bottom: 10px;">
+                        <div class="wc-3d-model-info">
+                            <span class="dashicons dashicons-media-3d"></span>
+                            <span class="model-filename"><?php echo esc_html(basename($model_url)); ?></span>
+                        </div>
+                    </div>
+                <?php endif; ?>
+                
+                <button type="button" class="button wc-3d-upload-btn" data-loop="product">
+                    <?php echo $model_url ? esc_html__('Change 3D Model', 'wc-3d-viewer') : esc_html__('Upload 3D Model', 'wc-3d-viewer'); ?>
+                </button>
+                
+                <?php if ($model_url) : ?>
+                    <button type="button" class="button wc-3d-remove-btn" data-loop="product">
+                        <?php esc_html_e('Remove', 'wc-3d-viewer'); ?>
+                    </button>
+                <?php endif; ?>
+                
+                <span class="description" style="display: block; margin-top: 5px;">
+                    <?php esc_html_e('Supported formats: GLB, GLTF, OBJ, FBX, STL', 'wc-3d-viewer'); ?>
+                </span>
+            </div>
+        </p>
+        <?php
+        
+        echo '</div>';
     }
     
     /**
@@ -109,6 +263,31 @@ class WC_3D_Viewer_Admin {
             </div>
         </div>
         <?php
+    }
+    
+    /**
+     * Save product-level 3D model
+     */
+    public function save_product_3d_model($post_id) {
+        // Verify nonce for simple products
+        if (isset($_POST['wc_3d_product_model_nonce']) && !wp_verify_nonce($_POST['wc_3d_product_model_nonce'], 'wc_3d_product_model_nonce')) {
+            return;
+        }
+        
+        if (isset($_POST['_product_3d_model_id'])) {
+            $model_id = absint($_POST['_product_3d_model_id']);
+            
+            if ($model_id > 0) {
+                $file_path = get_attached_file($model_id);
+                if ($file_path && $this->is_valid_3d_file($file_path)) {
+                    update_post_meta($post_id, '_product_3d_model_id', $model_id);
+                } else {
+                    delete_post_meta($post_id, '_product_3d_model_id');
+                }
+            } else {
+                delete_post_meta($post_id, '_product_3d_model_id');
+            }
+        }
     }
     
     /**

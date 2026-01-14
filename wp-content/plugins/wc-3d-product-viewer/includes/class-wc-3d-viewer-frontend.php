@@ -16,8 +16,8 @@ class WC_3D_Viewer_Frontend {
         // Enqueue frontend scripts
         add_action('wp_enqueue_scripts', array($this, 'enqueue_frontend_scripts'));
         
-        // Add 3D button to product images
-        add_action('woocommerce_product_thumbnails', array($this, 'add_3d_button'), 25);
+        // Add 3D button and overlay HTML
+        add_action('woocommerce_before_single_product_summary', array($this, 'add_3d_button'), 5);
         
         // AJAX handler to get variation 3D model
         add_action('wp_ajax_get_variation_3d_model', array($this, 'get_variation_3d_model'));
@@ -34,21 +34,49 @@ class WC_3D_Viewer_Frontend {
         
         global $product;
         
-        // Only load on variable products
-        if (!$product || !$product->is_type('variable')) {
+        // Get product object if not set or if it's not an object
+        if (!is_object($product)) {
+            $product = wc_get_product(get_the_ID());
+        }
+        
+        if (!$product || !is_object($product)) {
             return;
         }
         
-        // Check if any variation has a 3D model
         $has_3d_model = false;
-        $available_variations = $product->get_available_variations();
+        $product_3d_model = null;
+        $variations_3d_data = array();
         
-        foreach ($available_variations as $variation) {
-            $variation_id = $variation['variation_id'];
-            $model_id = get_post_meta($variation_id, '_3d_model_id', true);
-            if ($model_id) {
-                $has_3d_model = true;
-                break;
+        // Check for product-level 3D model (for simple products or default for variable)
+        $product_model_id = get_post_meta($product->get_id(), '_product_3d_model_id', true);
+        if ($product_model_id) {
+            $has_3d_model = true;
+            $product_model_url = wp_get_attachment_url($product_model_id);
+            if ($product_model_url) {
+                $product_3d_model = array(
+                    'model_url' => $product_model_url,
+                    'model_id' => $product_model_id,
+                    'extension' => strtolower(pathinfo($product_model_url, PATHINFO_EXTENSION))
+                );
+            }
+        }
+        
+        // For variable products, check variations
+        if ($product->is_type('variable')) {
+            $available_variations = $product->get_available_variations();
+            
+            foreach ($available_variations as $variation) {
+                $variation_id = $variation['variation_id'];
+                $model_id = get_post_meta($variation_id, '_3d_model_id', true);
+                if ($model_id) {
+                    $has_3d_model = true;
+                    $model_url = wp_get_attachment_url($model_id);
+                    $variations_3d_data[$variation_id] = array(
+                        'model_url' => $model_url,
+                        'model_id' => $model_id,
+                        'extension' => strtolower(pathinfo($model_url, PATHINFO_EXTENSION))
+                    );
+                }
             }
         }
         
@@ -56,73 +84,27 @@ class WC_3D_Viewer_Frontend {
             return;
         }
         
-        // Enqueue Three.js from CDN
-        wp_enqueue_script(
-            'threejs',
-            'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js',
-            array(),
-            '0.160.0',
-            true
-        );
-        
-        // Enqueue GLTFLoader
-        wp_enqueue_script(
-            'threejs-gltf-loader',
-            'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/js/loaders/GLTFLoader.js',
-            array('threejs'),
-            '0.160.0',
-            true
-        );
-        
-        // Enqueue OBJLoader
-        wp_enqueue_script(
-            'threejs-obj-loader',
-            'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/js/loaders/OBJLoader.js',
-            array('threejs'),
-            '0.160.0',
-            true
-        );
-        
-        // Enqueue OrbitControls
-        wp_enqueue_script(
-            'threejs-orbit-controls',
-            'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/js/controls/OrbitControls.js',
-            array('threejs'),
-            '0.160.0',
-            true
-        );
-        
-        // Enqueue custom frontend script
+        // Enqueue custom frontend script as module
         wp_enqueue_script(
             'wc-3d-viewer-frontend',
             WC_3D_VIEWER_PLUGIN_URL . 'assets/js/frontend.js',
-            array('jquery', 'threejs', 'threejs-gltf-loader', 'threejs-obj-loader', 'threejs-orbit-controls'),
+            array('jquery'),
             WC_3D_VIEWER_VERSION,
             true
         );
         
-        // Prepare variation 3D models data
-        $variations_3d_data = array();
-        foreach ($available_variations as $variation) {
-            $variation_id = $variation['variation_id'];
-            $model_id = get_post_meta($variation_id, '_3d_model_id', true);
-            
-            if ($model_id) {
-                $model_url = wp_get_attachment_url($model_id);
-                $variations_3d_data[$variation_id] = array(
-                    'model_url' => $model_url,
-                    'model_id' => $model_id,
-                    'extension' => strtolower(pathinfo($model_url, PATHINFO_EXTENSION))
-                );
-            }
-        }
+        // Add module type for frontend script
+        add_filter('script_loader_tag', array($this, 'add_type_attribute'), 10, 3);
         
         wp_localize_script('wc-3d-viewer-frontend', 'wc3dViewer', array(
             'ajax_url' => admin_url('admin-ajax.php'),
             'nonce' => wp_create_nonce('wc_3d_viewer_nonce'),
+            'product_3d' => $product_3d_model,
             'variations_3d' => $variations_3d_data,
+            'is_variable' => $product->is_type('variable'),
             'button_text' => __('View 3D', 'wc-3d-viewer'),
             'close_text' => __('Close 3D View', 'wc-3d-viewer'),
+            'plugin_url' => WC_3D_VIEWER_PLUGIN_URL,
         ));
         
         // Enqueue frontend styles
@@ -135,12 +117,40 @@ class WC_3D_Viewer_Frontend {
     }
     
     /**
-     * Add 3D button to product images
+     * Add 3D button and overlay HTML
      */
     public function add_3d_button() {
         global $product;
         
-        if (!$product || !$product->is_type('variable')) {
+        // Get product object if not set or if it's not an object
+        if (!is_object($product)) {
+            $product = wc_get_product(get_the_ID());
+        }
+        
+        if (!$product || !is_object($product)) {
+            return;
+        }
+        
+        // Check if product has any 3D model
+        $has_3d = false;
+        
+        // Check product-level model
+        if (get_post_meta($product->get_id(), '_product_3d_model_id', true)) {
+            $has_3d = true;
+        }
+        
+        // For variable products, check variations
+        if (!$has_3d && $product->is_type('variable')) {
+            $available_variations = $product->get_available_variations();
+            foreach ($available_variations as $variation) {
+                if (get_post_meta($variation['variation_id'], '_3d_model_id', true)) {
+                    $has_3d = true;
+                    break;
+                }
+            }
+        }
+        
+        if (!$has_3d) {
             return;
         }
         
@@ -156,18 +166,13 @@ class WC_3D_Viewer_Frontend {
             </button>
         </div>
         
-        <div id="wc-3d-viewer-modal" class="wc-3d-modal" style="display: none;">
-            <div class="wc-3d-modal-overlay"></div>
-            <div class="wc-3d-modal-content">
-                <button type="button" class="wc-3d-modal-close">
-                    <span>&times;</span>
-                </button>
-                <div id="wc-3d-viewer-container"></div>
-                <div class="wc-3d-viewer-controls">
-                    <p class="wc-3d-viewer-instructions">
-                        <?php esc_html_e('Drag to rotate • Scroll to zoom • Right-click drag to pan', 'wc-3d-viewer'); ?>
-                    </p>
-                </div>
+        <div id="wc-3d-viewer-overlay" style="display: none;">
+            <button type="button" id="wc-3d-close-btn" class="wc-3d-close-btn">
+                <span>&times;</span>
+            </button>
+            <div id="wc-3d-viewer-container"></div>
+            <div class="wc-3d-viewer-instructions">
+                <?php esc_html_e('Drag to rotate • Scroll to zoom • Right-click drag to pan', 'wc-3d-viewer'); ?>
             </div>
         </div>
         <?php
@@ -200,5 +205,16 @@ class WC_3D_Viewer_Frontend {
             'model_url' => $model_url,
             'extension' => strtolower(pathinfo($model_url, PATHINFO_EXTENSION))
         ));
+    }
+    
+    /**
+     * Add type="module" to specific scripts
+     */
+    public function add_type_attribute($tag, $handle, $src) {
+        if ('wc-3d-viewer-frontend' === $handle) {
+            $tag = str_replace('<script ', '<script type="module" ', $tag);
+        }
+        
+        return $tag;
     }
 }
